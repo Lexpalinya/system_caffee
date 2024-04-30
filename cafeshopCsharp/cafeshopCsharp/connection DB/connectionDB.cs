@@ -11,18 +11,22 @@ namespace cafeshopCsharp.connection_DB
     {
           private MySqlConnection connect=new MySqlConnection("Server=localhost;Database=cafe_shop_db;Uid=root;");
         public void getConnectionDB() {
-            try {
+            try
+            {
 
-                if (connect.State ==System.Data.ConnectionState.Open) {
+                if (connect.State == System.Data.ConnectionState.Open)
+                {
                     connect.Clone();
                 }
                 connect.Open();
+                MessageBox.Show("mess");
             }
-            catch (Exception ex) {
-                MessageBox.Show("Connection failed:"+ ex.Message);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection failed:" + ex.Message);
             }
 
-            
+
         }
         
     }
