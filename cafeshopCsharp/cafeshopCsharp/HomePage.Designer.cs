@@ -299,7 +299,7 @@ namespace cafeshopCsharp
             this.panel1.BackColor = System.Drawing.Color.Green;
             this.panel1.Controls.Add(this.label10);
             this.panel1.ForeColor = System.Drawing.Color.Gold;
-            this.panel1.Location = new System.Drawing.Point(12, 494);
+            this.panel1.Location = new System.Drawing.Point(12, 492);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(279, 52);
             this.panel1.TabIndex = 10;
