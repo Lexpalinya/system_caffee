@@ -52,5 +52,10 @@ namespace cafeshopCsharp
             sizeselected = "L";
             lbsize.Text = sizeselected;
         }
+
+        private void Sell_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

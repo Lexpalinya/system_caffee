@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using System.Data;
-using System.Collections.Generic;
+
 using cafeshopCsharp.connection_DB;
 namespace cafeshopCsharp.modle
 {

@@ -456,6 +456,7 @@ namespace cafeshopCsharp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sell";
             this.Text = "Sell";
+            this.Load += new System.EventHandler(this.Sell_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
