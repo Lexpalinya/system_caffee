@@ -90,3 +90,5 @@ E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\bin\Debug\System.Numerics.
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.csproj.CopyComplete
+E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.HomePage.resources
+E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.Sell.resources
