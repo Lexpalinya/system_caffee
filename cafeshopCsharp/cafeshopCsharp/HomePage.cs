@@ -13,7 +13,7 @@ namespace cafeshopCsharp
     public partial class HomePage : Form
     {
 
-        string MenuBartitle;
+       
         public HomePage()
         {
             InitializeComponent();
