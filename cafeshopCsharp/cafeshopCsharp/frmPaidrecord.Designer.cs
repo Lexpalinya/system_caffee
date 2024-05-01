@@ -31,6 +31,11 @@ namespace cafeshopCsharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaidrecord));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,13 +46,6 @@ namespace cafeshopCsharp
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -84,18 +82,69 @@ namespace cafeshopCsharp
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 880);
+            this.panel1.Size = new System.Drawing.Size(449, 880);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Gold;
+            this.label7.Location = new System.Drawing.Point(58, 548);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 34);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "ວັນທີ";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(189, 409);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(206, 41);
+            this.textBox5.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Gold;
+            this.label6.Location = new System.Drawing.Point(194, 372);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 34);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "ລາຄາ/ອັນ";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.DarkGreen;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(449, 57);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "ບັນທຶກລາຍຈ່າຍ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(202, 548);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(193, 41);
+            this.dateTimePicker1.TabIndex = 24;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(77, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 127);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,87 +247,14 @@ namespace cafeshopCsharp
             this.textBox2.Size = new System.Drawing.Size(347, 41);
             this.textBox2.TabIndex = 14;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(47, 207);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 34);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "ຊື່ລາຍການ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(48, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 41);
-            this.textBox1.TabIndex = 12;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(202, 548);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(193, 41);
-            this.dateTimePicker1.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.DarkGreen;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(455, 57);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "ສະມາຊິກ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gold;
-            this.label6.Location = new System.Drawing.Point(194, 372);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 34);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "ລາຄາ/ອັນ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(189, 409);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 41);
-            this.textBox5.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gold;
-            this.label7.Location = new System.Drawing.Point(58, 548);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 34);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "ວັນທີ";
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.textBox6);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(455, 0);
+            this.panel4.Location = new System.Drawing.Point(449, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1327, 100);
+            this.panel4.Size = new System.Drawing.Size(1333, 100);
             this.panel4.TabIndex = 5;
             // 
             // textBox6
@@ -312,11 +288,11 @@ namespace cafeshopCsharp
             this.Column8,
             this.Column9});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(455, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(449, 100);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1327, 780);
+            this.dataGridView1.Size = new System.Drawing.Size(1333, 780);
             this.dataGridView1.TabIndex = 6;
             // 
             // Column1
@@ -419,8 +395,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;

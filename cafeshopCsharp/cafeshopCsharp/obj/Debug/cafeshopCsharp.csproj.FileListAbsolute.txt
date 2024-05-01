@@ -102,3 +102,12 @@ E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.e
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.report.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.seller.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.sellHistory.resources
+<<<<<<< Updated upstream
+=======
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.employee.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.productAdding.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.report.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.seller.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.sellHistory.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.sellManage.resources
+>>>>>>> Stashed changes

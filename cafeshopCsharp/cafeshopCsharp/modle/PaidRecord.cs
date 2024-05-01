@@ -12,6 +12,7 @@ namespace cafeshopCsharp.modle
         public string PrText { get; set; }
         public int PrAmount { get; set; }
         public int PrPrice { get; set; }
+        public int PrTotal { get; set; }
         public DateTime PrDate { get; set; }
     }
 }
