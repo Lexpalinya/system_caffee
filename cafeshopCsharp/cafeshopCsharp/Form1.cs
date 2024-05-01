@@ -1,4 +1,5 @@
 ﻿using cafeshopCsharp.connection_DB;
+using cafeshopCsharp.modle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,55 @@ namespace cafeshopCsharp
 {
     public partial class Form1 : Form
     {
-        private connectionDB conn=new connectionDB();
+      
+        private readonly MemberRepository _memberRepository;
         public Form1()
         {
             InitializeComponent();
+            _memberRepository = new MemberRepository(new connectionDB().getConnection());
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            conn.getConnectionDB();
+            Member addMember = new Member {
+                mbName = "bou",
+                mbPhoneNumber = "58578313",
+                mbAddress = "ທ່າແຂກ, ຄຳມ່ວນ",
+                mbPoints=0
+                
+            
+            };
+            Member updateMember = new Member
+            {
+                mbId=3,
+                mbName = "kittima",
+                mbPhoneNumber = "28434443",
+                mbAddress = "ທ່າແຂກ, ຄຳມ່ວນ",
+                mbPoints = 0
+
+
+            };
+
+            Member updatePoints = new Member {
+                mbPhoneNumber = "28490166",
+                mbPoints=10
+            };
+            Member deleteMember = new Member {
+            mbId=1
+            };
+
+
+            //  _memberRepository.AddMember(addMember);
+            //
+
+            //  _memberRepository.UpdataMember(updateMember);
+            //_memberRepository.UpdatePoints(updatePoints);
+            // _memberRepository.DeleteMember(deleteMember);
+          //   var members = _memberRepository.GetAllMembers();
+          var members=  _memberRepository.GetMember("28434443");
+            List<Member> found = new List<Member> { members };
+
+            dataGridView1.DataSource = found;
         }
     }
 }

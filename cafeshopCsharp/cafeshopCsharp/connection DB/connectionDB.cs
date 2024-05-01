@@ -1,33 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 namespace cafeshopCsharp.connection_DB
 {
-   public class connectionDB
+    public class connectionDB
     {
-          private MySqlConnection connect=new MySqlConnection("Server=localhost;Database=cafe_shop_db;Uid=root;");
-        public void getConnectionDB() {
+        private readonly MySqlConnection connect = new MySqlConnection("Server=localhost;Database=cafe_shop_db;Uid=root;");
+
+        public IDbConnection getConnection()
+        {
             try
             {
-
-                if (connect.State == System.Data.ConnectionState.Open)
+                if (connect.State != System.Data.ConnectionState.Open)
                 {
-                    connect.Clone();
+                    connect.Open();
+                   // MessageBox.Show("Connection successful");
                 }
-                connect.Open();
-                MessageBox.Show("mess");
+              
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Connection failed:" + ex.Message);
+                MessageBox.Show("Connection failed: " + ex.Message);
             }
 
-
+            return connect;
         }
-        
     }
 }
