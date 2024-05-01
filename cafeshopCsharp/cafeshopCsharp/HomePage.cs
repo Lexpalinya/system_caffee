@@ -87,5 +87,18 @@ namespace cafeshopCsharp
             member.Show();
             member.Dock = DockStyle.Fill;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            frmPaidrecord paidrecord = new frmPaidrecord();
+            paidrecord.MdiParent = this;
+            paidrecord.Show();
+            paidrecord.Dock = DockStyle.Fill;
+        }
     }
 }

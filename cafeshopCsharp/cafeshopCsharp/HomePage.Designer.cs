@@ -31,12 +31,9 @@ namespace cafeshopCsharp
         {
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,12 +47,15 @@ namespace cafeshopCsharp
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dashmain = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel10.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,7 +63,10 @@ namespace cafeshopCsharp
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashmain)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel10
@@ -91,32 +94,6 @@ namespace cafeshopCsharp
             this.label9.Size = new System.Drawing.Size(123, 42);
             this.label9.TabIndex = 5;
             this.label9.Text = "Logout";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Green;
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.ForeColor = System.Drawing.Color.Gold;
-            this.panel8.Location = new System.Drawing.Point(16, 606);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(372, 64);
-            this.panel8.TabIndex = 9;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(139, 12);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 39);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "ລາຍງານ";
             // 
             // panel9
             // 
@@ -153,18 +130,6 @@ namespace cafeshopCsharp
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(92, 1102);
             this.panel11.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::cafeshopCsharp.Properties.Resources.threedash;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 55);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel6
             // 
@@ -321,6 +286,7 @@ namespace cafeshopCsharp
             // pnMain
             // 
             this.pnMain.BackColor = System.Drawing.Color.DarkGreen;
+            this.pnMain.Controls.Add(this.panel1);
             this.pnMain.Controls.Add(this.dashmain);
             this.pnMain.Controls.Add(this.panel10);
             this.pnMain.Controls.Add(this.panel8);
@@ -339,17 +305,82 @@ namespace cafeshopCsharp
             this.pnMain.TabIndex = 6;
             this.pnMain.VisibleChanged += new System.EventHandler(this.pnMain_VisibleChanged);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::cafeshopCsharp.Properties.Resources.threedash;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 55);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // dashmain
             // 
             this.dashmain.Image = global::cafeshopCsharp.Properties.Resources.threedash;
             this.dashmain.Location = new System.Drawing.Point(16, 15);
-            this.dashmain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dashmain.Margin = new System.Windows.Forms.Padding(4);
             this.dashmain.Name = "dashmain";
             this.dashmain.Size = new System.Drawing.Size(67, 55);
             this.dashmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dashmain.TabIndex = 12;
             this.dashmain.TabStop = false;
             this.dashmain.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(139, 12);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 39);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "ລາຍງານ";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Green;
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.ForeColor = System.Drawing.Color.Gold;
+            this.panel8.Location = new System.Drawing.Point(16, 680);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(372, 64);
+            this.panel8.TabIndex = 9;
+            this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.ForeColor = System.Drawing.Color.Gold;
+            this.panel1.Location = new System.Drawing.Point(16, 608);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(372, 64);
+            this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(89, 15);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(195, 39);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "ບັນທຶກລາຍຈ່າຍ";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // HomePage
             // 
@@ -367,12 +398,9 @@ namespace cafeshopCsharp
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -386,7 +414,12 @@ namespace cafeshopCsharp
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.pnMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashmain)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -394,8 +427,6 @@ namespace cafeshopCsharp
         #endregion
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel11;
@@ -414,5 +445,9 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox dashmain;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label7;
     }
 }
