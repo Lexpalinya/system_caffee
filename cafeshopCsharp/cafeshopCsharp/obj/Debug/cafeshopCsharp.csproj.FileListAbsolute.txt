@@ -92,3 +92,5 @@ E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\bin\Debug\System.Threading
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.csproj.CopyComplete
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.HomePage.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.Sell.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.HomePage.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.Sell.resources
