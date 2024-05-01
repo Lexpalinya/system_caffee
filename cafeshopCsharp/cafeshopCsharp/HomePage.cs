@@ -68,5 +68,11 @@ namespace cafeshopCsharp
         {
             pnMain.Visible = true;
         }
+
+        private void pnMain_VisibleChanged(object sender, EventArgs e)
+        {
+            int placelogoutBTY = this.Height - 100;
+            panel10.Location = new Point(12,placelogoutBTY);
+        }
     }
 }

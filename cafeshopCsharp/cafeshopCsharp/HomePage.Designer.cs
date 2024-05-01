@@ -303,6 +303,7 @@ namespace cafeshopCsharp
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(303, 1079);
             this.pnMain.TabIndex = 6;
+            this.pnMain.VisibleChanged += new System.EventHandler(this.pnMain_VisibleChanged);
             // 
             // pictureBox2
             // 
