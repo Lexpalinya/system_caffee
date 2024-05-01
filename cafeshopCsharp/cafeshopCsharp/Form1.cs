@@ -25,6 +25,14 @@ namespace cafeshopCsharp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            int centerX = (this.Width - panel1.Width) / 2;
+            int centerY = (this.Height - panel1.Height) / 2;
+
+            panel1.Location = new Point(centerX, centerY);
+            
+
+
+
             Member addMember = new Member {
                 mbName = "bou",
                 mbPhoneNumber = "58578313",
@@ -63,7 +71,19 @@ namespace cafeshopCsharp
           var members=  _memberRepository.GetMember("28434443");
             List<Member> found = new List<Member> { members };
 
-            dataGridView1.DataSource = found;
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HomePage hp = new HomePage();
+            hp.Show();
+            this.Hide();
         }
     }
 }
