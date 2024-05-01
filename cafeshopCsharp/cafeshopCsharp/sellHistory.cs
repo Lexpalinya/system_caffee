@@ -16,5 +16,14 @@ namespace cafeshopCsharp
         {
             InitializeComponent();
         }
+
+        private void sellHistory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+       
     }
 }
