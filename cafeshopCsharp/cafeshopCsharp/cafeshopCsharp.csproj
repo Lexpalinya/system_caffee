@@ -114,6 +114,12 @@
     <Compile Include="frmMember.Designer.cs">
       <DependentUpon>frmMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPaidrecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaidrecord.Designer.cs">
+      <DependentUpon>frmPaidrecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMember.resx">
       <DependentUpon>frmMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaidrecord.resx">
+      <DependentUpon>frmPaidrecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
@@ -177,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\threedash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

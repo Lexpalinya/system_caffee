@@ -74,5 +74,18 @@ namespace cafeshopCsharp
             int placelogoutBTY = this.Height - 100;
             panel10.Location = new Point(12,placelogoutBTY);
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            frmMember member = new frmMember();
+            member.MdiParent = this;
+            member.Show();
+            member.Dock = DockStyle.Fill;
+        }
     }
 }
