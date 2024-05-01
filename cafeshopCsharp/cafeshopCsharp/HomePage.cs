@@ -31,9 +31,7 @@ namespace cafeshopCsharp
         {
             pnMain.Visible = false;
             panel11.Visible = true;
-            if (pnMain.Dock == DockStyle.None) {
-                pnMain.Dock = DockStyle.Left;
-            }
+            
         }
 
         private void panel8_Click(object sender, EventArgs e)
@@ -109,6 +107,8 @@ namespace cafeshopCsharp
             {
                 childForm.Close(); 
             }
+            pnMain.Visible = false;
+            panel11.Visible = true;
             form.MdiParent = this;
             form.Show();
             form.Dock = DockStyle.Fill;
@@ -142,6 +142,11 @@ namespace cafeshopCsharp
         {
             seller selmn = new seller();
             setmdi(selmn);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

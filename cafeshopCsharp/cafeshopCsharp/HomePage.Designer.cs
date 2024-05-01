@@ -34,7 +34,6 @@ namespace cafeshopCsharp
             this.panel9 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,13 +49,13 @@ namespace cafeshopCsharp
             this.pnMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.dashmain = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dashmain = new System.Windows.Forms.PictureBox();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -65,8 +64,9 @@ namespace cafeshopCsharp
             this.panel5.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dashmain)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashmain)).BeginInit();
             this.SuspendLayout();
             // 
             // panel10
@@ -126,17 +126,6 @@ namespace cafeshopCsharp
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(69, 894);
             this.panel11.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::cafeshopCsharp.Properties.Resources.threedash;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 45);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel6
             // 
@@ -271,6 +260,7 @@ namespace cafeshopCsharp
             this.panel2.Size = new System.Drawing.Size(279, 52);
             this.panel2.TabIndex = 2;
             this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel5
             // 
@@ -329,17 +319,6 @@ namespace cafeshopCsharp
             this.label10.Text = "ບັນທຶກລາຍຈ່າຍ";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // dashmain
-            // 
-            this.dashmain.Image = global::cafeshopCsharp.Properties.Resources.threedash;
-            this.dashmain.Location = new System.Drawing.Point(12, 12);
-            this.dashmain.Name = "dashmain";
-            this.dashmain.Size = new System.Drawing.Size(50, 45);
-            this.dashmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dashmain.TabIndex = 12;
-            this.dashmain.TabStop = false;
-            this.dashmain.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Green;
@@ -364,6 +343,28 @@ namespace cafeshopCsharp
             this.label7.TabIndex = 5;
             this.label7.Text = "ລາຍງານ";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::cafeshopCsharp.Properties.Resources.threedash;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 45);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // dashmain
+            // 
+            this.dashmain.Image = global::cafeshopCsharp.Properties.Resources.threedash;
+            this.dashmain.Location = new System.Drawing.Point(12, 12);
+            this.dashmain.Name = "dashmain";
+            this.dashmain.Size = new System.Drawing.Size(50, 45);
+            this.dashmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dashmain.TabIndex = 12;
+            this.dashmain.TabStop = false;
+            this.dashmain.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,7 +383,6 @@ namespace cafeshopCsharp
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -398,9 +398,10 @@ namespace cafeshopCsharp
             this.pnMain.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dashmain)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashmain)).EndInit();
             this.ResumeLayout(false);
 
         }
