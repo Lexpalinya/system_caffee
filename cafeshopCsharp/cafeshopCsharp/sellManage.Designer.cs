@@ -61,9 +61,9 @@ namespace cafeshopCsharp
             this.label1.BackColor = System.Drawing.Color.DarkGreen;
             this.label1.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(5, 7);
+            this.label1.Location = new System.Drawing.Point(12, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(404, 57);
+            this.label1.Size = new System.Drawing.Size(228, 57);
             this.label1.TabIndex = 3;
             this.label1.Text = "ຈັດການໜ້າຂາຍ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -113,3 +113,4 @@ D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\c
 >>>>>>> Stashed changes
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.productCard.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.productCards.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.productCards.resources
