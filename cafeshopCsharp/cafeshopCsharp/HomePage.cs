@@ -38,7 +38,8 @@ namespace cafeshopCsharp
 
         private void panel8_Click(object sender, EventArgs e)
         {
-         
+            report selmn = new report();
+            setmdi(selmn);
         }
 
         private void panel10_Click(object sender, EventArgs e)
@@ -57,9 +58,7 @@ namespace cafeshopCsharp
         private void panel2_Click(object sender, EventArgs e)
         {
             Sell sell = new Sell();
-            sell.MdiParent = this;
-            sell.Show();
-            sell.Dock = DockStyle.Fill;
+            setmdi(sell);
             
   
         }
@@ -77,15 +76,14 @@ namespace cafeshopCsharp
 
         private void label5_Click(object sender, EventArgs e)
         {
-          
+            employee selmn = new employee();
+            setmdi(selmn);
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
             frmMember member = new frmMember();
-            member.MdiParent = this;
-            member.Show();
-            member.Dock = DockStyle.Fill;
+            setmdi(member);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -96,9 +94,54 @@ namespace cafeshopCsharp
         private void label10_Click(object sender, EventArgs e)
         {
             frmPaidrecord paidrecord = new frmPaidrecord();
-            paidrecord.MdiParent = this;
-            paidrecord.Show();
-            paidrecord.Dock = DockStyle.Fill;
+            setmdi(paidrecord);
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            sellManage selmn = new sellManage();
+            setmdi(selmn);
+            
+        }
+        public void setmdi(Form form)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close(); 
+            }
+            form.MdiParent = this;
+            form.Show();
+            form.Dock = DockStyle.Fill;
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            productAdding selmn = new productAdding();
+            setmdi(selmn);
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            sellHistory selmn = new sellHistory();
+            setmdi(selmn);
+        }
+
+        private void panel7_Click(object sender, EventArgs e)
+        {
+            frmMember selmn = new frmMember();
+            setmdi(selmn);
+        }
+
+        private void panel6_Click(object sender, EventArgs e)
+        {
+            employee selmn = new employee();
+            setmdi(selmn);
+        }
+
+        private void panel9_Click(object sender, EventArgs e)
+        {
+            seller selmn = new seller();
+            setmdi(selmn);
         }
     }
 }
