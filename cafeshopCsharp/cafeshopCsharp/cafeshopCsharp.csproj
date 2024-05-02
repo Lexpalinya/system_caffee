@@ -101,12 +101,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adfsf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="adfsf.Designer.cs">
-      <DependentUpon>adfsf.cs</DependentUpon>
-    </Compile>
     <Compile Include="connection DB\connectionDB.cs" />
     <Compile Include="employee.cs">
       <SubType>Form</SubType>
