@@ -49,14 +49,12 @@ namespace cafeshopCsharp
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbsize = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnSize = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -287,10 +285,8 @@ namespace cafeshopCsharp
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel5.Controls.Add(this.pnSize);
             this.panel5.Controls.Add(this.lbsize);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(512, 13);
             this.panel5.Name = "panel5";
@@ -310,57 +306,6 @@ namespace cafeshopCsharp
             this.lbsize.Size = new System.Drawing.Size(71, 28);
             this.lbsize.TabIndex = 18;
             this.lbsize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(27, 107);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.label11.Size = new System.Drawing.Size(94, 34);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "L";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(131, 61);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.label10.Size = new System.Drawing.Size(94, 34);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "M";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(26, 61);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.label9.Size = new System.Drawing.Size(94, 34);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "S";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label4
             // 
@@ -425,6 +370,13 @@ namespace cafeshopCsharp
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1402, 666);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
+            // pnSize
+            // 
+            this.pnSize.Location = new System.Drawing.Point(3, 50);
+            this.pnSize.Name = "pnSize";
+            this.pnSize.Size = new System.Drawing.Size(240, 102);
+            this.pnSize.TabIndex = 19;
+            // 
             // Sell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,9 +427,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label13;
@@ -485,5 +434,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Label lbtemperature;
         private System.Windows.Forms.Label lbsize;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel pnSize;
     }
 }

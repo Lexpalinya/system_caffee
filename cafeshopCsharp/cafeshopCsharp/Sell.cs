@@ -15,7 +15,9 @@ namespace cafeshopCsharp
         public Sell()
         {
             InitializeComponent();
-            
+            string[] sizes = { "S", "M", "L" };
+            createPanelSize(sizes);
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -23,34 +25,64 @@ namespace cafeshopCsharp
 
         }
         
-        private string sizeselected;
-        private void label9_Click(object sender, EventArgs e)
-        {
-            sizeselected = "S";
-            lbsize.Text = sizeselected;
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-            sizeselected = "M";
-            lbsize.Text = sizeselected;
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-            sizeselected = "L";
-            lbsize.Text = sizeselected;
-        }
+        
+        
 
         private void Sell_Load(object sender, EventArgs e)
         {
             
         }
+        
+           
+            
+
+
+        
+
+        public void createPanelSize(string[] sizes)
+        {
+
+
+            int Y = 10;
+            int X = 25;
+            int columnWidth = 100;
+            foreach (var index in Enumerable.Range(0, sizes.Length))
+            {
+
+                int column = index % 2;
+                int rowthis = index / 2;
+                Label labelSize = new Label
+                {
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Text = sizes[index],
+                    Size = new Size(94, 34),
+                    BackColor = Color.White,
+                    ForeColor = Color.Goldenrod,
+                    
+                  
+                    Location = new Point(X + column * columnWidth, Y + rowthis * 40),
+                    Font = new Font("Times new roman", 16, FontStyle.Bold),
+
+
+                };
+                labelSize.Click
++= (sender, e) =>
+{
+    lbsize.Text = labelSize.Text;
+
+};
+
+
+                // Size ------------------
+                pnSize.Controls.Add(labelSize);
+
+
+            };
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            searchMember smb = new searchMember();
-            smb.Show();
 
         }
     }

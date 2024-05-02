@@ -54,17 +54,17 @@ namespace cafeshopCsharp
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Column3
@@ -171,9 +171,9 @@ namespace cafeshopCsharp
             this.label3.Location = new System.Drawing.Point(57, 268);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 29);
+            this.label3.Size = new System.Drawing.Size(91, 29);
             this.label3.TabIndex = 3;
-            this.label3.Text = "ເບີໂທ";
+            this.label3.Text = "ປະເພດສິນ";
             // 
             // textBox2
             // 
@@ -191,9 +191,9 @@ namespace cafeshopCsharp
             this.label2.Location = new System.Drawing.Point(57, 186);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 29);
+            this.label2.Size = new System.Drawing.Size(69, 29);
             this.label2.TabIndex = 1;
-            this.label2.Text = "ຊື່ສະມາຊິກ";
+            this.label2.Text = "ຊື່ສິນຄ້າ";
             // 
             // Column4
             // 
@@ -257,7 +257,7 @@ namespace cafeshopCsharp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(966, 780);
+            this.dataGridView1.Size = new System.Drawing.Size(1065, 780);
             this.dataGridView1.TabIndex = 5;
             // 
             // Column2
@@ -275,7 +275,7 @@ namespace cafeshopCsharp
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(404, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(966, 880);
+            this.panel3.Size = new System.Drawing.Size(1065, 880);
             this.panel3.TabIndex = 5;
             // 
             // panel4
@@ -285,7 +285,7 @@ namespace cafeshopCsharp
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(966, 100);
+            this.panel4.Size = new System.Drawing.Size(1065, 100);
             this.panel4.TabIndex = 4;
             // 
             // textBox5
@@ -294,6 +294,16 @@ namespace cafeshopCsharp
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(398, 20);
             this.textBox5.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(898, 27);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(50, 41);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -315,6 +325,16 @@ namespace cafeshopCsharp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 823);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(80, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -341,32 +361,12 @@ namespace cafeshopCsharp
             this.label1.Text = "ເພີ່ມສິນຄ້າ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(898, 27);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 41);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(80, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 127);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // productAdding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(1370, 880);
+            this.ClientSize = new System.Drawing.Size(1469, 880);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -378,8 +378,8 @@ namespace cafeshopCsharp
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
