@@ -22,18 +22,7 @@ namespace cafeshopCsharp
         {
 
         }
-        private string temselected;
-        private void label7_Click_1(object sender, EventArgs e)
-        {
-            temselected = "Hot";
-            lbtemperature.Text = temselected;
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            temselected = "Cold";
-            lbtemperature.Text = temselected;
-        }
+        
         private string sizeselected;
         private void label9_Click(object sender, EventArgs e)
         {
@@ -56,6 +45,13 @@ namespace cafeshopCsharp
         private void Sell_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            searchMember smb = new searchMember();
+            smb.Show();
+
         }
     }
 }

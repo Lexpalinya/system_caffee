@@ -160,6 +160,12 @@
     <Compile Include="report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchMember.Designer.cs">
+      <DependentUpon>searchMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </Compile>
     <EmbeddedResource Include="report.resx">
       <DependentUpon>report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchMember.resx">
+      <DependentUpon>searchMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>
