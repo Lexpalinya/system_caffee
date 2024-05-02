@@ -68,8 +68,8 @@ namespace cafeshopCsharp
             //_memberRepository.UpdatePoints(updatePoints);
             // _memberRepository.DeleteMember(deleteMember);
           //   var members = _memberRepository.GetAllMembers();
-          var members=  _memberRepository.GetMember("28434443");
-            List<Member> found = new List<Member> { members };
+         // var members=  _memberRepository.GetMember("28434443");
+          //  List<Member> found = new List<Member> { members };
 
             
         }

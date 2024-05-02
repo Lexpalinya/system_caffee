@@ -184,6 +184,12 @@
     <Compile Include="sellManage.Designer.cs">
       <DependentUpon>sellManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="sellManageCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="sellManageCard.Designer.cs">
+      <DependentUpon>sellManageCard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="employee.resx">
       <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sellManage.resx">
       <DependentUpon>sellManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sellManageCard.resx">
+      <DependentUpon>sellManageCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
