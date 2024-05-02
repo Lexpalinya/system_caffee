@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class searchMember : Form
+    public partial class addmember : Form
     {
-        public searchMember()
+        public addmember()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.MdiParent.Close();
         }
     }
 }

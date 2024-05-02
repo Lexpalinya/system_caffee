@@ -83,7 +83,8 @@ namespace cafeshopCsharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            containerForMember c = new containerForMember();
+            c.Show();
         }
     }
 }
