@@ -101,19 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addmember.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addmember.Designer.cs">
-      <DependentUpon>addmember.cs</DependentUpon>
-    </Compile>
     <Compile Include="connection DB\connectionDB.cs" />
-    <Compile Include="containerForMember.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="containerForMember.Designer.cs">
-      <DependentUpon>containerForMember.cs</DependentUpon>
-    </Compile>
     <Compile Include="employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,12 +196,6 @@
     <Compile Include="sellManageCard.Designer.cs">
       <DependentUpon>sellManageCard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addmember.resx">
-      <DependentUpon>addmember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="containerForMember.resx">
-      <DependentUpon>containerForMember.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="employee.resx">
       <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
