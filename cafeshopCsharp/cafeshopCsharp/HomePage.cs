@@ -148,5 +148,11 @@ namespace cafeshopCsharp
         {
 
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            SalaryPayment salaryPayment = new SalaryPayment();
+            setmdi(salaryPayment);
+        }
     }
 }

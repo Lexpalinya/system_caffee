@@ -147,6 +147,12 @@
     <Compile Include="modle\PaidRecord.cs" />
     <Compile Include="modle\Product.cs" />
     <Compile Include="modle\SalaryPayment.cs" />
+    <Compile Include="SalaryPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryPayment.Designer.cs">
+      <DependentUpon>SalaryPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="productAdding.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaryPayment.resx">
+      <DependentUpon>SalaryPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productAdding.resx">
       <DependentUpon>productAdding.cs</DependentUpon>
