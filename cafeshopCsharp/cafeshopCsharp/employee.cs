@@ -16,5 +16,29 @@ namespace cafeshopCsharp
         {
             InitializeComponent();
         }
+
+        private void pbImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Image Files (*.jpg, *.png, *.bmp)|*.jpg;*.png;*.bmp|All files (*.*)|*.*";
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = fileDialog.FileName;
+
+                try
+                {
+
+                    Image image = Image.FromFile(fileName);
+                    pbImage.Image = image;
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading Image:" + ex.Message);
+                }
+
+            }
+        }
     }
 }

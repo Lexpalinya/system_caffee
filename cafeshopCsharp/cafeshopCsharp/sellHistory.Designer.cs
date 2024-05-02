@@ -51,27 +51,27 @@ namespace cafeshopCsharp
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1287, 20);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1560, 26);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 41);
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 35);
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.Value = new System.DateTime(2024, 5, 1, 0, 0, 0, 0);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightYellow;
-            this.panel1.Location = new System.Drawing.Point(12, 85);
+            this.panel1.Location = new System.Drawing.Point(36, 85);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1445, 766);
+            this.panel1.Size = new System.Drawing.Size(1751, 970);
             this.panel1.TabIndex = 6;
             // 
             // sellHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 34F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(1469, 866);
+            this.ClientSize = new System.Drawing.Size(1789, 1080);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);

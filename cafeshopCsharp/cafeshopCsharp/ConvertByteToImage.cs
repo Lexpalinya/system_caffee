@@ -13,24 +13,22 @@ namespace cafeshopCsharp
     {
 
 
-        public void ConvertToImage(PictureBox picture,byte[] ImageByte) {
-            try
+        public Image ByteToImage(byte[] ImageByte) {
+
+            using (MemoryStream ms = new MemoryStream(ImageByte))
             {
-
-                using (MemoryStream ms = new MemoryStream(ImageByte))
-                {
-
-                    Image img = Image.FromStream(ms);
-                    picture.Image = img;
-                }
-
+                Image img = Image.FromStream(ms);
+                return img;
             }
+        }
 
-            catch (Exception ex)
+        public  byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
             {
-                MessageBox.Show("Error loading Image:" + ex.Message);
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
             }
-
         }
     }
 }

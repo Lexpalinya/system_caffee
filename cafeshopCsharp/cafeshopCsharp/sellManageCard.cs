@@ -45,6 +45,7 @@ namespace cafeshopCsharp
                     AutoSize = true,
                     Location = new Point(X + column * columnWidth, Y + rowthis * 30),
                     Font = new Font("Phetsarath OT", 16, FontStyle.Bold),
+                    ForeColor=Color.Gold
                 };
 
 

@@ -28,6 +28,7 @@ namespace cafeshopCsharp
 
             clearPanel(mainPanel);
             int y = 150;
+            int x = 30;
 
 
            
@@ -37,7 +38,7 @@ namespace cafeshopCsharp
 
                 sellManageCard card = new sellManageCard(data[i])
                 {
-                    Location = new Point(10, (i + 1) * (y + 10) - y + 10)
+                    Location = new Point(x, (i + 1) * (y + 10) - y + 10)
                 };
                 mainPanel.Controls.Add(card);
 
@@ -80,6 +81,11 @@ namespace cafeshopCsharp
                 createGrid(data);
             }
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 

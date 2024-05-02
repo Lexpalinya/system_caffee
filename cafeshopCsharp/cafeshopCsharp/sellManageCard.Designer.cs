@@ -57,15 +57,17 @@ namespace cafeshopCsharp
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(372, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 35);
+            this.label1.Size = new System.Drawing.Size(23, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "ຊື່";
             // 
             // lblName
             // 
             this.lblName.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Gold;
             this.lblName.Location = new System.Drawing.Point(231, 81);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(300, 40);
@@ -76,15 +78,17 @@ namespace cafeshopCsharp
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(567, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 35);
+            this.label2.Size = new System.Drawing.Size(61, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "ປະເພດ";
             // 
             // lblType
             // 
             this.lblType.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.ForeColor = System.Drawing.Color.Gold;
             this.lblType.Location = new System.Drawing.Point(537, 81);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(137, 40);
@@ -96,7 +100,8 @@ namespace cafeshopCsharp
             // 
             this.button1.BackColor = System.Drawing.Color.DarkGreen;
             this.button1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1234, 32);
+            this.button1.ForeColor = System.Drawing.Color.Gold;
+            this.button1.Location = new System.Drawing.Point(1536, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 49);
             this.button1.TabIndex = 5;
@@ -107,7 +112,8 @@ namespace cafeshopCsharp
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1234, 87);
+            this.button2.ForeColor = System.Drawing.Color.Gold;
+            this.button2.Location = new System.Drawing.Point(1536, 81);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 49);
             this.button2.TabIndex = 6;
@@ -117,7 +123,8 @@ namespace cafeshopCsharp
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(901, 77);
+            this.button3.ForeColor = System.Drawing.Color.Gold;
+            this.button3.Location = new System.Drawing.Point(1007, 77);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 40);
             this.button3.TabIndex = 7;
@@ -129,7 +136,8 @@ namespace cafeshopCsharp
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DarkGreen;
-            this.button4.Location = new System.Drawing.Point(1064, 77);
+            this.button4.ForeColor = System.Drawing.Color.Gold;
+            this.button4.Location = new System.Drawing.Point(1170, 77);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 40);
             this.button4.TabIndex = 8;
@@ -141,9 +149,9 @@ namespace cafeshopCsharp
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(975, 78);
+            this.txtAmount.Location = new System.Drawing.Point(1081, 78);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(60, 47);
+            this.txtAmount.Size = new System.Drawing.Size(60, 39);
             this.txtAmount.TabIndex = 9;
             this.txtAmount.Text = "0";
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -152,31 +160,33 @@ namespace cafeshopCsharp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(953, 15);
+            this.label3.ForeColor = System.Drawing.Color.Gold;
+            this.label3.Location = new System.Drawing.Point(1078, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 35);
+            this.label3.Size = new System.Drawing.Size(63, 27);
             this.label3.TabIndex = 10;
-            this.label3.Text = "ຈຳນວນss";
+            this.label3.Text = "ຈຳນວນ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(737, 15);
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(802, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 35);
+            this.label4.Size = new System.Drawing.Size(68, 27);
             this.label4.TabIndex = 11;
             this.label4.Text = "ຂະໜາດ";
             // 
             // panelSize
             // 
-            this.panelSize.Location = new System.Drawing.Point(713, 60);
+            this.panelSize.Location = new System.Drawing.Point(783, 60);
             this.panelSize.Name = "panelSize";
             this.panelSize.Size = new System.Drawing.Size(128, 76);
             this.panelSize.TabIndex = 12;
             // 
             // sellManageCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 34F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.Controls.Add(this.panelSize);
@@ -195,7 +205,7 @@ namespace cafeshopCsharp
             this.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "sellManageCard";
-            this.Size = new System.Drawing.Size(1405, 150);
+            this.Size = new System.Drawing.Size(1700, 150);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
