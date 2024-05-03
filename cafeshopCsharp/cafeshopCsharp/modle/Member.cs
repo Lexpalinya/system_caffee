@@ -8,6 +8,8 @@ using Dapper;
 using System.Data;
 
 using cafeshopCsharp.connection_DB;
+using System.Windows.Forms;
+
 namespace cafeshopCsharp.modle
 {
     public class Member
@@ -28,41 +30,134 @@ namespace cafeshopCsharp.modle
         {
             dbConnection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
-
+        // GetAllMember ----------------------------------------------------------------------------
         public IEnumerable<Member> GetAllMembers()
         {
-            // Using Dapper's Query method to execute the SQL query and map the result to Member objects
-            return dbConnection.Query<Member>("SELECT * FROM tb_member");
+            try {
+                return dbConnection.Query<Member>("SELECT * FROM tb_member");
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Enumerable.Empty<Member>();
+            }
+
+
+
         }
 
 
-
+        //GetMember -----------------------------------------------------------------------------------------
         public Member GetMember(string mbPhoneNumber) {
-            return dbConnection.QueryFirstOrDefault<Member>("SELECT * FROM tb_member WHERE mbPhoneNumber=@PhoneNumber", new { PhoneNumber = mbPhoneNumber });
-        }
 
+            try {
+                string sql = "SELECT * FROM tb_member WHERE mbPhoneNumber=@PhoneNumber";
+                return dbConnection.QueryFirstOrDefault<Member>(sql, new { PhoneNumber = mbPhoneNumber });
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        } 
+        // Add Member --------------------------------------------------------------------------------------
         public void AddMember(Member addMember)
         {
-            string sql = "INSERT INTO tb_member (mbName, mbPhoneNumber, mbAddress, mbPoints) VALUES (@mbName, @mbPhoneNumber, @mbAddress, @mbPoints)";
-            dbConnection.Execute(sql, addMember);
+            try
+            {
+                string sql = "INSERT INTO tb_member (mbName, mbPhoneNumber, mbAddress, mbPoints) VALUES (@mbName, @mbPhoneNumber, @mbAddress, @mbPoints)";
+                int rowAffected=dbConnection.Execute(sql, addMember);
+
+                if (rowAffected == 1)
+                {
+                    MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        // Update Member -----------------------------------------------------------------------------------
+        public void UpdateMember(Member updateMember) {
 
-        public void UpdataMember(Member updateMember) {
+            try {
+                string sql = "UPDATE tb_member SET mbName=@mbName,mbPhoneNumber=@mbPhoneNumber,mbAddress=@mbAddress WHERE mbId=@mbId";
+                int rowAffected=dbConnection.Execute(sql, updateMember);
 
-            string sql = "UPDATE tb_member SET mbName=@mbName,mbPhoneNumber=@mbPhoneNumber,mbAddress=@mbAddress WHERE mbId=@mbId";
-            dbConnection.Execute(sql, updateMember);
+
+
+                if (rowAffected == 0)
+                {
+                    MessageBox.Show("ແກ້ໄຂຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("ແກ້ໄຂສຳເລັດ", "Edit", MessageBoxButtons.OK);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        // Update Point Member -----------------------------------------------------------------------------
         public void UpdatePoints(Member updatePoints) {
 
-            string sql = "UPDATE tb_member SET mbPoints=@mbPoints WHERE mbPhoneNumber=@mbPhoneNumber";
-            dbConnection.Execute(sql, updatePoints);
+           
+            try
+            {
+                string sql = "UPDATE tb_member SET mbPoints=@mbPoints WHERE mbPhoneNumber=@mbPhoneNumber";
+                int rowAffected = dbConnection.Execute(sql, updatePoints);
+
+                if (rowAffected == 0)
+                {
+                    MessageBox.Show("ແກ້ໄຂຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("ແກ້ໄຂສຳເລັດ", "Edit", MessageBoxButtons.OK);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+
+        // Delete Member -----------------------------------------------------------------------------------
         public void DeleteMember(Member deleteMember) {
-            string sql = "DELETE FROM tb_member where mbId=@mbId";
-            dbConnection.Execute(sql, deleteMember);
+            try { 
+                string sql = "DELETE FROM tb_member where mbId=@mbId";
+                int rowAffected=dbConnection.Execute(sql, deleteMember);
+
+                if (rowAffected == 0)
+                {
+                    MessageBox.Show("ລົບຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("ລົບສຳເລັດ", "DELETE", MessageBoxButtons.OK);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

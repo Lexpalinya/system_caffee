@@ -36,49 +36,94 @@ namespace cafeshopCsharp.modle
         
         }
 
+
+        // Get All Products ----------------------------------------------------------------------
         public IEnumerable<Product> GetAllProducts() {
+            try { 
+                return dbConnection.Query<Product>("SELECT * FROM tb_products");
+            }
+            catch (Exception ex)
+            {
 
-            return dbConnection.Query<Product>("SELECT * FROM tb_products");
-
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Enumerable.Empty<Product>();
+            }
         }
-
+        // Get Products By Type -----------------------------------------------------------------------
         public IEnumerable< Product> GetProductByType(Product product) {
-            return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pType=@pType",product);
+            try { 
+                
+                return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pType=@pType",product);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Enumerable.Empty<Product>();
+            }
         }
 
+        // Get Products By Status -------------------------------------------------------------------------
         public IEnumerable<Product> GetProductByStatus(Product product) { 
-            return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pStatus=@pStatus", product);
-        }
-
-        public void AddProduct(Product product) {
-            string sql= "INSERT INTO tb_products (pName, pType, pSize, pImage, pStatus, pPriceOriginal, pExp) " +
-                       "VALUES (@PName, @PType, @PSize, @PImage, @PStatus, @PPriceOriginal, @PExp)";
             try
             {
-                dbConnection.Query<Product>(sql, product);
+                return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pStatus=@pStatus", product);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error); return Enumerable.Empty<Product>(); }
+        }
+
+        // Add Product --------------------------------------------------------------------------------------
+        public void AddProduct(Product product) {
+            try
+            {
+                 string sql= "INSERT INTO tb_products (pName, pType, pSize, pImage, pStatus, pPriceOriginal, pExp) " +
+                       "VALUES (@PName, @PType, @PSize, @PImage, @PStatus, @PPriceOriginal, @PExp)";
+                 int rowAffected=   dbConnection.Execute(sql, product);
+                if (rowAffected == 1)
+                {
+                    MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ຂະໜາດຂອງຮູບໃຫ່ຍເກີນໄປ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // Update Product ---------------------------------------------------------------------------------------
         public void UpdateProduct(Product product)
         {
-            string sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pImage=@pImage,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp WHERE pId=@pID";
-
             try {
-                dbConnection.Query<Product>(sql,product);
+                string sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pImage=@pImage,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp WHERE pId=@pID";
+                int rowAffected=dbConnection.Execute(sql,product);
+                if (rowAffected == 0)
+                {
+                    MessageBox.Show("ແກ້ໄຂຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("ແກ້ໄຂສຳເລັດ", "Edit", MessageBoxButtons.OK);
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show("ຂະໜາດຂອງຮູບໃຫ່ຍເກີນໄປ","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
+        // Delete Product ----------------------------------------------------------------------------------------
         public void DeteleProduct(Product product) {
-            string sql = "DELETE FROM tb_products WHERE pId=@pId";
             try
             {
-                dbConnection.Query<Product>(sql, product);
+                string sql = "DELETE FROM tb_products WHERE pId=@pId";
+                int rowAffected=dbConnection.Execute(sql, product);
+                if (rowAffected == 0)
+                {
+                    MessageBox.Show("ລົບຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("ລົບສຳເລັດ", "DELETE", MessageBoxButtons.OK);
+                }
             }
             catch (Exception ex)
             {
