@@ -19,13 +19,18 @@ namespace cafeshopCsharp
         private readonly PaidRecordRepository _paidRecordRepository;
 
 
+
         private readonly ProductRepository _productRepository;
+
+        private readonly AccountRepository _accountRepository;
+
         public Form2()
         {
             InitializeComponent();
              _memberRepository = new MemberRepository(new connectionDB().getConnection());
             _paidRecordRepository = new PaidRecordRepository(new connectionDB().getConnection());
             _productRepository = new ProductRepository(new connectionDB().getConnection());
+            _accountRepository = new AccountRepository(new connectionDB().getConnection());
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -143,18 +148,64 @@ namespace cafeshopCsharp
             Product deleteProduct = new Product {
                 PId = 1
             };
-            _productRepository.DeteleProduct(deleteProduct);
+            // _productRepository.DeteleProduct(deleteProduct);
 
 
 
-             var product = _productRepository.GetAllProducts();
+            // var product = _productRepository.GetAllProducts();
             //var product = _productRepository.GetProductByStatus(findStatus);
 
-         
 
-           // var product = _productRepository.GetProductByType(findType);
-            dataGridView1.DataSource = product;
 
+            // var product = _productRepository.GetProductByType(findType);
+            // dataGridView1.DataSource = product;
+
+
+
+
+
+            //test Account -----------------------------------------------------------------------
+
+            Account acc = new Account {
+                AccPassword = "1234",
+                AccUserName = "palinya",
+
+            };
+
+            Account addAcc = new Account {
+                AccEmpId=4,
+                AccLevel="Seller",
+                AccPassword="1234",
+                AccUserName="palinya",
+                       
+            };
+
+            Account updateAcc = new Account
+            {
+                AccId=11,
+                AccEmpId = 4,
+                AccLevel = "Seller",
+                AccPassword = "1234",
+                AccUserName = "oshi noy",
+
+            };
+
+            Account deleteAcc = new Account { 
+            AccId=8
+            };
+            //  _accountRepository.AddAccount(addAcc);
+
+            // _accountRepository.UpdateAccount(updateAcc);
+            _accountRepository.DeleteAccount(deleteAcc);
+
+            var data = _accountRepository.GetAllAccount();
+            dataGridView1.DataSource = data;
+
+
+
+            // var data = _accountRepository.AccountLogin(acc);
+
+            //  dataGridView1.DataSource=new List<AccountAll> { data};
 
 
         }
@@ -209,9 +260,9 @@ namespace cafeshopCsharp
                 };
                 // _productRepository.AddProduct(AddProduct);
 
-                _productRepository.UpdateProduct(updateProduct);
-                var product = _productRepository.GetAllProducts();
-                dataGridView1.DataSource = product;
+                //_productRepository.UpdateProduct(updateProduct);
+                //var product = _productRepository.GetAllProducts();
+                //dataGridView1.DataSource = product;
             }
           
         }
