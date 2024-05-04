@@ -19,7 +19,7 @@ namespace cafeshopCsharp.modle
         public string AccPassword { get; set; }
     }
 
-    public class AccountAll {
+    public class AccountView {
 
         public int AccId { get; set; }
         public string empName { get; set; }
@@ -43,21 +43,21 @@ namespace cafeshopCsharp.modle
         }
 
         // Show Account -------------------------------------------------------------------------
-        public IEnumerable<AccountAll> GetAllAccount(){
+        public IEnumerable<AccountView> GetAllAccount(){
             try {
                 string sql = "SELECT * FROM v_account";
-                return dbConnection.Query<AccountAll>(sql);
+                return dbConnection.Query<AccountView>(sql);
 
 
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return Enumerable.Empty<AccountAll>();
+                return Enumerable.Empty<AccountView>();
             }
 
         }
         // Login -----------------------------------------------------------------------------
-        public AccountAll AccountLogin(Account acc) {
+        public AccountView AccountLogin(Account acc) {
 
           
 
@@ -65,7 +65,7 @@ namespace cafeshopCsharp.modle
             {
 
                 string sql = " SELECT * FROM v_account WHERE accUserName=@Username AND accPassword=@Password";
-                return dbConnection.QueryFirst<AccountAll>(sql, new { Username = acc.AccUserName, Password = acc.AccPassword });
+                return dbConnection.QueryFirst<AccountView>(sql, new { Username = acc.AccUserName, Password = acc.AccPassword });
 
             }
             catch (Exception ex)

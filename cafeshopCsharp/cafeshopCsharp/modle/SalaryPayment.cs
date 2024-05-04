@@ -18,10 +18,13 @@ namespace cafeshopCsharp.modle
         public int SpStatusPay { get; set; }
     }
 
-    public class SalaryPaymentView:SalaryPayment {
-
+    public class SalaryPaymentView {
+        public int SpId { get; set; }
         public string EmpName { get; set; }
         public string EmpLastName { get; set; }
+        public int SpSalary { get; set; }
+        public DateTime SpPayday { get; set; }
+        public int SpStatusPay { get; set; }
     }
 
     public class SalaryPaymentRepository {
@@ -49,7 +52,7 @@ namespace cafeshopCsharp.modle
 
         // GetSalaryPaymentViewByMonthYear-------------------------------------------------------------------------------
         public IEnumerable<SalaryPaymentView> GetSalaryPaymentViewsByMonthYear(SalaryPayment salaryPayment) {
-
+            
             try
             {
                 string sql = "SELECT * FROM v_salarypayment WHERE YEAR(spPayday)=@year AND MONTH(spPayday)=@month";
