@@ -93,7 +93,7 @@ namespace cafeshopCsharp.modle
 
                 if (rowAffected == 0)
                 {
-                    MessageBox.Show("ແກ້ໄຂຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ແກ້ໄຂຜິດພາດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

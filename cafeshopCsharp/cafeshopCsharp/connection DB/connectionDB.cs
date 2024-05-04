@@ -27,5 +27,24 @@ namespace cafeshopCsharp.connection_DB
 
             return connect;
         }
+        public IDbConnection closecn()
+        {
+            try
+            {
+                if (connect.State == System.Data.ConnectionState.Open)
+                {
+                    connect.Close();
+                    // MessageBox.Show("Connection successful");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection failed: " + ex.Message);
+            }
+
+            return connect;
+        }
+        
     }
 }
