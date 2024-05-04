@@ -52,7 +52,7 @@ namespace cafeshopCsharp.modle
 
             try {
                 string sql = "SELECT * FROM tb_member WHERE mbPhoneNumber=@mbPhoneNumber";
-                return dbConnection.QueryFirst<Member>(sql, mb);
+                return dbConnection.QueryFirstOrDefault<Member>(sql, mb)??null;
             }
             catch (Exception ex)
             {

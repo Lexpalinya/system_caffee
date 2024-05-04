@@ -160,6 +160,7 @@ namespace cafeshopCsharp
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(288, 35);
             this.textBox4.TabIndex = 6;
+            this.textBox4.Text = "0";
             // 
             // label4
             // 
@@ -242,7 +243,7 @@ namespace cafeshopCsharp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1326, 914);
+            this.dataGridView1.Size = new System.Drawing.Size(1370, 910);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -264,6 +265,7 @@ namespace cafeshopCsharp
             this.reload.Size = new System.Drawing.Size(46, 35);
             this.reload.TabIndex = 4;
             this.reload.UseVisualStyleBackColor = true;
+            this.reload.Click += new System.EventHandler(this.reload_Click);
             // 
             // textBox5
             // 

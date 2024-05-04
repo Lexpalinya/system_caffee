@@ -45,15 +45,20 @@ namespace cafeshopCsharp
         // add
         private void button1_Click(object sender, EventArgs e)
         {
-            int point;
-            if (int.TryParse(textBox4.Text, out point)&& !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)))
+           
+            if (checkPhoneNumber(textBox2.Text)) {
+                MessageBox.Show("ເບີນີ້: " + textBox2.Text + " ໄດ້ສະໝັກແລ້ວ");
+                return;
+            } 
+           
+            if ( !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) ))
             {
                 Member newmember = new Member
                 {
                     mbName = textBox1.Text,
                     mbPhoneNumber = textBox2.Text,
                     mbAddress = textBox3.Text,
-                    mbPoints = point
+                    mbPoints = 0
                 };
                 memberrepo.AddMember(newmember);
                 loadMember();
@@ -62,10 +67,8 @@ namespace cafeshopCsharp
             {
                 string errortext = (string.IsNullOrWhiteSpace(textBox1.Text) ||
                       string.IsNullOrWhiteSpace(textBox2.Text) ||
-                      string.IsNullOrWhiteSpace(textBox3.Text) ||
-                      string.IsNullOrWhiteSpace(textBox4.Text) ) ? "ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ"
-                   : !int.TryParse(textBox4.Text, out point)?"ແຕ້ມຕ້ອງເປັນໂຕເລກ" 
-                   :"brhu";
+                      string.IsNullOrWhiteSpace(textBox3.Text) 
+                      ) ? "ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ" :"brhu";
 
 
                 MessageBox.Show(errortext, "ຜິດຜາດ", MessageBoxButtons.OK);
@@ -75,6 +78,8 @@ namespace cafeshopCsharp
         //edit
         private void button2_Click(object sender, EventArgs e)
         {
+
+           
             int point;
             int id;
             if (  Cellclick == true && int.TryParse(mbid, out id) && int.TryParse(textBox4.Text, out point) && !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)
@@ -87,14 +92,11 @@ namespace cafeshopCsharp
                     mbName = textBox1.Text,
                     mbPhoneNumber = textBox2.Text,
                     mbAddress = textBox3.Text,
-                    mbPoints = point
+                    mbPoints = pointss
 
                 };
                 memberrepo.UpdateMember(updatemb);
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
+              
                 Cellclick = false;
              
                 loadMember();
@@ -114,7 +116,8 @@ namespace cafeshopCsharp
         //delete
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            DialogResult result = MessageBox.Show("ຕ້ອງການຈະລົບຫຼືບໍ ?", "ຢືນຢັນ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult.No==result) return;
             int id;
             if(Cellclick == true&& int.TryParse(mbid, out id))
             {
@@ -131,16 +134,33 @@ namespace cafeshopCsharp
                 MessageBox.Show("ກະລຸນາເລືອກແຖວ", "ຜິດຜາດ", MessageBoxButtons.OK);
             }
         }
-
+        IEnumerable<Member> data;
         private void frmMember_Load(object sender, EventArgs e)
         {
-          
+           
             loadMember();
         }
         private void loadMember()
         {
-            dataGridView1.DataSource = memberrepo.GetAllMembers();
+            data = memberrepo.GetAllMembers();
+            dataGridView1.DataSource = data;
+            clearTextbox();
+
+         
         }
+
+        private void clearTextbox() {
+            textBox4.ReadOnly = true;
+            textBox2.ReadOnly = false;
+            button1.Enabled = true;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "0";
+        }
+
         bool Cellclick;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -150,17 +170,46 @@ namespace cafeshopCsharp
             textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            textBox2.ReadOnly = true;
+            
+            button1.Enabled = false;
+            button2.Enabled = true;
+            button3.Enabled = true;
+
         }
 
+        // check PhoneNumber ------------------------------------------------------
+        private bool checkPhoneNumber(string phonnumber) {
+
+            Member members = data.FirstOrDefault<Member>(member => member.mbPhoneNumber == phonnumber);
+           
+            return members != null ? true:false;
+
+
+        }
         private void button4_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(textBox5.Text)) {
 
-            Member mb = new Member {
-                mbPhoneNumber=textBox5.Text
-            };
-            var data = memberrepo.GetMember(mb);
+                //Member mb = new Member
+                //{
+                //    mbPhoneNumber = textBox5.Text
+                //};
+                //var data = memberrepo.GetMember(mb);
+                Member members = data.FirstOrDefault(member => member.mbPhoneNumber==textBox5.Text);
+                dataGridView1.DataSource = new List<Member> { members };
+                //dataGridView1.DataSource =  members;
+            }
+                clearTextbox();
+          
 
-            dataGridView1.DataSource = new List<Member> { data };
+
+
+        }
+
+        private void reload_Click(object sender, EventArgs e)
+        {
+            loadMember();
         }
     }
 }
