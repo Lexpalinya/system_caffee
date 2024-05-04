@@ -28,6 +28,9 @@ namespace cafeshopCsharp
 
 
         private readonly EmployeeRepository _employeeRepository;
+        private readonly BillRepository _billRepository;
+
+        private readonly BillDetailRepository _billDetailRepository;
 
         public Form2()
         {
@@ -39,6 +42,10 @@ namespace cafeshopCsharp
             _salaryPaymentRepository = new SalaryPaymentRepository(new connectionDB().getConnection());
 
             _employeeRepository = new EmployeeRepository(new connectionDB().getConnection());
+
+            _billRepository = new BillRepository(new connectionDB().getConnection());
+
+            _billDetailRepository = new BillDetailRepository(new connectionDB().getConnection());
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -263,14 +270,41 @@ namespace cafeshopCsharp
 
             // test Employee ------------------------------------------------------------------------------------------
 
-            Employee deleteEmp = new Employee { 
-                EmpId=5
-            
-            };
-            _employeeRepository.DeleteEmployee(deleteEmp);
-          var data = _employeeRepository.GetAllEmployee();
-           dataGridView1.DataSource = data;
+            //  Employee deleteEmp = new Employee { 
+            //      EmpId=5
 
+            //  };
+            //  _employeeRepository.DeleteEmployee(deleteEmp);
+            //var data = _employeeRepository.GetAllEmployee();
+            // dataGridView1.DataSource = data;
+
+            //test Bill-----------------------------------------------------------------------------------------------
+
+            Bill addBill = new Bill {
+                BlMbId = 3,
+                BlAccId = 12,
+                BlTotalMoney = 50000,
+                BlDate = DateTime.Now
+            };
+
+            // _billRepository.AddBill(addBill);
+
+
+            // test BillDetail ------------------------------------------------------------------------------
+
+
+            BillDetail addbillDetail = new BillDetail { 
+            
+                BdblId=1,
+                BdPId=2,
+                BdSize="S",
+                BdPrice=50000,
+                BdAmount=1,
+                BdTotal=50000
+            };
+            _billDetailRepository.AddBillDetail(addbillDetail);
+
+           
 
 
 
@@ -296,6 +330,9 @@ namespace cafeshopCsharp
 
 
             if (img!=null) {
+                // test Product ---------------------------------------------------------------------------------------
+
+
 
                 //Product AddProduct = new Product
                 //{
@@ -331,6 +368,7 @@ namespace cafeshopCsharp
                 //dataGridView1.DataSource = product;
 
 
+                // test Employee -------------------------------------------------------------------------------------------
                 Employee addEmp = new Employee {
                 EmpName="palinya",
                 EmpLastName="Khanthaphengxai",
