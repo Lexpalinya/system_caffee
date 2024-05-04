@@ -232,7 +232,7 @@ namespace cafeshopCsharp
             this.label1.TabIndex = 0;
             this.label1.Text = "ສະມາຊິກ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+  
             // 
             // dataGridView1
             // 
@@ -245,7 +245,7 @@ namespace cafeshopCsharp
             this.dataGridView1.Size = new System.Drawing.Size(1364, 918);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+  
             // 
             // panel4
             // 
@@ -256,7 +256,7 @@ namespace cafeshopCsharp
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1416, 125);
             this.panel4.TabIndex = 4;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+
             // 
             // textBox5
             // 
@@ -286,7 +286,7 @@ namespace cafeshopCsharp
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1416, 1061);
             this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+   
             // 
             // frmMember
             // 

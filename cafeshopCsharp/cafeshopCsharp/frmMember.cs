@@ -15,41 +15,25 @@ namespace cafeshopCsharp
     {
         private MemberRepository memberrepo;
         String mbid;
-        
         public frmMember()
         {
             
             InitializeComponent();
             
-        }
-        
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         // add
         private void button1_Click(object sender, EventArgs e)
         {
             int point;
-            
-            if (int.TryParse(textBox4.Text, out point)&& !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)
-               ))
+            if (int.TryParse(textBox4.Text, out point)&& !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)))
             {
-
                 Member newmember = new Member
                 {
                     mbName = textBox1.Text,
                     mbPhoneNumber = textBox2.Text,
                     mbAddress = textBox3.Text,
                     mbPoints = point
-    
                 };
                 memberrepo.AddMember(newmember);
                 loadMember();
@@ -66,10 +50,8 @@ namespace cafeshopCsharp
 
                 MessageBox.Show(errortext, "ຜິດຜາດ", MessageBoxButtons.OK);
             }
-
-
-
         }
+
         //edit
         private void button2_Click(object sender, EventArgs e)
         {
@@ -106,8 +88,6 @@ namespace cafeshopCsharp
                       string.IsNullOrWhiteSpace(textBox4.Text)) ? "ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ"
                    : !int.TryParse(textBox4.Text, out point) ? "ແຕ້ມຕ້ອງເປັນໂຕເລກ"
                    : "brhu";
-
-
                 MessageBox.Show(errortext, "ຜິດຜາດ", MessageBoxButtons.OK);
             }
         }
@@ -132,33 +112,15 @@ namespace cafeshopCsharp
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void frmMember_Load(object sender, EventArgs e)
         {
             connectionDB connect = new connectionDB();
             memberrepo = new MemberRepository(connect.getConnection());
             loadMember();
-            
         }
         private void loadMember()
         {
-            
             dataGridView1.DataSource = memberrepo.GetAllMembers();
-            
         }
         bool Cellclick;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
