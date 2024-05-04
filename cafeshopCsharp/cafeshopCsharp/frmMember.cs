@@ -17,10 +17,33 @@ namespace cafeshopCsharp
         String mbid;
         public frmMember()
         {
-            
+            connectionDB connect = new connectionDB();
+            memberrepo = new MemberRepository(connect.getConnection());
             InitializeComponent();
+<<<<<<< Updated upstream
             
         }       
+=======
+<<<<<<< HEAD
+
+
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+=======
+            
+        }       
+>>>>>>> bd666ae784e47a33b9e2884c571ef0710a1ae798
+>>>>>>> Stashed changes
 
         // add
         private void button1_Click(object sender, EventArgs e)
@@ -114,8 +137,7 @@ namespace cafeshopCsharp
 
         private void frmMember_Load(object sender, EventArgs e)
         {
-            connectionDB connect = new connectionDB();
-            memberrepo = new MemberRepository(connect.getConnection());
+          
             loadMember();
         }
         private void loadMember()
@@ -135,8 +157,13 @@ namespace cafeshopCsharp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            dataGridView1.DataSource = memberrepo.GetMember(textBox5.Text);
+
+            Member mb = new Member {
+                mbPhoneNumber=textBox5.Text
+            };
+            var data = memberrepo.GetMember(mb);
+
+            dataGridView1.DataSource = new List<Member> { data };
         }
     }
 }

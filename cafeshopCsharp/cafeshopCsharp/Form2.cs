@@ -26,6 +26,9 @@ namespace cafeshopCsharp
 
         private readonly SalaryPaymentRepository _salaryPaymentRepository;
 
+
+        private readonly EmployeeRepository _employeeRepository;
+
         public Form2()
         {
             InitializeComponent();
@@ -34,6 +37,8 @@ namespace cafeshopCsharp
             _productRepository = new ProductRepository(new connectionDB().getConnection());
             _accountRepository = new AccountRepository(new connectionDB().getConnection());
             _salaryPaymentRepository = new SalaryPaymentRepository(new connectionDB().getConnection());
+
+            _employeeRepository = new EmployeeRepository(new connectionDB().getConnection());
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -69,6 +74,10 @@ namespace cafeshopCsharp
             {
                 mbId = 1
             };
+            Member findPhone = new Member {
+                mbPhoneNumber = "28434443"
+            
+            };
 
 
             //  _memberRepository.AddMember(addMember);
@@ -77,11 +86,11 @@ namespace cafeshopCsharp
             //  _memberRepository.UpdataMember(updateMember);
             //_memberRepository.UpdatePoints(updatePoints);
             // _memberRepository.DeleteMember(deleteMember);
-            //var members = _memberRepository.GetAllMembers();
-            // var members=  _memberRepository.GetMember("28434443");
-            // List<Member> found = new List<Member> { members };
+           //var members = _memberRepository.GetAllMembers();
+             var members=  _memberRepository.GetMember(findPhone);
+            List<Member> found = new List<Member> { members };
 
-            //  dataGridView1.DataSource = found; 
+             dataGridView1.DataSource = found; 
 
 
             //test PaidRecord CRUD---------------------------------------------------------------------
@@ -227,7 +236,7 @@ namespace cafeshopCsharp
             SalaryPayment addSalaryPayment = new SalaryPayment { 
                 SpEmpId=4,
                 SpSalary=250000,
-                SpPayday=new DateTime(2024,09,30),
+                SpPayday=new DateTime(2024,04,30),
                 SpStatusPay=0
             };
 
@@ -241,18 +250,22 @@ namespace cafeshopCsharp
              SpId=3
             };
 
-            //_salaryPaymentRepository.AddSalaryPayment(addSalaryPayment);
+            // _salaryPaymentRepository.AddSalaryPayment(addSalaryPayment);
 
             // _salaryPaymentRepository.UpdateStatusSalaryPayment(updateStatusSalaryPayment);
 
-            _salaryPaymentRepository.DeleteSalayPayment(deleteSalaryPayment);
+            // _salaryPaymentRepository.DeleteSalayPayment(deleteSalaryPayment);
 
-            var data = _salaryPaymentRepository.GetAllSalaryPaymentViews();
-            //var data = _salaryPaymentRepository.GetSalaryPaymentViewsByMonthYear(spMonthYear);
+            //  var data = _salaryPaymentRepository.GetAllSalaryPaymentViews();
+            //var data = _salaryPaymentRepository.GetSalaryPaymentViewsByMonthYear(findspMonthYear);
             //var data = _salaryPaymentRepository.GetSalaryPaymentViewsByIdEmployee(findspEmpId);
+            // dataGridView1.DataSource = data;
+
+            // test Employee ------------------------------------------------------------------------------------------
+
+
+           var data= _employeeRepository.GetAllEmployee();
             dataGridView1.DataSource = data;
-
-
 
 
 

@@ -48,11 +48,11 @@ namespace cafeshopCsharp.modle
 
 
         //GetMember -----------------------------------------------------------------------------------------
-        public Member GetMember(string mbPhoneNumber) {
+        public Member GetMember(Member mb) {
 
             try {
-                string sql = "SELECT * FROM tb_member WHERE mbPhoneNumber=@PhoneNumber";
-                return dbConnection.QueryFirstOrDefault<Member>(sql, new { PhoneNumber = mbPhoneNumber });
+                string sql = "SELECT * FROM tb_member WHERE mbPhoneNumber=@mbPhoneNumber";
+                return dbConnection.QueryFirst<Member>(sql, mb);
             }
             catch (Exception ex)
             {
