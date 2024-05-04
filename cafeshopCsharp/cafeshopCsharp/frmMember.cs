@@ -20,14 +20,13 @@ namespace cafeshopCsharp
             connectionDB connect = new connectionDB();
             memberrepo = new MemberRepository(connect.getConnection());
             InitializeComponent();
-<<<<<<< Updated upstream
+
             
         }       
-=======
-<<<<<<< HEAD
 
 
-        }
+
+        
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,11 +38,9 @@ namespace cafeshopCsharp
         {
 
         }
-=======
-            
-        }       
->>>>>>> bd666ae784e47a33b9e2884c571ef0710a1ae798
->>>>>>> Stashed changes
+     
+       
+
 
         // add
         private void button1_Click(object sender, EventArgs e)

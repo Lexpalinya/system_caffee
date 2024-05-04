@@ -210,8 +210,8 @@ namespace cafeshopCsharp
             // _accountRepository.UpdateAccount(updateAcc);
             //  _accountRepository.DeleteAccount(deleteAcc);
 
-            //  var data = _accountRepository.GetAllAccount();
-            // dataGridView1.DataSource = data;
+            var data = _accountRepository.GetAllAccount();
+             dataGridView1.DataSource = data;
 
 
 
@@ -264,8 +264,8 @@ namespace cafeshopCsharp
             // test Employee ------------------------------------------------------------------------------------------
 
 
-           var data= _employeeRepository.GetAllEmployee();
-            dataGridView1.DataSource = data;
+          // var data= _employeeRepository.GetAllEmployee();
+           // dataGridView1.DataSource = data;
 
 
 
