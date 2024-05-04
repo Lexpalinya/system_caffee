@@ -14,7 +14,7 @@ namespace cafeshopCsharp
     public partial class frmMember : Form
     {
         private MemberRepository memberrepo;
-         
+        String mbid;
         
         public frmMember()
         {
@@ -70,15 +70,66 @@ namespace cafeshopCsharp
 
 
         }
-
+        //edit
         private void button2_Click(object sender, EventArgs e)
         {
+            int point;
+            int id;
+            if (  Cellclick == true && int.TryParse(mbid, out id) && int.TryParse(textBox4.Text, out point) && !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)
+               ) )
+            {
 
+                Member updatemb = new Member
+                {
+                    mbId = id,
+                    mbName = textBox1.Text,
+                    mbPhoneNumber = textBox2.Text,
+                    mbAddress = textBox3.Text,
+                    mbPoints = point
+
+                };
+                memberrepo.UpdateMember(updatemb);
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                Cellclick = false;
+             
+                loadMember();
+            }
+            else
+            {
+                string errortext = Cellclick == false?"ກະລຸນາເລືອກແຖວ":
+                    (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                      string.IsNullOrWhiteSpace(textBox2.Text) ||
+                      string.IsNullOrWhiteSpace(textBox3.Text) ||
+                      string.IsNullOrWhiteSpace(textBox4.Text)) ? "ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ"
+                   : !int.TryParse(textBox4.Text, out point) ? "ແຕ້ມຕ້ອງເປັນໂຕເລກ"
+                   : "brhu";
+
+
+                MessageBox.Show(errortext, "ຜິດຜາດ", MessageBoxButtons.OK);
+            }
         }
-
+        //delete
         private void button3_Click(object sender, EventArgs e)
         {
-
+           
+            int id;
+            if(Cellclick == true&& int.TryParse(mbid, out id))
+            {
+                Member deletemb = new Member
+                {
+                    mbId = id
+                };
+                memberrepo.DeleteMember(deletemb);
+                Cellclick = false;
+                loadMember();
+            }
+            else
+            {
+                MessageBox.Show("ກະລຸນາເລືອກແຖວ", "ຜິດຜາດ", MessageBoxButtons.OK);
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -98,15 +149,32 @@ namespace cafeshopCsharp
 
         private void frmMember_Load(object sender, EventArgs e)
         {
+            connectionDB connect = new connectionDB();
+            memberrepo = new MemberRepository(connect.getConnection());
             loadMember();
             
         }
         private void loadMember()
         {
-            connectionDB connect = new connectionDB();
-            memberrepo = new MemberRepository(connect.getConnection());
+            
             dataGridView1.DataSource = memberrepo.GetAllMembers();
-            connect.closecn();
+            
+        }
+        bool Cellclick;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Cellclick = true;
+            mbid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            dataGridView1.DataSource = memberrepo.GetMember(textBox5.Text);
         }
     }
 }
