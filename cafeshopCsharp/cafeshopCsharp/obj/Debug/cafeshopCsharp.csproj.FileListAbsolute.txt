@@ -139,11 +139,6 @@ D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\c
 D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSellHistory.resources
 D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSellManage.resources
 >>>>>>> d10d9ac41d86fd8652ef6896309c4722fcc5330d
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmEmployee.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmHomePage.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSalaryPayment.resources
@@ -154,7 +149,4 @@ E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.f
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSeller.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSellHistory.resources
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSellManage.resources
-<<<<<<< Updated upstream
-=======
 >>>>>>> bd666ae784e47a33b9e2884c571ef0710a1ae798
->>>>>>> Stashed changes

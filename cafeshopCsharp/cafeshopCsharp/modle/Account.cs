@@ -19,15 +19,18 @@ namespace cafeshopCsharp.modle
         public string AccPassword { get; set; }
     }
 
-    public class AccountAll:Account {
-    
+    public class AccountAll {
+
+        public int AccId { get; set; }
         public string empName { get; set; }
         public string empLastName { get; set; }
-    
-    
-    
-    
-    
+        public string AccLevel { get; set; }
+        public string AccUserName { get; set; }
+        public string AccPassword { get; set; }
+
+
+
+
     }
 
     public class AccountRepository {
