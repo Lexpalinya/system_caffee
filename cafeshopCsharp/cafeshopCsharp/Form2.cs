@@ -210,8 +210,8 @@ namespace cafeshopCsharp
             // _accountRepository.UpdateAccount(updateAcc);
             //  _accountRepository.DeleteAccount(deleteAcc);
 
-            var data = _accountRepository.GetAllAccount();
-             dataGridView1.DataSource = data;
+           // var data = _accountRepository.GetAllAccount();
+          //   dataGridView1.DataSource = data;
 
 
 
@@ -263,9 +263,13 @@ namespace cafeshopCsharp
 
             // test Employee ------------------------------------------------------------------------------------------
 
-
-          // var data= _employeeRepository.GetAllEmployee();
-           // dataGridView1.DataSource = data;
+            Employee deleteEmp = new Employee { 
+                EmpId=5
+            
+            };
+            _employeeRepository.DeleteEmployee(deleteEmp);
+          var data = _employeeRepository.GetAllEmployee();
+           dataGridView1.DataSource = data;
 
 
 
@@ -325,6 +329,36 @@ namespace cafeshopCsharp
                 //_productRepository.UpdateProduct(updateProduct);
                 //var product = _productRepository.GetAllProducts();
                 //dataGridView1.DataSource = product;
+
+
+                Employee addEmp = new Employee {
+                EmpName="palinya",
+                EmpLastName="Khanthaphengxai",
+                EmpAddress="drndang ,gunthabury",
+                EmpPhoneNumber="58578313",
+                EmpPosition="CEO",
+                EmpSalary=6000000,
+                EmpImage=new ConvertByteToImage().ImageToByteArray(img)
+                
+                };
+                Employee updateEmp = new Employee
+                {
+                    EmpId=4,
+                    EmpName = "palinya",
+                    EmpLastName = "Khanthaphengxai",
+                    EmpAddress = "drndang ,gunthabury",
+                    EmpPhoneNumber = "58578313",
+                    EmpPosition = "CEO",
+                    EmpSalary = 6000000,
+                    EmpImage = new ConvertByteToImage().ImageToByteArray(img)
+
+                };
+
+                _employeeRepository.AddEmployee(addEmp);
+               // _employeeRepository.UpdateEmployee(updateEmp);
+                var data = _employeeRepository.GetAllEmployee();
+                dataGridView1.DataSource = data;
+
             }
           
         }

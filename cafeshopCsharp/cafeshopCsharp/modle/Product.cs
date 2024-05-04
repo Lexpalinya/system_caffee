@@ -84,9 +84,9 @@ namespace cafeshopCsharp.modle
                     MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("ຂະໜາດຂອງຮູບໃຫ່ຍເກີນໄປ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ຂະໜາດຂອງຮູບໃຫ່ຍເກີນໄປ"+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -106,7 +106,7 @@ namespace cafeshopCsharp.modle
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show("ຂະໜາດຂອງຮູບໃຫ່ຍເກີນໄປ","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("ຂະໜາດຂອງຮູບໃຫ່ຍເກີນໄປ"+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -127,7 +127,7 @@ namespace cafeshopCsharp.modle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ບໍໍ່ມີໃນລະບົບ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ບໍໍ່ມີໃນລະບົບ"+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
