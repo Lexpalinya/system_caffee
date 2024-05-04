@@ -48,13 +48,15 @@ namespace cafeshopCsharp
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pnSize = new System.Windows.Forms.Panel();
             this.lbsize = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnSize = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -293,6 +295,13 @@ namespace cafeshopCsharp
             this.panel5.Size = new System.Drawing.Size(247, 189);
             this.panel5.TabIndex = 17;
             // 
+            // pnSize
+            // 
+            this.pnSize.Location = new System.Drawing.Point(3, 50);
+            this.pnSize.Name = "pnSize";
+            this.pnSize.Size = new System.Drawing.Size(240, 102);
+            this.pnSize.TabIndex = 19;
+            // 
             // lbsize
             // 
             this.lbsize.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -370,24 +379,35 @@ namespace cafeshopCsharp
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1402, 666);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // pnSize
+            // flowLayoutPanel2
             // 
-            this.pnSize.Location = new System.Drawing.Point(3, 50);
-            this.pnSize.Name = "pnSize";
-            this.pnSize.Size = new System.Drawing.Size(240, 102);
-            this.pnSize.TabIndex = 19;
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(380, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1402, 49);
+            this.flowLayoutPanel2.TabIndex = 0;
             // 
-            // Sell
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1731, 49);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(51, 617);
+            this.flowLayoutPanel3.TabIndex = 4;
+            // 
+            // frmSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1782, 880);
+            this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Sell";
+            this.Name = "frmSell";
             this.Text = "Sell";
             this.Load += new System.EventHandler(this.Sell_Load);
             this.panel1.ResumeLayout(false);
@@ -435,5 +455,7 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Label lbsize;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel pnSize;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
     }
 }

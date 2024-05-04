@@ -59,6 +59,8 @@ namespace cafeshopCsharp
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -96,7 +98,7 @@ namespace cafeshopCsharp
             this.label7.Location = new System.Drawing.Point(58, 548);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 34);
+            this.label7.Size = new System.Drawing.Size(51, 29);
             this.label7.TabIndex = 28;
             this.label7.Text = "ວັນທີ";
             // 
@@ -105,7 +107,7 @@ namespace cafeshopCsharp
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Location = new System.Drawing.Point(189, 409);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 41);
+            this.textBox5.Size = new System.Drawing.Size(206, 37);
             this.textBox5.TabIndex = 27;
             // 
             // label6
@@ -116,7 +118,7 @@ namespace cafeshopCsharp
             this.label6.Location = new System.Drawing.Point(194, 372);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 34);
+            this.label6.Size = new System.Drawing.Size(83, 29);
             this.label6.TabIndex = 26;
             this.label6.Text = "ລາຄາ/ອັນ";
             // 
@@ -138,7 +140,7 @@ namespace cafeshopCsharp
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(202, 548);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(193, 41);
+            this.dateTimePicker1.Size = new System.Drawing.Size(193, 37);
             this.dateTimePicker1.TabIndex = 24;
             // 
             // pictureBox1
@@ -195,7 +197,7 @@ namespace cafeshopCsharp
             this.label5.Location = new System.Drawing.Point(47, 453);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 34);
+            this.label5.Size = new System.Drawing.Size(96, 29);
             this.label5.TabIndex = 19;
             this.label5.Text = "ຈຳນວນເງິນ";
             // 
@@ -204,7 +206,7 @@ namespace cafeshopCsharp
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Location = new System.Drawing.Point(48, 491);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(347, 41);
+            this.textBox4.Size = new System.Drawing.Size(347, 37);
             this.textBox4.TabIndex = 18;
             // 
             // label4
@@ -215,7 +217,7 @@ namespace cafeshopCsharp
             this.label4.Location = new System.Drawing.Point(47, 371);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 34);
+            this.label4.Size = new System.Drawing.Size(69, 29);
             this.label4.TabIndex = 17;
             this.label4.Text = "ຈຳນວນ";
             // 
@@ -224,7 +226,7 @@ namespace cafeshopCsharp
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Location = new System.Drawing.Point(48, 409);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(92, 41);
+            this.textBox3.Size = new System.Drawing.Size(92, 37);
             this.textBox3.TabIndex = 16;
             // 
             // label3
@@ -235,7 +237,7 @@ namespace cafeshopCsharp
             this.label3.Location = new System.Drawing.Point(47, 289);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 34);
+            this.label3.Size = new System.Drawing.Size(102, 29);
             this.label3.TabIndex = 15;
             this.label3.Text = "ລາຍລະອຽດ";
             // 
@@ -244,7 +246,7 @@ namespace cafeshopCsharp
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Location = new System.Drawing.Point(48, 327);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(347, 41);
+            this.textBox2.Size = new System.Drawing.Size(347, 37);
             this.textBox2.TabIndex = 14;
             // 
             // panel4
@@ -261,7 +263,7 @@ namespace cafeshopCsharp
             // 
             this.textBox6.Location = new System.Drawing.Point(518, 27);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(398, 41);
+            this.textBox6.Size = new System.Drawing.Size(398, 37);
             this.textBox6.TabIndex = 2;
             // 
             // button4
@@ -358,12 +360,30 @@ namespace cafeshopCsharp
             this.Column9.Name = "Column9";
             this.Column9.Width = 125;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1714, 100);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(68, 780);
+            this.flowLayoutPanel1.TabIndex = 9;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(449, 816);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1265, 64);
+            this.flowLayoutPanel2.TabIndex = 10;
+            // 
             // frmPaidrecord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 34F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1782, 880);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -413,5 +433,7 @@ namespace cafeshopCsharp
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

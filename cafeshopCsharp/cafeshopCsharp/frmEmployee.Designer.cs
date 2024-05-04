@@ -64,6 +64,8 @@ namespace cafeshopCsharp
             this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,7 +98,7 @@ namespace cafeshopCsharp
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(718, 823);
+            this.panel2.Size = new System.Drawing.Size(718, 1004);
             this.panel2.TabIndex = 1;
             // 
             // pbImage
@@ -309,8 +311,9 @@ namespace cafeshopCsharp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(751, 780);
+            this.dataGridView1.Size = new System.Drawing.Size(1061, 912);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -389,7 +392,7 @@ namespace cafeshopCsharp
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(751, 100);
+            this.panel4.Size = new System.Drawing.Size(1129, 100);
             this.panel4.TabIndex = 4;
             // 
             // button4
@@ -406,11 +409,13 @@ namespace cafeshopCsharp
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGreen;
             this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Controls.Add(this.flowLayoutPanel2);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(718, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(751, 880);
+            this.panel3.Size = new System.Drawing.Size(1129, 1061);
             this.panel3.TabIndex = 7;
             // 
             // panel1
@@ -422,19 +427,35 @@ namespace cafeshopCsharp
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(718, 880);
+            this.panel1.Size = new System.Drawing.Size(718, 1061);
             this.panel1.TabIndex = 6;
             // 
-            // employee
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 1012);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1129, 49);
+            this.flowLayoutPanel2.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1061, 100);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(68, 912);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(1469, 880);
+            this.ClientSize = new System.Drawing.Size(1847, 1061);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "employee";
+            this.Name = "frmEmployee";
             this.Text = "employee";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -485,5 +506,7 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

@@ -31,7 +31,6 @@ namespace cafeshopCsharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeller));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -42,13 +41,16 @@ namespace cafeshopCsharp
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.reload = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,6 +60,7 @@ namespace cafeshopCsharp
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -69,22 +72,12 @@ namespace cafeshopCsharp
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(431, 1061);
             this.panel2.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 268);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(288, 33);
-            this.comboBox1.TabIndex = 13;
             // 
             // label1
             // 
@@ -153,7 +146,7 @@ namespace cafeshopCsharp
             this.label5.Location = new System.Drawing.Point(71, 482);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 26);
+            this.label5.Size = new System.Drawing.Size(107, 29);
             this.label5.TabIndex = 7;
             this.label5.Text = "Password";
             // 
@@ -174,7 +167,7 @@ namespace cafeshopCsharp
             this.label4.Location = new System.Drawing.Point(71, 400);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 26);
+            this.label4.Size = new System.Drawing.Size(121, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "User Name";
             // 
@@ -195,18 +188,19 @@ namespace cafeshopCsharp
             this.label3.Location = new System.Drawing.Point(71, 318);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 26);
+            this.label3.Size = new System.Drawing.Size(60, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "ລະດັບ";
             // 
-            // textBox2
+            // dataGridView1
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(68, 356);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(288, 31);
-            this.textBox2.TabIndex = 2;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(431, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1416, 1061);
+            this.dataGridView1.TabIndex = 3;
             // 
             // label2
             // 
@@ -216,18 +210,18 @@ namespace cafeshopCsharp
             this.label2.Location = new System.Drawing.Point(71, 236);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 26);
+            this.label2.Size = new System.Drawing.Size(138, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "ລະຫັດພະນັກງານ";
             // 
-            // dataGridView1
+            // comboBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(431, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1416, 1061);
-            this.dataGridView1.TabIndex = 3;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(68, 268);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(288, 33);
+            this.comboBox1.TabIndex = 13;
             // 
             // panel4
             // 
@@ -242,9 +236,9 @@ namespace cafeshopCsharp
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(991, 25);
+            this.reload.Location = new System.Drawing.Point(904, 27);
             this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(38, 33);
+            this.reload.Size = new System.Drawing.Size(50, 41);
             this.reload.TabIndex = 4;
             this.reload.UseVisualStyleBackColor = true;
             // 
@@ -260,11 +254,36 @@ namespace cafeshopCsharp
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(915, 25);
+            this.button4.Location = new System.Drawing.Point(990, 27);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(43, 33);
+            this.button4.Size = new System.Drawing.Size(50, 41);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(68, 350);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(288, 33);
+            this.comboBox2.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1788, 125);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(59, 936);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(431, 1009);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1357, 52);
+            this.panel3.TabIndex = 7;
             // 
             // frmSeller
             // 
@@ -272,6 +291,8 @@ namespace cafeshopCsharp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1847, 1061);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
@@ -300,7 +321,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -309,5 +329,8 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Button reload;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
