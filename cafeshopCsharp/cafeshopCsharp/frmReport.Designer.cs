@@ -1,7 +1,7 @@
 ﻿
 namespace cafeshopCsharp
 {
-    partial class seller
+    partial class frmReport
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,15 @@ namespace cafeshopCsharp
         {
             this.SuspendLayout();
             // 
-            // seller
+            // report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "seller";
-            this.Text = "seller";
+            this.Name = "report";
+            this.Text = "report";
             this.ResumeLayout(false);
 
         }

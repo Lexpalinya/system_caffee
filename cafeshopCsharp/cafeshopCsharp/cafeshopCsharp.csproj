@@ -103,11 +103,11 @@
   <ItemGroup>
     <Compile Include="connection DB\connectionDB.cs" />
     <Compile Include="ConvertByteToImage.cs" />
-    <Compile Include="employee.cs">
+    <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employee.Designer.cs">
-      <DependentUpon>employee.cs</DependentUpon>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -133,11 +133,11 @@
     <Compile Include="frmPaidrecord.Designer.cs">
       <DependentUpon>frmPaidrecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="frmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <Compile Include="frmHomePage.Designer.cs">
+      <DependentUpon>frmHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="modle\Account.cs" />
     <Compile Include="modle\Bill.cs" />
@@ -147,17 +147,17 @@
     <Compile Include="modle\PaidRecord.cs" />
     <Compile Include="modle\Product.cs" />
     <Compile Include="modle\SalaryPayment.cs" />
-    <Compile Include="SalaryPayment.cs">
+    <Compile Include="frmSalaryPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalaryPayment.Designer.cs">
-      <DependentUpon>SalaryPayment.cs</DependentUpon>
+    <Compile Include="frmSalaryPayment.Designer.cs">
+      <DependentUpon>frmSalaryPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="productAdding.cs">
+    <Compile Include="frmProductAdding.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="productAdding.Designer.cs">
-      <DependentUpon>productAdding.cs</DependentUpon>
+    <Compile Include="frmProductAdding.Designer.cs">
+      <DependentUpon>frmProductAdding.cs</DependentUpon>
     </Compile>
     <Compile Include="productCards.cs">
       <SubType>UserControl</SubType>
@@ -167,41 +167,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="report.cs">
+    <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="report.Designer.cs">
-      <DependentUpon>report.cs</DependentUpon>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="searchMember.cs">
+    <Compile Include="frmSearchMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchMember.Designer.cs">
-      <DependentUpon>searchMember.cs</DependentUpon>
+    <Compile Include="frmSearchMember.Designer.cs">
+      <DependentUpon>frmSearchMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sell.cs">
+    <Compile Include="frmSell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sell.Designer.cs">
-      <DependentUpon>Sell.cs</DependentUpon>
+    <Compile Include="frmSell.Designer.cs">
+      <DependentUpon>frmSell.cs</DependentUpon>
     </Compile>
-    <Compile Include="seller.cs">
+    <Compile Include="frmSeller.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="seller.Designer.cs">
-      <DependentUpon>seller.cs</DependentUpon>
+    <Compile Include="frmSeller.Designer.cs">
+      <DependentUpon>frmSeller.cs</DependentUpon>
     </Compile>
-    <Compile Include="sellHistory.cs">
+    <Compile Include="frmSellHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sellHistory.Designer.cs">
-      <DependentUpon>sellHistory.cs</DependentUpon>
+    <Compile Include="frmSellHistory.Designer.cs">
+      <DependentUpon>frmSellHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="sellManage.cs">
+    <Compile Include="frmSellManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sellManage.Designer.cs">
-      <DependentUpon>sellManage.cs</DependentUpon>
+    <Compile Include="frmSellManage.Designer.cs">
+      <DependentUpon>frmSellManage.cs</DependentUpon>
     </Compile>
     <Compile Include="sellManageCard.cs">
       <SubType>UserControl</SubType>
@@ -209,8 +209,8 @@
     <Compile Include="sellManageCard.Designer.cs">
       <DependentUpon>sellManageCard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="employee.resx">
-      <DependentUpon>employee.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -224,14 +224,14 @@
     <EmbeddedResource Include="frmPaidrecord.resx">
       <DependentUpon>frmPaidrecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="frmHomePage.resx">
+      <DependentUpon>frmHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalaryPayment.resx">
-      <DependentUpon>SalaryPayment.cs</DependentUpon>
+    <EmbeddedResource Include="frmSalaryPayment.resx">
+      <DependentUpon>frmSalaryPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="productAdding.resx">
-      <DependentUpon>productAdding.cs</DependentUpon>
+    <EmbeddedResource Include="frmProductAdding.resx">
+      <DependentUpon>frmProductAdding.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productCards.resx">
       <DependentUpon>productCards.cs</DependentUpon>
@@ -246,23 +246,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="report.resx">
-      <DependentUpon>report.cs</DependentUpon>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="searchMember.resx">
-      <DependentUpon>searchMember.cs</DependentUpon>
+    <EmbeddedResource Include="frmSearchMember.resx">
+      <DependentUpon>frmSearchMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sell.resx">
-      <DependentUpon>Sell.cs</DependentUpon>
+    <EmbeddedResource Include="frmSell.resx">
+      <DependentUpon>frmSell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="seller.resx">
-      <DependentUpon>seller.cs</DependentUpon>
+    <EmbeddedResource Include="frmSeller.resx">
+      <DependentUpon>frmSeller.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sellHistory.resx">
-      <DependentUpon>sellHistory.cs</DependentUpon>
+    <EmbeddedResource Include="frmSellHistory.resx">
+      <DependentUpon>frmSellHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sellManage.resx">
-      <DependentUpon>sellManage.cs</DependentUpon>
+    <EmbeddedResource Include="frmSellManage.resx">
+      <DependentUpon>frmSellManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sellManageCard.resx">
       <DependentUpon>sellManageCard.cs</DependentUpon>

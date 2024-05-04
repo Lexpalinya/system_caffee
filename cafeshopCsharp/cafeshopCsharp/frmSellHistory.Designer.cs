@@ -1,7 +1,7 @@
 ﻿
 namespace cafeshopCsharp
 {
-    partial class sellHistory
+    partial class frmSellHistory
     {
         /// <summary>
         /// Required designer variable.

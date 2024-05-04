@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class searchMember : Form
+    public partial class frmSearchMember : Form
     {
-        public searchMember()
+        public frmSearchMember()
         {
             InitializeComponent();
         }

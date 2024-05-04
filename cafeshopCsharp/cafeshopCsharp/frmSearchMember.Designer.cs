@@ -1,7 +1,7 @@
 ﻿
 namespace cafeshopCsharp
 {
-    partial class searchMember
+    partial class frmSearchMember
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace cafeshopCsharp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchMember));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearchMember));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();

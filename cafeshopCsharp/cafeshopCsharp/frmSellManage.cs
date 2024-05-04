@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class sellManage : Form
+    public partial class frmSellManage : Form
     {
             string[] data = {"amazon","late","green tea","milk","milk tea", "cake" ,"back coffee"};
-        public sellManage()
+        public frmSellManage()
         {
             InitializeComponent();
         }

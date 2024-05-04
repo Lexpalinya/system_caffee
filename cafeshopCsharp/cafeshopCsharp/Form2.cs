@@ -24,6 +24,8 @@ namespace cafeshopCsharp
 
         private readonly AccountRepository _accountRepository;
 
+        private readonly SalaryPaymentRepository _salaryPaymentRepository;
+
         public Form2()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace cafeshopCsharp
             _paidRecordRepository = new PaidRecordRepository(new connectionDB().getConnection());
             _productRepository = new ProductRepository(new connectionDB().getConnection());
             _accountRepository = new AccountRepository(new connectionDB().getConnection());
+            _salaryPaymentRepository = new SalaryPaymentRepository(new connectionDB().getConnection());
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -196,16 +199,62 @@ namespace cafeshopCsharp
             //  _accountRepository.AddAccount(addAcc);
 
             // _accountRepository.UpdateAccount(updateAcc);
-            _accountRepository.DeleteAccount(deleteAcc);
+            //  _accountRepository.DeleteAccount(deleteAcc);
 
-            var data = _accountRepository.GetAllAccount();
-            dataGridView1.DataSource = data;
+            //  var data = _accountRepository.GetAllAccount();
+            // dataGridView1.DataSource = data;
 
 
 
             // var data = _accountRepository.AccountLogin(acc);
 
             //  dataGridView1.DataSource=new List<AccountAll> { data};
+
+
+
+            // test SalayPayment ---------------------------------------------------------------------------------------
+
+            SalaryPayment findspMonthYear = new SalaryPayment {
+                SpPayday = new DateTime(2024,04,03)
+            
+            };
+
+            SalaryPayment findspEmpId = new SalaryPayment {
+            
+                SpEmpId=5
+            };
+
+            SalaryPayment addSalaryPayment = new SalaryPayment { 
+                SpEmpId=4,
+                SpSalary=250000,
+                SpPayday=new DateTime(2024,09,30),
+                SpStatusPay=0
+            };
+
+            SalaryPayment updateStatusSalaryPayment = new SalaryPayment
+            {
+                SpId=3,
+                
+                SpStatusPay = 1
+            };
+            SalaryPayment deleteSalaryPayment = new SalaryPayment { 
+             SpId=3
+            };
+
+            //_salaryPaymentRepository.AddSalaryPayment(addSalaryPayment);
+
+            // _salaryPaymentRepository.UpdateStatusSalaryPayment(updateStatusSalaryPayment);
+
+            _salaryPaymentRepository.DeleteSalayPayment(deleteSalaryPayment);
+
+            var data = _salaryPaymentRepository.GetAllSalaryPaymentViews();
+            //var data = _salaryPaymentRepository.GetSalaryPaymentViewsByMonthYear(spMonthYear);
+            //var data = _salaryPaymentRepository.GetSalaryPaymentViewsByIdEmployee(findspEmpId);
+            dataGridView1.DataSource = data;
+
+
+
+
 
 
         }
