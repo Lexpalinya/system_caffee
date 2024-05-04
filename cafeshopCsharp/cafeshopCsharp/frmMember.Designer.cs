@@ -50,6 +50,7 @@ namespace cafeshopCsharp
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.reload = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,6 +248,7 @@ namespace cafeshopCsharp
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.reload);
             this.panel4.Controls.Add(this.textBox5);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -266,7 +268,7 @@ namespace cafeshopCsharp
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(898, 27);
+            this.button4.Location = new System.Drawing.Point(990, 27);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 41);
             this.button4.TabIndex = 3;
@@ -283,6 +285,14 @@ namespace cafeshopCsharp
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1416, 1061);
             this.panel3.TabIndex = 3;
+            // 
+            // reload
+            // 
+            this.reload.Location = new System.Drawing.Point(904, 27);
+            this.reload.Name = "reload";
+            this.reload.Size = new System.Drawing.Size(50, 41);
+            this.reload.TabIndex = 4;
+            this.reload.UseVisualStyleBackColor = true;
             // 
             // frmMember
             // 
@@ -331,5 +341,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button reload;
     }
 }
