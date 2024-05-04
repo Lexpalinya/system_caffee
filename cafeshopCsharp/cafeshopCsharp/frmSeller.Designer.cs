@@ -87,7 +87,7 @@ namespace cafeshopCsharp
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 63);
             this.label1.TabIndex = 12;
-            this.label1.Text = "ສະມາຊິກ";
+            this.label1.Text = "ຜູ້ຂາຍ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
