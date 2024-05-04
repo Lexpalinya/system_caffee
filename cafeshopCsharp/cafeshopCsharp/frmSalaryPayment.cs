@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class sellHistory : Form
+    public partial class frmSalaryPayment : Form
     {
-        public sellHistory()
+        public frmSalaryPayment()
         {
             InitializeComponent();
         }
 
-        private void sellHistory_Load(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-
-
-       
     }
 }

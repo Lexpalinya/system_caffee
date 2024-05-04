@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class report : Form
+    public partial class frmSeller : Form
     {
-        public report()
+        public frmSeller()
         {
             InitializeComponent();
         }

@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class productAdding : Form
+    public partial class frmProductAdding : Form
     {
 
 
 
-        public productAdding()
+        public frmProductAdding()
         {
             InitializeComponent();
         

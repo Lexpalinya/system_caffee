@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class Sell : Form
+    public partial class frmSell : Form
     {
-        public Sell()
+        public frmSell()
         {
             InitializeComponent();
             string[] sizes = { "S", "M", "L" };
@@ -83,7 +83,7 @@ namespace cafeshopCsharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            searchMember sm = new searchMember();
+            frmSearchMember sm = new frmSearchMember();
             sm.Show();
         }
     }

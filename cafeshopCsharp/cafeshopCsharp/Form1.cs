@@ -81,7 +81,7 @@ namespace cafeshopCsharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HomePage hp = new HomePage();
+            frmHomePage hp = new frmHomePage();
             hp.Show();
             this.Hide();
         }

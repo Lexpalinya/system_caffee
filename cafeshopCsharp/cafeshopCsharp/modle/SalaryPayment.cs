@@ -52,8 +52,9 @@ namespace cafeshopCsharp.modle
 
             try
             {
-                string sql = "SELECT * FROM v_salarypayment WHERE   YEAR(spPayday)=@year AND MONTH(spPayday)=@month ";
-                return dbConnection.Query<SalaryPaymentView>(sql,new { year=salaryPayment.SpPayday.Year ,month=salaryPayment.SpPayday.Month});
+                string sql = "SELECT * FROM v_salarypayment WHERE YEAR(spPayday)=@year AND MONTH(spPayday)=@month";
+                return dbConnection.Query<SalaryPaymentView>(sql, new { year = salaryPayment.SpPayday.Year, month = salaryPayment.SpPayday.Month });
+
             }
             catch (Exception ex)
             {
@@ -62,6 +63,29 @@ namespace cafeshopCsharp.modle
                 return Enumerable.Empty<SalaryPaymentView>();
             }
         }
+
+        //GetSalaryPaymentViewById --------------------------------------------------------------------------------------
+
+
+        public IEnumerable<SalaryPaymentView> GetSalaryPaymentViewsByIdEmployee(SalaryPayment salaryPayment)
+        {
+
+            try
+            {
+                string sql = "SELECT * FROM v_salarypayment WHERE spEmpId=@spEmpId   ";
+                return dbConnection.Query<SalaryPaymentView>(sql,salaryPayment);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Enumerable.Empty<SalaryPaymentView>();
+            }
+        }
+
+
+
+
 
         // AddSalaryPayment ------------------------------------------------------------------------------------------------
         public void AddSalaryPayment(SalaryPayment salaryPayment) {

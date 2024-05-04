@@ -1,7 +1,7 @@
 ﻿
 namespace cafeshopCsharp
 {
-    partial class HomePage
+    partial class frmHomePage
     {
         /// <summary>
         /// Required designer variable.

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class HomePage : Form
+    public partial class frmHomePage : Form
     {
 
        
-        public HomePage()
+        public frmHomePage()
         {
             InitializeComponent();
             panel11.Visible = false;
@@ -36,7 +36,7 @@ namespace cafeshopCsharp
 
         private void panel8_Click(object sender, EventArgs e)
         {
-            report selmn = new report();
+            frmReport selmn = new frmReport();
             setmdi(selmn);
         }
 
@@ -55,7 +55,7 @@ namespace cafeshopCsharp
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            Sell sell = new Sell();
+            frmSell sell = new frmSell();
             setmdi(sell);
             
   
@@ -74,7 +74,7 @@ namespace cafeshopCsharp
 
         private void label5_Click(object sender, EventArgs e)
         {
-            employee selmn = new employee();
+            frmEmployee selmn = new frmEmployee();
             setmdi(selmn);
         }
 
@@ -97,7 +97,7 @@ namespace cafeshopCsharp
 
         private void panel3_Click(object sender, EventArgs e)
         {
-            sellManage selmn = new sellManage();
+            frmSellManage selmn = new frmSellManage();
             setmdi(selmn);
             
         }
@@ -116,13 +116,13 @@ namespace cafeshopCsharp
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            productAdding selmn = new productAdding();
+            frmProductAdding selmn = new frmProductAdding();
             setmdi(selmn);
         }
 
         private void panel4_Click(object sender, EventArgs e)
         {
-            sellHistory selmn = new sellHistory();
+            frmSellHistory selmn = new frmSellHistory();
             setmdi(selmn);
         }
 
@@ -134,13 +134,13 @@ namespace cafeshopCsharp
 
         private void panel6_Click(object sender, EventArgs e)
         {
-            employee selmn = new employee();
+            frmEmployee selmn = new frmEmployee();
             setmdi(selmn);
         }
 
         private void panel9_Click(object sender, EventArgs e)
         {
-            seller selmn = new seller();
+            frmSeller selmn = new frmSeller();
             setmdi(selmn);
         }
 
@@ -151,7 +151,7 @@ namespace cafeshopCsharp
 
         private void label11_Click(object sender, EventArgs e)
         {
-            SalaryPayment salaryPayment = new SalaryPayment();
+            frmSalaryPayment salaryPayment = new frmSalaryPayment();
             setmdi(salaryPayment);
         }
     }
