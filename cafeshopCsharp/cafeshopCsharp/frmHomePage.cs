@@ -154,5 +154,20 @@ namespace cafeshopCsharp
             frmSalaryPayment salaryPayment = new frmSalaryPayment();
             setmdi(salaryPayment);
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

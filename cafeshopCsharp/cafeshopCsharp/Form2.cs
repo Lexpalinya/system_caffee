@@ -217,8 +217,8 @@ namespace cafeshopCsharp
             // _accountRepository.UpdateAccount(updateAcc);
             //  _accountRepository.DeleteAccount(deleteAcc);
 
-           // var data = _accountRepository.GetAllAccount();
-          //   dataGridView1.DataSource = data;
+            var data = _accountRepository.GetAllAccount();
+            dataGridView1.DataSource = data;
 
 
 
@@ -302,7 +302,7 @@ namespace cafeshopCsharp
                 BdAmount=1,
                 BdTotal=50000
             };
-            _billDetailRepository.AddBillDetail(addbillDetail);
+          //  _billDetailRepository.AddBillDetail(addbillDetail);
 
            
 
