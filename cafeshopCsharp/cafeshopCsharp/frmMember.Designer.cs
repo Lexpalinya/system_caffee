@@ -260,7 +260,7 @@ namespace cafeshopCsharp
             // 
             // reload
             // 
-            this.reload.Location = new System.Drawing.Point(980, 27);
+            this.reload.Location = new System.Drawing.Point(986, 27);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(46, 35);
             this.reload.TabIndex = 4;

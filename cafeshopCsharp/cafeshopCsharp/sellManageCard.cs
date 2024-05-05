@@ -1,4 +1,6 @@
-﻿using System;
+﻿using cafeshopCsharp.connection_DB;
+using cafeshopCsharp.modle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +13,12 @@ using System.Windows.Forms;
 namespace cafeshopCsharp
 {
     public partial class sellManageCard : UserControl
+
     {
+        private readonly ProductRepository _productRepository;
+        private frmSellManage _frmSellManage;
+
+        int PId = 0;
         public sellManageCard()
         {
             InitializeComponent();
@@ -19,14 +26,30 @@ namespace cafeshopCsharp
 
            
         }
-        public sellManageCard(string name) {
+        public sellManageCard(Product product,frmSellManage frmSellManage) {
+            _frmSellManage = frmSellManage;
+            _productRepository = new ProductRepository(new connectionDB().getConnection());
             InitializeComponent();
-            string[] sizes = { "S", "M", "L" };
+            string[] sizes =product.PSize.Split(',');
             createPanelSize(sizes);
-            lblName.Text = name;
+            lblName.Text = product.PName;
+            pictureBox1.Image =new ConvertByteToImage().ByteToImage(product.PImage);
+            lblType.Text = product.PType;
+            txtAmount.Text = product.PAmount.ToString();
+            PId = product.PId;
 
+            if (product.PStatus == 1)
+            {
 
+                BackColor = Color.DarkGreen;
+            }
+            else {
+
+                BackColor = Color.DarkRed;
+            }
         }
+
+  
 
         public void createPanelSize(string [] sizes) {
 
@@ -99,6 +122,35 @@ namespace cafeshopCsharp
             if (amount > 0)  amount--;
 
             txtAmount.Text = amount.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Product update = new Product
+            {
+                PId = PId,
+                PAmount = int.Parse(txtAmount.Text),
+                PStatus = 1
+
+            };
+            _productRepository.UpdateStatusAndAmount(update);
+            List<Product> updateData= (List<Product>)_productRepository.GetAllProducts();
+            _frmSellManage.reLoadData(updateData);
+        
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Product update = new Product
+            {
+                PId = PId,
+                PAmount = int.Parse(txtAmount.Text),
+                PStatus = 0
+
+            };
+            _productRepository.UpdateStatusAndAmount(update);
+            List<Product> updateData = (List<Product>)_productRepository.GetAllProducts();
+            _frmSellManage.reLoadData(updateData);
         }
     }
 }

@@ -13,16 +13,34 @@ namespace cafeshopCsharp
     {
 
 
-        public Image ByteToImage(byte[] ImageByte) {
-
-            using (MemoryStream ms = new MemoryStream(ImageByte))
+        public Image ByteToImage(byte[] ImageByte)
+        {
+            if (ImageByte == null || ImageByte.Length == 0)
             {
-                Image img = Image.FromStream(ms);
-                return img;
+                // Handle null or empty byte array
+                return null;
+            }
+
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(ImageByte))
+                {
+                    // Reset memory stream position
+                    ms.Position = 0;
+
+                    Image img = Image.FromStream(ms);
+                    return img;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle image conversion error
+                Console.WriteLine("Error converting byte array to image: " + ex.Message);
+                return null;
             }
         }
 
-        public  byte[] ImageToByteArray(Image image)
+        public byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream ms = new MemoryStream())
             {

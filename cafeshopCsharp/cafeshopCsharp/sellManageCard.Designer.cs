@@ -107,6 +107,7 @@ namespace cafeshopCsharp
             this.button1.TabIndex = 5;
             this.button1.Text = "ເພີ່ມລົງ";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -119,6 +120,7 @@ namespace cafeshopCsharp
             this.button2.TabIndex = 6;
             this.button2.Text = "ນຳອອກ";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -188,7 +190,7 @@ namespace cafeshopCsharp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGreen;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panelSize);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
