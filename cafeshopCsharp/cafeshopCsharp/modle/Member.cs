@@ -48,11 +48,11 @@ namespace cafeshopCsharp.modle
 
 
         //GetMember -----------------------------------------------------------------------------------------
-        public Member GetMember(Member mb) {
+        public Member GetMember(string phoneNumber) {
 
             try {
                 string sql = "SELECT * FROM tb_member WHERE mbPhoneNumber=@mbPhoneNumber";
-                return dbConnection.QueryFirstOrDefault<Member>(sql, mb)??null;
+                return dbConnection.QueryFirstOrDefault<Member>(sql,new { mbPhoneNumber=phoneNumber });
             }
             catch (Exception ex)
             {
@@ -62,23 +62,24 @@ namespace cafeshopCsharp.modle
             }
         } 
         // Add Member --------------------------------------------------------------------------------------
-        public void AddMember(Member addMember)
+        public int AddMember(Member addMember)
         {
             try
             {
-                string sql = "INSERT INTO tb_member (mbName, mbPhoneNumber, mbAddress, mbPoints) VALUES (@mbName, @mbPhoneNumber, @mbAddress, @mbPoints)";
-                int rowAffected=dbConnection.Execute(sql, addMember);
+                string sql = "INSERT INTO tb_member (mbName, mbPhoneNumber, mbAddress, mbPoints) VALUES (@mbName, @mbPhoneNumber, @mbAddress, @mbPoints);" +
+                    "SELECT LAST_INSERT_ID();";
+                int lastInsertedId = dbConnection.QuerySingle<int>(sql, addMember);
 
-                if (rowAffected == 1)
-                {
-                    MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
-                }
 
+                MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
+
+                return lastInsertedId;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
             }
         }
 

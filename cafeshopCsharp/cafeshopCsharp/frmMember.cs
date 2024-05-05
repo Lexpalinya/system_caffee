@@ -92,7 +92,7 @@ namespace cafeshopCsharp
                     mbName = textBox1.Text,
                     mbPhoneNumber = textBox2.Text,
                     mbAddress = textBox3.Text,
-                    mbPoints = pointss
+                    mbPoints = point
 
                 };
                 memberrepo.UpdateMember(updatemb);
@@ -164,17 +164,24 @@ namespace cafeshopCsharp
         bool Cellclick;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Cellclick = true;
-            mbid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            textBox2.ReadOnly = true;
-            
-            button1.Enabled = false;
-            button2.Enabled = true;
-            button3.Enabled = true;
+            try {
+
+                Cellclick = true;
+                mbid = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBox2.ReadOnly = true;
+                button1.Enabled = false;
+                button2.Enabled = true;
+                button3.Enabled = true;
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+          
 
         }
 

@@ -81,10 +81,10 @@ namespace cafeshopCsharp
             {
                 mbId = 1
             };
-            Member findPhone = new Member {
-                mbPhoneNumber = "28434443"
+            //Member findPhone = new Member {
+            //    mbPhoneNumber = "28434443"
             
-            };
+            //};
 
 
             //  _memberRepository.AddMember(addMember);
@@ -94,7 +94,7 @@ namespace cafeshopCsharp
             //_memberRepository.UpdatePoints(updatePoints);
             // _memberRepository.DeleteMember(deleteMember);
            //var members = _memberRepository.GetAllMembers();
-             var members=  _memberRepository.GetMember(findPhone);
+             var members=  _memberRepository.GetMember("28434443");
             List<Member> found = new List<Member> { members };
 
              dataGridView1.DataSource = found; 

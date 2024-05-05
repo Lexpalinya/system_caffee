@@ -31,15 +31,14 @@ namespace cafeshopCsharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearchMember));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btn = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,26 +52,6 @@ namespace cafeshopCsharp
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gold;
-            this.label5.Location = new System.Drawing.Point(80, 417);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 26);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "ຄະແນນ";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(77, 455);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(288, 35);
-            this.textBox4.TabIndex = 18;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -85,13 +64,13 @@ namespace cafeshopCsharp
             this.label4.TabIndex = 17;
             this.label4.Text = "ທີ່ຢູ່";
             // 
-            // textBox3
+            // txtAddress
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(77, 373);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(288, 35);
-            this.textBox3.TabIndex = 16;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.Location = new System.Drawing.Point(77, 373);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(288, 35);
+            this.txtAddress.TabIndex = 16;
             // 
             // label3
             // 
@@ -105,13 +84,13 @@ namespace cafeshopCsharp
             this.label3.TabIndex = 15;
             this.label3.Text = "ເບີໂທ";
             // 
-            // textBox2
+            // txtPhoneNumber
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(77, 291);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(288, 35);
-            this.textBox2.TabIndex = 14;
+            this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(77, 291);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(288, 35);
+            this.txtPhoneNumber.TabIndex = 14;
             // 
             // label2
             // 
@@ -125,47 +104,58 @@ namespace cafeshopCsharp
             this.label2.TabIndex = 13;
             this.label2.Text = "ຊື່ສະມາຊິກ";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(77, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 35);
-            this.textBox1.TabIndex = 12;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Location = new System.Drawing.Point(77, 209);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(288, 35);
+            this.txtName.TabIndex = 12;
             // 
-            // button1
+            // btn
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGreen;
-            this.button1.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(85, 558);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 51);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.Location = new System.Drawing.Point(85, 558);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(266, 51);
+            this.btn.TabIndex = 21;
+            this.btn.Text = "ຄົ້ນຫາ";
+            this.btn.UseVisualStyleBackColor = false;
+            this.btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // searchMember
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.Location = new System.Drawing.Point(240, 433);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(125, 31);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "ເພື່ມສະມາຊິກ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // frmSearchMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(447, 657);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.btn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Gold;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Name = "searchMember";
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "frmSearchMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "searchMember";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -177,14 +167,13 @@ namespace cafeshopCsharp
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
