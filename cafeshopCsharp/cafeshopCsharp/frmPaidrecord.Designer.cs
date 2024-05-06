@@ -47,13 +47,14 @@ namespace cafeshopCsharp
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -248,6 +249,7 @@ namespace cafeshopCsharp
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.dateTimePicker2);
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.textBox6);
             this.panel4.Controls.Add(this.button4);
@@ -256,6 +258,17 @@ namespace cafeshopCsharp
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1333, 100);
             this.panel4.TabIndex = 5;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(1087, 27);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 41);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox6
             // 
@@ -316,16 +329,14 @@ namespace cafeshopCsharp
             this.panel5.Size = new System.Drawing.Size(79, 780);
             this.panel5.TabIndex = 11;
             // 
-            // button5
+            // dateTimePicker2
             // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(1087, 27);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 41);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(84, 27);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(193, 35);
+            this.dateTimePicker2.TabIndex = 25;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // frmPaidrecord
             // 
@@ -379,5 +390,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

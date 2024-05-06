@@ -157,6 +157,7 @@ namespace cafeshopCsharp
             this.txtAmount.TabIndex = 9;
             this.txtAmount.Text = "0";
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // label3

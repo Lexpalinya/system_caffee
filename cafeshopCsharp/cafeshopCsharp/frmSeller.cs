@@ -169,11 +169,16 @@ namespace cafeshopCsharp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Account deleteAccount = new Account {
-                AccId = id
-            };
-            _accountRepository.DeleteAccount(deleteAccount);
-            showData();
+            DialogResult result = MessageBox.Show("ຕ້ອງການລົບຂໍ້ມູນນີ້ຫຼືບໍ?", "ຢືນຢັນ", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Account deleteAccount = new Account
+                {
+                    AccId = id
+                };
+                _accountRepository.DeleteAccount(deleteAccount);
+                showData();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -215,7 +220,7 @@ namespace cafeshopCsharp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var searchName = data.Where<AccountView>(items => items.empName == txtSearch.Text);
+            var searchName = data.Where<AccountView>(items => items.empName.ToLower().Contains(txtSearch.Text.ToLower()));
             dataGridView1.DataSource=searchName.ToArray<AccountView>();
         }
     }

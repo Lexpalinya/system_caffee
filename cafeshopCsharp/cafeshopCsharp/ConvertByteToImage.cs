@@ -42,11 +42,25 @@ namespace cafeshopCsharp
 
         public byte[] ImageToByteArray(Image image)
         {
-            using (MemoryStream ms = new MemoryStream())
+            if (image == null)
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
+                // Handle null or empty byte array
+                return null;
             }
+            try {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    return ms.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle image conversion error
+                Console.WriteLine("Error converting image to byte array: " + ex.Message);
+                return null;
+            }
+
         }
     }
 }

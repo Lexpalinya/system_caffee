@@ -198,16 +198,12 @@ namespace cafeshopCsharp
         {
             if (!string.IsNullOrWhiteSpace(textBox5.Text)) {
 
-                //Member mb = new Member
-                //{
-                //    mbPhoneNumber = textBox5.Text
-                //};
-                //var data = memberrepo.GetMember(mb);
-                Member members = data.FirstOrDefault(member => member.mbPhoneNumber==textBox5.Text);
+            
+                Member members = data.FirstOrDefault(member => member.mbPhoneNumber.ToLower().Contains(textBox5.Text.ToLower()));
                 dataGridView1.DataSource = new List<Member> { members };
-                //dataGridView1.DataSource =  members;
+               
             }
-                clearTextbox();
+               
           
 
 

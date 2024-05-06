@@ -152,5 +152,10 @@ namespace cafeshopCsharp
             List<Product> updateData = (List<Product>)_productRepository.GetAllProducts();
             _frmSellManage.reLoadData(updateData);
         }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

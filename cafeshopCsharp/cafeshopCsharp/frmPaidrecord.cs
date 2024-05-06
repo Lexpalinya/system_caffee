@@ -105,11 +105,16 @@ namespace cafeshopCsharp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PaidRecord delePaidRecord = new PaidRecord {
-                PrId = id
-            };
-            _paidrecordRepository.DeletePaidRecord(delePaidRecord);
-            reloadData();
+            DialogResult result = MessageBox.Show("ຕ້ອງການລົບຂໍ້ມູນນີ້ຫຼືບໍ?", "ຢືນຢັນ", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                PaidRecord delePaidRecord = new PaidRecord
+                {
+                    PrId = id
+                };
+                _paidrecordRepository.DeletePaidRecord(delePaidRecord);
+                reloadData();
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -140,6 +145,16 @@ namespace cafeshopCsharp
         private void button5_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = data;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            PaidRecord paid = new PaidRecord {
+               PrDate= dateTimePicker2.Value
+
+            };
+            var searchMonth = _paidrecordRepository.GetPaidRecordBYMoth(paid);
+            dataGridView1.DataSource = searchMonth;
         }
     }
 }
