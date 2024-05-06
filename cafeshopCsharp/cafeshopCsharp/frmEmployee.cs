@@ -120,16 +120,16 @@ namespace cafeshopCsharp
         {
             if (checkTextBox())
             {
-
-                MessageBox.Show("ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົນຖ້ວນ", "ເຕືອນ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            byte[] img = new ConvertByteToImage().ImageToByteArray(pbImage.Image);
+            // Convert image to byte array only if PictureBox has an image
+            byte[] img = pbImage.Image != null ? new ConvertByteToImage().ImageToByteArray(pbImage.Image) : null;
 
             Employee updateEmployee = new Employee
             {
-                EmpId=id,
+                EmpId = id,
                 EmpName = txtName.Text,
                 EmpLastName = txtLastName.Text,
                 EmpAddress = txtAddress.Text,
@@ -137,11 +137,11 @@ namespace cafeshopCsharp
                 EmpPosition = txtPosition.Text,
                 EmpSalary = int.Parse(txtSalary.Text),
                 EmpImage = img
-
             };
             _employeeRepository.UpdateEmployee(updateEmployee);
             reloadData();
         }
+
         private string getDatafromDatagridview(int cell, DataGridViewCellEventArgs e) {
             return dataGridView1.Rows[e.RowIndex].Cells[cell].Value.ToString();
         }

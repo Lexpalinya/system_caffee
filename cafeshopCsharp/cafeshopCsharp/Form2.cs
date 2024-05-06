@@ -151,18 +151,18 @@ namespace cafeshopCsharp
                 PType = "Hot"
             };
 
-            Product AddProduct = new Product
-            {
-                PName="coffee",
-                PType="Hot",
-                PSize="S,M,L,XL",
-                PPrice=50000,
-                PImage=null,
-                PStatus=1,
-                PPriceOriginal=20000,
-                PExp="no"
+            //Product AddProduct = new Product
+            //{
+            //    PName="coffee",
+            //    PType="Hot",
+            //    PSize="S,M,L,XL",
+            //    PPrice=50000,
+            //    PImage=null,
+            //    PStatus=1,
+            //    PPriceOriginal=20000,
+            //    PExp="no"
 
-            };
+            //};
 
             Product deleteProduct = new Product {
                 PId = 1
@@ -348,19 +348,19 @@ namespace cafeshopCsharp
                 //};
 
 
-                Product updateProduct = new Product
-                {
-                    PId=2,
-                    PName = "Green tea",
-                    PType = "Hot",
-                    PSize = "S,M,L,XL",
-                    PPrice = 50000,
-                    PImage = new ConvertByteToImage().ImageToByteArray(img),
-                    PStatus = 1,
-                    PPriceOriginal = 20000,
-                    PExp = "no"
+                //Product updateProduct = new Product
+                //{
+                //    PId=2,
+                //    PName = "Green tea",
+                //    PType = "Hot",
+                //    PSize = "S,M,L,XL",
+                //    PPrice = 50000,
+                //    PImage = new ConvertByteToImage().ImageToByteArray(img),
+                //    PStatus = 1,
+                //    PPriceOriginal = 20000,
+                //    PExp = "no"
 
-                };
+                //};
                 // _productRepository.AddProduct(AddProduct);
 
                 //_productRepository.UpdateProduct(updateProduct);
@@ -369,30 +369,30 @@ namespace cafeshopCsharp
 
 
                 // test Employee -------------------------------------------------------------------------------------------
-                Employee addEmp = new Employee {
-                EmpName="palinya",
-                EmpLastName="Khanthaphengxai",
-                EmpAddress="drndang ,gunthabury",
-                EmpPhoneNumber="58578313",
-                EmpPosition="CEO",
-                EmpSalary=6000000,
-                EmpImage=new ConvertByteToImage().ImageToByteArray(img)
+               // Employee addEmp = new Employee {
+               // EmpName="palinya",
+               // EmpLastName="Khanthaphengxai",
+               // EmpAddress="drndang ,gunthabury",
+               // EmpPhoneNumber="58578313",
+               // EmpPosition="CEO",
+               // EmpSalary=6000000,
+               //EmpImage=new ConvertByteToImage().ImageToByteArray(img)
                 
-                };
-                Employee updateEmp = new Employee
-                {
-                    EmpId=4,
-                    EmpName = "palinya",
-                    EmpLastName = "Khanthaphengxai",
-                    EmpAddress = "drndang ,gunthabury",
-                    EmpPhoneNumber = "58578313",
-                    EmpPosition = "CEO",
-                    EmpSalary = 6000000,
-                    EmpImage = new ConvertByteToImage().ImageToByteArray(img)
+               // };
+               // Employee updateEmp = new Employee
+               // {
+               //     EmpId=4,
+               //     EmpName = "palinya",
+               //     EmpLastName = "Khanthaphengxai",
+               //     EmpAddress = "drndang ,gunthabury",
+               //     EmpPhoneNumber = "58578313",
+               //     EmpPosition = "CEO",
+               //     EmpSalary = 6000000,
+               //     EmpImage = new ConvertByteToImage().ImageToByteArray(img)
 
-                };
+               // };
 
-                _employeeRepository.AddEmployee(addEmp);
+                //_employeeRepository.AddEmployee(addEmp);
                // _employeeRepository.UpdateEmployee(updateEmp);
                 var data = _employeeRepository.GetAllEmployee();
                 dataGridView1.DataSource = data;

@@ -44,23 +44,28 @@ namespace cafeshopCsharp
         {
             if (image == null)
             {
-                // Handle null or empty byte array
+                // Handle null image
                 return null;
             }
-            try {
+
+            try
+            {
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    // Save the image to the memory stream
+                    image.Save(ms, image.RawFormat);
+                    // Return the byte array representation of the image
                     return ms.ToArray();
                 }
             }
             catch (Exception ex)
             {
                 // Handle image conversion error
-                Console.WriteLine("Error converting image to byte array: " + ex.Message);
+             MessageBox.Show("Error converting image to byte array: " + ex.Message);
                 return null;
             }
-
         }
+
     }
 }
+

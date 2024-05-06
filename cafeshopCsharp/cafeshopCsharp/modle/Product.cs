@@ -16,7 +16,7 @@ namespace cafeshopCsharp.modle
         public string PName { get; set; }
         public string PType { get; set; }
         public string PSize { get; set; }
-        public int PPrice { get; set; } 
+        public string PPrice { get; set; } 
         public int PAmount { get; set; }
         public int PStatus { get; set; }
         public int PPriceOriginal { get; set; }
@@ -77,8 +77,8 @@ namespace cafeshopCsharp.modle
         public void AddProduct(Product product) {
             try
             {
-                 string sql= "INSERT INTO tb_products (pName, pType, pSize, pAmount,pImage, pStatus, pPriceOriginal, pExp) " +
-                       "VALUES (@PName, @PType, @PSize,@PAmount, @PImage, @PStatus, @PPriceOriginal, @PExp)";
+                 string sql= "INSERT INTO tb_products (pName, pType, pSize, pAmount,pImage, pStatus, pPriceOriginal, pExp,pPrice) " +
+                       "VALUES (@PName, @PType, @PSize,@PAmount, @PImage, @PStatus, @PPriceOriginal, @PExp,@PPrice)";
                  int rowAffected=   dbConnection.Execute(sql, product);
                 if (rowAffected == 1)
                 {
@@ -95,11 +95,11 @@ namespace cafeshopCsharp.modle
         public void UpdateProduct(Product product)
         {
             try {
-                string sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pAmount=@PAmount,pImage=@pImage,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp WHERE pId=@pID";
+                string sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pAmount=@PAmount,pImage=@pImage,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp,pPrice=@pPrice WHERE pId=@pID";
                 int rowAffected=dbConnection.Execute(sql,product);
                 if (rowAffected == 0)
                 {
-                    MessageBox.Show("ແກ້ໄຂຜິດພາຍດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ແກ້ໄຂຜິດພາດ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
