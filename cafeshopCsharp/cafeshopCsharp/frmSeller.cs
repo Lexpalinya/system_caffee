@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class frmSeller : Form
+    public partial class FrmSeller : Form
     {
         private readonly AccountRepository _accountRepository;
         private readonly EmployeeRepository _employeeRepository;
@@ -20,7 +20,7 @@ namespace cafeshopCsharp
 
         int id;
         string usernameforcheck;
-        public frmSeller()
+        public FrmSeller()
         {
             _accountRepository = new AccountRepository(new connectionDB().getConnection());
             _employeeRepository = new EmployeeRepository(new connectionDB().getConnection());
@@ -32,7 +32,7 @@ namespace cafeshopCsharp
 
 
       
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (cmbEmp.Text == "------ກະລຸນາເລືອກພະນັກງານ-----")
             {
@@ -66,10 +66,10 @@ namespace cafeshopCsharp
             }
 
             _accountRepository.AddAccount(addAccount);
-            showData();
+            ShowData();
         }
 
-        private void searchAutoComplete(List<Employee> employees) {
+        private void SearchAutoComplete(List<Employee> employees) {
 
             AutoCompleteStringCollection search = new AutoCompleteStringCollection();
             foreach (var dr in employees)
@@ -84,7 +84,7 @@ namespace cafeshopCsharp
         }
 
 
-        private void addComboboxAndAutoComplete(List<Employee> employees) {
+        private void AddComboboxAndAutoComplete(List<Employee> employees) {
 
             employees.ForEach(emp => emp.EmpName = emp.EmpName + " " + emp.EmpLastName);
 
@@ -108,27 +108,27 @@ namespace cafeshopCsharp
             cmbEmp.Focus();
         }
 
-        private void frmSeller_Load(object sender, EventArgs e)
+        private void FrmSeller_Load(object sender, EventArgs e)
         {
             List<Employee> employees= (List<Employee>)_employeeRepository.GetAllEmployee();
 
-            searchAutoComplete(employees);
-            addComboboxAndAutoComplete(employees);
-            showData();
+            SearchAutoComplete(employees);
+            AddComboboxAndAutoComplete(employees);
+            ShowData();
            
         }
 
-        private void showData() {
+        private void ShowData() {
              data = (List<AccountView>)_accountRepository.GetAllAccount();
             dataGridView1.DataSource = data;
             button1.Enabled = true;
             button2.Enabled = false;
             button3.Enabled = false;
-            clearText();
+            ClearText();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             if (cmbEmp.Text == "------ກະລຸນາເລືອກພະນັກງານ-----")
             {
@@ -164,10 +164,10 @@ namespace cafeshopCsharp
                 return;
             }
             _accountRepository.UpdateAccount(updateAccount);
-            showData();
+            ShowData();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("ຕ້ອງການລົບຂໍ້ມູນນີ້ຫຼືບໍ?", "ຢືນຢັນ", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -177,11 +177,11 @@ namespace cafeshopCsharp
                     AccId = id
                 };
                 _accountRepository.DeleteAccount(deleteAccount);
-                showData();
+                ShowData();
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -203,7 +203,7 @@ namespace cafeshopCsharp
 
 
         }
-        private void clearText() {
+        private void ClearText() {
             txtPassword.Clear();
             txtUserName.Clear();
             cmbEmp.SelectedIndex = 0;
@@ -213,12 +213,12 @@ namespace cafeshopCsharp
 
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
-            showData();
+            ShowData();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             var searchName = data.Where<AccountView>(items => items.empName.ToLower().Contains(txtSearch.Text.ToLower()));
             dataGridView1.DataSource=searchName.ToArray<AccountView>();

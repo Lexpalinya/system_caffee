@@ -138,7 +138,7 @@ namespace cafeshopCsharp
 
         private void button4_Click(object sender, EventArgs e)
         {
-             var search =data.Where(p => p.PrText == textBox6.Text).ToList<PaidRecord>();
+             var search =data.Where(p => p.PrText.Contains(textBox6.Text)).ToList<PaidRecord>();
             dataGridView1.DataSource = search;
         }
 

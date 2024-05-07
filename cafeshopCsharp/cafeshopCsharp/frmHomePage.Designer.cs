@@ -106,7 +106,7 @@ namespace cafeshopCsharp
             this.panel9.Size = new System.Drawing.Size(279, 52);
             this.panel9.TabIndex = 8;
             this.panel9.Click += new System.EventHandler(this.panel9_Click);
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel9_Paint);
             // 
             // label8
             // 
@@ -370,7 +370,7 @@ namespace cafeshopCsharp
             this.dashmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dashmain.TabIndex = 12;
             this.dashmain.TabStop = false;
-            this.dashmain.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.dashmain.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // panel8
             // 
@@ -381,7 +381,7 @@ namespace cafeshopCsharp
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(279, 52);
             this.panel8.TabIndex = 9;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            this.panel8.Click += new System.EventHandler(this.Panel8_Click);
             // 
             // label7
             // 

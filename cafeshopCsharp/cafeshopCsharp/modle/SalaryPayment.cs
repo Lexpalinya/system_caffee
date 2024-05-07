@@ -50,6 +50,9 @@ namespace cafeshopCsharp.modle
         }
 
 
+
+       
+
         // GetSalaryPaymentViewByMonthYear-------------------------------------------------------------------------------
         public IEnumerable<SalaryPaymentView> GetSalaryPaymentViewsByMonthYear(SalaryPayment salaryPayment) {
             
@@ -64,6 +67,42 @@ namespace cafeshopCsharp.modle
 
                 MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return Enumerable.Empty<SalaryPaymentView>();
+            }
+        }
+
+        // GetSalaryPaymentViewByMonthYearAndStatus-------------------------------------------------------------------------------
+        public IEnumerable<SalaryPaymentView> GetSalaryPaymentViewsByMonthYearAndStatus(SalaryPayment salaryPayment)
+        {
+
+            try
+            {
+                string sql = "SELECT * FROM v_salarypayment WHERE YEAR(spPayday)=@year AND MONTH(spPayday)=@month AND spStatusPay=@spStatus";
+                return dbConnection.Query<SalaryPaymentView>(sql, new { year = salaryPayment.SpPayday.Year, month = salaryPayment.SpPayday.Month, spStatus = salaryPayment.SpStatusPay });
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Enumerable.Empty<SalaryPaymentView>();
+            }
+        }
+
+        // GetSalaryPaymentViewByMonthYearAndEmpId-------------------------------------------------------------------------------
+        public SalaryPaymentView GetSalaryPaymentViewsByMonthYearAndEmpId(SalaryPayment salaryPayment)
+        {
+
+            try
+            {
+                string sql = "SELECT * FROM v_salarypayment WHERE YEAR(spPayday)=@year AND MONTH(spPayday)=@month AND spEmpId=@spEmpId";
+                return dbConnection.QueryFirstOrDefault<SalaryPaymentView>(sql, new { year = salaryPayment.SpPayday.Year, month = salaryPayment.SpPayday.Month, spEmpId = salaryPayment.SpEmpId });
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
 
@@ -87,6 +126,20 @@ namespace cafeshopCsharp.modle
         }
 
 
+
+        // AddSalaryPayment by employee amount ------------------------------------------------------------------------------------------------
+
+        public void AddSalaryPaymentByEmployee() {
+            try {
+                dbConnection.Execute("InsertSalaryPaymentOncePerMonth");
+             
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 

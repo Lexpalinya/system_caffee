@@ -257,6 +257,7 @@ namespace cafeshopCsharp
              SpId=3
             };
 
+            _salaryPaymentRepository.AddSalaryPaymentByEmployee();
             // _salaryPaymentRepository.AddSalaryPayment(addSalaryPayment);
 
             // _salaryPaymentRepository.UpdateStatusSalaryPayment(updateStatusSalaryPayment);

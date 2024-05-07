@@ -83,16 +83,12 @@ namespace cafeshopCsharp
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            List<Product> filteredProducts = new List<Product>();
+            var filteredProducts = new List<Product>();
 
-            if (checkBox1.Checked)
-            {
-                filteredProducts = data.Where(item => item.PStatus == 0).ToList();
-            }
-            else
-            {
-                filteredProducts = data.Where(item => item.PStatus == 1).ToList();
-            }
+            int status = checkBox1.Checked == true ? 1 : 0;
+            filteredProducts = data.Where(item => item.PStatus ==status).ToList();
+            
+          
 
             createGrid(filteredProducts.ToArray());
         }

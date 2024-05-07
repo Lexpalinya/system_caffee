@@ -15,12 +15,18 @@ namespace cafeshopCsharp
 {
     public partial class Form1 : Form
     {
-      
-        private readonly MemberRepository _memberRepository;
+        private readonly SalaryPaymentRepository _salaryPaymentRepository;
         public Form1()
         {
             InitializeComponent();
-            _memberRepository = new MemberRepository(new connectionDB().getConnection());
+            _salaryPaymentRepository = new SalaryPaymentRepository(new connectionDB().getConnection());
+            if (DateTime.Today.Day == 25 || DateTime.Today.Day == 26 || DateTime.Today.Day == 27 || DateTime.Today.Day == 28)
+            {
+                _salaryPaymentRepository.AddSalaryPaymentByEmployee();
+            }
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,56 +36,14 @@ namespace cafeshopCsharp
 
             panel1.Location = new Point(centerX, centerY);
             
-
-
-
-            Member addMember = new Member {
-                mbName = "bou",
-                mbPhoneNumber = "58578313",
-                mbAddress = "ທ່າແຂກ, ຄຳມ່ວນ",
-                mbPoints=0
-                
-            
-            };
-            Member updateMember = new Member
-            {
-                mbId=3,
-                mbName = "kittima",
-                mbPhoneNumber = "28434443",
-                mbAddress = "ທ່າແຂກ, ຄຳມ່ວນ",
-                mbPoints = 0
-
-
-            };
-
-            Member updatePoints = new Member {
-                mbPhoneNumber = "28490166",
-                mbPoints=10
-            };
-            Member deleteMember = new Member {
-            mbId=1
-            };
-
-
-            //  _memberRepository.AddMember(addMember);
-            //
-
-            //  _memberRepository.UpdataMember(updateMember);
-            //_memberRepository.UpdatePoints(updatePoints);
-            // _memberRepository.DeleteMember(deleteMember);
-          //   var members = _memberRepository.GetAllMembers();
-         // var members=  _memberRepository.GetMember("28434443");
-          //  List<Member> found = new List<Member> { members };
-
-            
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             frmHomePage hp = new frmHomePage();
             hp.Show();

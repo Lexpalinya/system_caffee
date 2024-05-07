@@ -13,7 +13,7 @@ namespace cafeshopCsharp
 {
     public partial class frmMember : Form
     {
-        private MemberRepository memberrepo;
+        private readonly MemberRepository memberrepo;
         String mbid;
         public frmMember()
         {
@@ -29,24 +29,17 @@ namespace cafeshopCsharp
         
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+   
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-     
+      
        
 
 
         // add
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
            
-            if (checkPhoneNumber(textBox2.Text)) {
+            if (CheckPhoneNumber(textBox2.Text)) {
                 MessageBox.Show("ເບີນີ້: " + textBox2.Text + " ໄດ້ສະໝັກແລ້ວ");
                 return;
             } 
@@ -61,7 +54,7 @@ namespace cafeshopCsharp
                     mbPoints = 0
                 };
                 memberrepo.AddMember(newmember);
-                loadMember();
+                LoadMember();
             }
             else
             {
@@ -76,14 +69,12 @@ namespace cafeshopCsharp
         }
 
         //edit
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
 
-           
-            int point;
-            int id;
-            if (  Cellclick == true && int.TryParse(mbid, out id) && int.TryParse(textBox4.Text, out point) && !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)
-               ) )
+
+            if (Cellclick == true && int.TryParse(mbid, out int id) && int.TryParse(textBox4.Text, out int point) && !(string.IsNullOrWhiteSpace(textBox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text) && string.IsNullOrWhiteSpace(textBox3.Text) && string.IsNullOrWhiteSpace(textBox4.Text)
+               ))
             {
 
                 Member updatemb = new Member
@@ -96,30 +87,29 @@ namespace cafeshopCsharp
 
                 };
                 memberrepo.UpdateMember(updatemb);
-              
+
                 Cellclick = false;
-             
-                loadMember();
+
+                LoadMember();
             }
             else
             {
-                string errortext = Cellclick == false?"ກະລຸນາເລືອກແຖວ":
+                string errortext = Cellclick == false ? "ກະລຸນາເລືອກແຖວ" :
                     (string.IsNullOrWhiteSpace(textBox1.Text) ||
                       string.IsNullOrWhiteSpace(textBox2.Text) ||
                       string.IsNullOrWhiteSpace(textBox3.Text) ||
                       string.IsNullOrWhiteSpace(textBox4.Text)) ? "ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ"
-                   : !int.TryParse(textBox4.Text, out point) ? "ແຕ້ມຕ້ອງເປັນໂຕເລກ"
+                   : !int.TryParse(textBox4.Text, out _) ? "ແຕ້ມຕ້ອງເປັນໂຕເລກ"
                    : "brhu";
                 MessageBox.Show(errortext, "ຜິດຜາດ", MessageBoxButtons.OK);
             }
         }
         //delete
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("ຕ້ອງການຈະລົບຫຼືບໍ ?", "ຢືນຢັນ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DialogResult.No==result) return;
-            int id;
-            if(Cellclick == true&& int.TryParse(mbid, out id))
+            if (Cellclick == true && int.TryParse(mbid, out int id))
             {
                 Member deletemb = new Member
                 {
@@ -127,7 +117,7 @@ namespace cafeshopCsharp
                 };
                 memberrepo.DeleteMember(deletemb);
                 Cellclick = false;
-                loadMember();
+                LoadMember();
             }
             else
             {
@@ -135,21 +125,21 @@ namespace cafeshopCsharp
             }
         }
         IEnumerable<Member> data;
-        private void frmMember_Load(object sender, EventArgs e)
+        private void FrmMember_Load(object sender, EventArgs e)
         {
            
-            loadMember();
+            LoadMember();
         }
-        private void loadMember()
+        private void LoadMember()
         {
             data = memberrepo.GetAllMembers();
             dataGridView1.DataSource = data;
-            clearTextbox();
+            ClearTextbox();
 
          
         }
 
-        private void clearTextbox() {
+        private void ClearTextbox() {
             textBox4.ReadOnly = true;
             textBox2.ReadOnly = false;
             button1.Enabled = true;
@@ -162,7 +152,7 @@ namespace cafeshopCsharp
         }
 
         bool Cellclick;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try {
 
@@ -186,33 +176,43 @@ namespace cafeshopCsharp
         }
 
         // check PhoneNumber ------------------------------------------------------
-        private bool checkPhoneNumber(string phonnumber) {
+        private bool CheckPhoneNumber(string phonnumber) {
 
             Member members = data.FirstOrDefault<Member>(member => member.mbPhoneNumber == phonnumber);
            
-            return members != null ? true:false;
+            return members != null;
 
 
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(textBox5.Text)) {
-
+        private void Button4_Click(object sender, EventArgs e)
             
-                Member members = data.FirstOrDefault(member => member.mbPhoneNumber.ToLower().Contains(textBox5.Text.ToLower()));
-                dataGridView1.DataSource = new List<Member> { members };
-               
+        {
+            try {
+                if (!string.IsNullOrWhiteSpace(textBox5.Text))
+                {
+
+
+                    var members = data.Where(member => member.mbPhoneNumber.Contains(textBox5.Text)).ToList();
+
+                    dataGridView1.DataSource = members;
+
+                }
             }
-               
-          
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
 
 
 
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Reload_Click(object sender, EventArgs e)
         {
-            loadMember();
+            LoadMember();
         }
     }
 }

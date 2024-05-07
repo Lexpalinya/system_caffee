@@ -113,7 +113,7 @@ namespace cafeshopCsharp
             this.button3.TabIndex = 10;
             this.button3.Text = "ລົບ";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -126,7 +126,7 @@ namespace cafeshopCsharp
             this.button2.TabIndex = 9;
             this.button2.Text = "ແກ້ໄຂ";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -139,7 +139,7 @@ namespace cafeshopCsharp
             this.button1.TabIndex = 8;
             this.button1.Text = "ເພີ່ມ";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label5
             // 
@@ -245,7 +245,7 @@ namespace cafeshopCsharp
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1370, 910);
             this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // panel4
             // 
@@ -265,7 +265,7 @@ namespace cafeshopCsharp
             this.reload.Size = new System.Drawing.Size(46, 35);
             this.reload.TabIndex = 4;
             this.reload.UseVisualStyleBackColor = true;
-            this.reload.Click += new System.EventHandler(this.reload_Click);
+            this.reload.Click += new System.EventHandler(this.Reload_Click);
             // 
             // textBox5
             // 
@@ -283,7 +283,7 @@ namespace cafeshopCsharp
             this.button4.Size = new System.Drawing.Size(44, 35);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // panel3
             // 
@@ -308,7 +308,7 @@ namespace cafeshopCsharp
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmMember";
             this.Text = "frmMember";
-            this.Load += new System.EventHandler(this.frmMember_Load);
+            this.Load += new System.EventHandler(this.FrmMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

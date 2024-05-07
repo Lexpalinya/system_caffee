@@ -218,7 +218,7 @@ namespace cafeshopCsharp
 
         private void pbImage_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right) { 
+            if (e.Button == MouseButtons.Right && pbImage.Image != null) { 
             
                 frmFullImage fimg = new frmFullImage(pbImage.Image);
                 fimg.ShowDialog();

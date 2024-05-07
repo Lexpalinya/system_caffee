@@ -27,14 +27,14 @@ namespace cafeshopCsharp
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             pnMain.Visible = false;
             panel11.Visible = true;
             
         }
 
-        private void panel8_Click(object sender, EventArgs e)
+        private void Panel8_Click(object sender, EventArgs e)
         {
             frmReport selmn = new frmReport();
             setmdi(selmn);
@@ -140,7 +140,7 @@ namespace cafeshopCsharp
 
         private void panel9_Click(object sender, EventArgs e)
         {
-            frmSeller selmn = new frmSeller();
+            FrmSeller selmn = new FrmSeller();
             setmdi(selmn);
         }
 
@@ -151,7 +151,7 @@ namespace cafeshopCsharp
 
         private void label11_Click(object sender, EventArgs e)
         {
-            frmSalaryPayment salaryPayment = new frmSalaryPayment();
+            FrmSalaryPayment salaryPayment = new FrmSalaryPayment();
             setmdi(salaryPayment);
         }
 
@@ -160,7 +160,7 @@ namespace cafeshopCsharp
 
         }
 
-        private void panel9_Paint(object sender, PaintEventArgs e)
+        private void Panel9_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -126,7 +126,6 @@ namespace cafeshopCsharp
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(288, 35);
             this.txtSalary.TabIndex = 18;
-            this.txtSalary.Text = "0";
             this.txtSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
