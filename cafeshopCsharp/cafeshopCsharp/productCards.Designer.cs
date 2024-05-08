@@ -1,7 +1,7 @@
 ﻿
 namespace cafeshopCsharp
 {
-    partial class productCards
+    partial class ProductCards
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,40 +37,48 @@ namespace cafeshopCsharp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(26, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(238, 184);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(25, 189);
+            this.lbName.Location = new System.Drawing.Point(24, 208);
+            this.lbName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(35, 13);
+            this.lbName.Size = new System.Drawing.Size(63, 27);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "label1";
             // 
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(25, 230);
+            this.lbPrice.Location = new System.Drawing.Point(162, 208);
+            this.lbPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(35, 13);
+            this.lbPrice.Size = new System.Drawing.Size(63, 27);
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "label2";
             // 
-            // productCards
+            // ProductCards
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gold;
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "productCards";
-            this.Size = new System.Drawing.Size(240, 261);
+            this.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "ProductCards";
+            this.Size = new System.Drawing.Size(250, 260);
+            this.Load += new System.EventHandler(this.ProductCards_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

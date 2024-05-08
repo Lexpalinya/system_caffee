@@ -65,10 +65,10 @@ namespace cafeshopCsharp.modle
         }
 
         // Get Products By Status -------------------------------------------------------------------------
-        public IEnumerable<Product> GetProductByStatus(Product product) { 
+        public IEnumerable<Product> GetProductByStatus() { 
             try
             {
-                return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pStatus=@pStatus", product);
+                return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pStatus=@pStatus",new { pStatus = 1} );
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error); return Enumerable.Empty<Product>(); }
         }

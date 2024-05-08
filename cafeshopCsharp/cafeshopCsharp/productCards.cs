@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cafeshopCsharp.modle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,43 @@ using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
-    public partial class productCards : UserControl
+    public partial class ProductCards : UserControl
     {
-        public productCards(string name,string price)
+        // Define event for entire product card click
+        public event EventHandler ProductCardClicked;
+        public frmSell _frmSell;
+        public Product product1;
+
+        public ProductCards(Product product, frmSell frmSell)
         {
+            _frmSell = frmSell;
+            product1 = product;
             InitializeComponent();
-            lbName.Text = name;
-            lbPrice.Text = price;
+            pictureBox1.Image = new ConvertByteToImage().ByteToImage(product.PImage);
+            lbName.Text = product.PName;
+            lbPrice.Text = product.PType;
+
+            // Wire up click event for the entire product card
+            this.Click += ProductCards_Click;
+        }
+
+        private void ProductCards_Click(object sender, EventArgs e)
+        {
+            _frmSell.seleteProductSetText(product1);
+        }
+
+        private void ProductCards_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
+            _frmSell.seleteProductSetText(product1);
         }
     }
+
+
+
 }

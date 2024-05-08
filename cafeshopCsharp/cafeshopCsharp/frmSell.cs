@@ -1,4 +1,6 @@
-﻿using System;
+﻿using cafeshopCsharp.connection_DB;
+using cafeshopCsharp.modle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,79 +14,192 @@ namespace cafeshopCsharp
 {
     public partial class frmSell : Form
     {
+
+        private readonly ProductRepository _productRepository;
+        int pid;
+
+
+        List<Product> data;
         public frmSell()
         {
+
+            _productRepository = new ProductRepository(new connectionDB().getConnection());
             InitializeComponent();
-            string[] sizes = { "S", "M", "L" };
-            createPanelSize(sizes);
+         
 
         }
-
+     
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
-        
-        
-        
+
+
+        private void reloadData() {
+            data = (List<Product>)_productRepository.GetProductByStatus();
+            createCard(data.ToArray<Product>());
+        }
 
         private void Sell_Load(object sender, EventArgs e)
         {
-            
-        }
-        
+
+            reloadData();
            
-            
+        }
+        private void createCard(Product[] product) {
+            pnMain.Controls.Clear();
+            int x = 20,y=10;           
+            int cardSizeX = 260, cardSizeY = 270;
+            foreach (var i in Enumerable.Range(0, product.Length)) {
+                int col = i % 5;
+                int rowthis = i / 5;
 
-
-        
-
-        public void createPanelSize(string[] sizes)
-        {
-
-
-            int Y = 10;
-            int X = 25;
-            int columnWidth = 100;
-            foreach (var index in Enumerable.Range(0, sizes.Length))
-            {
-
-                int column = index % 2;
-                int rowthis = index / 2;
-                Label labelSize = new Label
+                ProductCards cards = new ProductCards(product[i],this)
                 {
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Text = sizes[index],
-                    Size = new Size(94, 34),
-                    BackColor = Color.White,
-                    ForeColor = Color.Goldenrod,
-                    
-                  
-                    Location = new Point(X + column * columnWidth, Y + rowthis * 40),
-                    Font = new Font("Times new roman", 16, FontStyle.Bold),
+                    Location = new Point(x+col*cardSizeX,y+cardSizeY*rowthis)
+                };
 
+
+
+                pnMain.Controls.Add(cards);
+            }
+            pnMain.AutoScroll = true;
+            pnMain.VerticalScroll.Enabled = true;
+            pnMain.VerticalScroll.Visible = true;
+
+        }
+
+        public void createPanelSize(Product product)
+        {
+            string[] prices = product.PPrice.Split(',').ToArray();
+            string[] sizes = product.PSize.Split(',').ToArray();
+            Button selectedButton = null;
+
+
+            pnSize.Controls.Clear();
+
+            int X = 15, Y = 10;
+            int columnWidth = 100,rowHight=50;
+            foreach (int i in Enumerable.Range(0,sizes.Length)) {
+
+                int col = i % 2;
+                int row = i / 2;
+
+                Button button = new Button {
+                    Text = sizes[i],
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Size = new Size(94, 40),
+                    Font = new Font("Times new roman", 16, FontStyle.Bold),
+                    Location = new Point(X + col * columnWidth, Y + row * rowHight)
+                    ,BackColor=Color.Green,
+                    ForeColor=Color.Gold,
 
                 };
-                labelSize.Click
-+= (sender, e) =>
-{
-    lbsize.Text = labelSize.Text;
+                
+                button.Click += (sender, e) =>
+                {
+                    foreach (var control in pnSize.Controls) {
+                        if (control is Button btn) {
+                            btn.BackColor = Color.Green;
+                            btn.ForeColor = Color.Gold;
+                        }
+                    
+                    }
+                    button.ForeColor = Color.Gold;
+                    button.BackColor = Color.Black;
+                    lblPrice.Text = prices[i];
+                  
+                    txtTotal.Text = (int.Parse(prices[i]) * nmAmount.Value).ToString();
 
-};
+                };
+
+                if (i == 0) {
+                    selectedButton = button;
+                    lblPrice.Text = prices[i];
+
+                    txtTotal.Text = (int.Parse(prices[i]) * nmAmount.Value).ToString();
 
 
-                // Size ------------------
-                pnSize.Controls.Add(labelSize);
+                }
 
+                pnSize.Controls.Add(button);
+            }
 
-            };
-
+            selectedButton?.PerformClick();
         }
+
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             frmSearchMember sm = new frmSearchMember();
             sm.Show();
+        }
+
+      
+        public void seleteProductSetText(Product product) {
+            try
+            {
+
+                lblname.Text = product.PName;
+                lblType.Text = product.PType;
+
+               
+               createPanelSize(product);
+
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message);
+            }
+
+            
+
+        }
+
+        private void nmAmount_ValueChanged(object sender, EventArgs e)
+        {
+            int total = (int)(nmAmount.Value * int.Parse(lblPrice.Text));
+            txtTotal.Text = total.ToString() ;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            searchByType("Hot");   
+        }
+
+        private void searchByType(String findType) {
+
+            var find = data.Where<Product>(item=>item.PType==findType);
+            createCard(find.ToArray<Product>());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            searchByType("Cool");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            searchByType("Mix");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            searchByType("Other");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            reloadData();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var search = data.Where<Product>(item => item.PName.ToLower().Contains(txtSearch.Text.ToLower()));
+            createCard(search.ToArray());
         }
     }
 }
