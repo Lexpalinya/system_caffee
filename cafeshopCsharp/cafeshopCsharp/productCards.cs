@@ -27,8 +27,28 @@ namespace cafeshopCsharp
             lbName.Text = product.PName;
             lbPrice.Text = product.PType;
 
-            // Wire up click event for the entire product card
-            this.Click += ProductCards_Click;
+            if (product.PType == "Hot")
+            {
+                BackColor = ColorTranslator.FromHtml("#f27059");
+
+            }
+            else if (product.PType == "Cool")
+            {
+                BackColor = ColorTranslator.FromHtml("#7BC9FF");
+
+            }
+            else if (product.PType == "Mix")
+            {
+                BackColor = ColorTranslator.FromHtml("#41B06E");
+
+            }
+            else {
+
+                BackColor = ColorTranslator.FromHtml("#F9F54B");
+            }
+
+                // Wire up click event for the entire product card
+                this.Click += ProductCards_Click;
         }
 
         private void ProductCards_Click(object sender, EventArgs e)
