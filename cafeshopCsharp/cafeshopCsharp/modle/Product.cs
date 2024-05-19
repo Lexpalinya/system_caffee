@@ -41,7 +41,7 @@ namespace cafeshopCsharp.modle
         // Get All Products ----------------------------------------------------------------------
         public IEnumerable<Product> GetAllProducts() {
             try { 
-                return dbConnection.Query<Product>("SELECT * FROM tb_products");
+                return dbConnection.Query<Product>("SELECT * FROM tb_products  ORDER BY tb_products.pName ASC");
             }
             catch (Exception ex)
             {
@@ -68,7 +68,7 @@ namespace cafeshopCsharp.modle
         public IEnumerable<Product> GetProductByStatus() { 
             try
             {
-                return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pStatus=@pStatus",new { pStatus = 1} );
+                return dbConnection.Query<Product>("SELECT * FROM tb_products WHERE pStatus=@pStatus ORDER BY tb_products.pName ASC ", new { pStatus = 1} );
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error); return Enumerable.Empty<Product>(); }
         }

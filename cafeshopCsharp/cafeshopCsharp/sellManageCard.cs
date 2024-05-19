@@ -37,7 +37,26 @@ namespace cafeshopCsharp
             lblType.Text = product.PType;
             txtAmount.Text = product.PAmount.ToString();
             PId = product.PId;
+            if (product.PType == "Hot")
+            {
+                lblType.BackColor = ColorTranslator.FromHtml("#f27059");
 
+            }
+            else if (product.PType == "Cool")
+            {
+                lblType.BackColor = ColorTranslator.FromHtml("#7BC9FF");
+
+            }
+            else if (product.PType == "Mix")
+            {
+                lblType.BackColor = ColorTranslator.FromHtml("#41B06E");
+
+            }
+            else
+            {
+
+                lblType.BackColor = ColorTranslator.FromHtml("#F9F54B");
+            }
             if (product.PStatus == 1)
             {
 
