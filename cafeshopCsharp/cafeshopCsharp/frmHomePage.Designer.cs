@@ -29,6 +29,7 @@ namespace cafeshopCsharp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHomePage));
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -134,7 +135,7 @@ namespace cafeshopCsharp
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::cafeshopCsharp.Properties.Resources.threedash;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 45);
@@ -363,11 +364,11 @@ namespace cafeshopCsharp
             // 
             // dashmain
             // 
-            this.dashmain.Image = global::cafeshopCsharp.Properties.Resources.threedash;
+            this.dashmain.Image = ((System.Drawing.Image)(resources.GetObject("dashmain.Image")));
             this.dashmain.Location = new System.Drawing.Point(12, 12);
             this.dashmain.Name = "dashmain";
             this.dashmain.Size = new System.Drawing.Size(50, 45);
-            this.dashmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dashmain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dashmain.TabIndex = 12;
             this.dashmain.TabStop = false;
             this.dashmain.Click += new System.EventHandler(this.PictureBox1_Click);
