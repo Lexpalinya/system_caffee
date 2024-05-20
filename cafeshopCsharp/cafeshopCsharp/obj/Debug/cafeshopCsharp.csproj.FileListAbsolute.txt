@@ -151,3 +151,4 @@ E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.f
 E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmSellManage.resources
 >>>>>>> bd666ae784e47a33b9e2884c571ef0710a1ae798
 D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmFullImage.resources
+E:\gitHub\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmFullImage.resources

@@ -40,7 +40,7 @@ namespace cafeshopCsharp
             this.pictureBox1.Location = new System.Drawing.Point(6, 6);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(238, 184);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -49,7 +49,7 @@ namespace cafeshopCsharp
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(6, 220);
+            this.lbName.Location = new System.Drawing.Point(24, 208);
             this.lbName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(63, 27);
@@ -59,7 +59,7 @@ namespace cafeshopCsharp
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(181, 220);
+            this.lbPrice.Location = new System.Drawing.Point(162, 208);
             this.lbPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(63, 27);
@@ -77,7 +77,7 @@ namespace cafeshopCsharp
             this.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ProductCards";
-            this.Size = new System.Drawing.Size(274, 260);
+            this.Size = new System.Drawing.Size(250, 260);
             this.Load += new System.EventHandler(this.ProductCards_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

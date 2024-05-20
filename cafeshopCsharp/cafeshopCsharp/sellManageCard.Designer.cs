@@ -89,9 +89,9 @@ namespace cafeshopCsharp
             // 
             this.lblType.Font = new System.Drawing.Font("Phetsarath OT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblType.ForeColor = System.Drawing.Color.Gold;
-            this.lblType.Location = new System.Drawing.Point(562, 77);
+            this.lblType.Location = new System.Drawing.Point(537, 81);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(77, 44);
+            this.lblType.Size = new System.Drawing.Size(137, 40);
             this.lblType.TabIndex = 4;
             this.lblType.Text = "label2";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

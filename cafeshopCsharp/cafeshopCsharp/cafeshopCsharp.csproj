@@ -294,11 +294,13 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\threedash.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="pictures\logo.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="pictures\clear.png" />
+    <Content Include="pictures\refresh.png" />
+    <Content Include="pictures\search.png" />
+    <Content Include="pictures\threedash.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

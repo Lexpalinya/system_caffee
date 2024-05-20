@@ -16,9 +16,7 @@ namespace cafeshopCsharp
     {
 
         private readonly ProductRepository _productRepository;
-        
-        string size, pid,price;
-        
+        int pid;
 
 
         List<Product> data;
@@ -27,7 +25,7 @@ namespace cafeshopCsharp
 
             _productRepository = new ProductRepository(new connectionDB().getConnection());
             InitializeComponent();
-      
+         
 
         }
      
@@ -50,11 +48,11 @@ namespace cafeshopCsharp
         }
         private void createCard(Product[] product) {
             pnMain.Controls.Clear();
-            int x = 10,y=10;           
-            int cardSizeX = 280, cardSizeY = 270;
+            int x = 20,y=10;           
+            int cardSizeX = 260, cardSizeY = 270;
             foreach (var i in Enumerable.Range(0, product.Length)) {
-                int col = i % 4;
-                int rowthis = i / 4;
+                int col = i % 5;
+                int rowthis = i / 5;
 
                 ProductCards cards = new ProductCards(product[i],this)
                 {
@@ -98,12 +96,8 @@ namespace cafeshopCsharp
 
                 };
                 
-                pid = product.PId.ToString();
-                price =prices[i].ToString();
-                
                 button.Click += (sender, e) =>
                 {
-                    size = sizes[i];
                     foreach (var control in pnSize.Controls) {
                         if (control is Button btn) {
                             btn.BackColor = Color.Green;
@@ -118,6 +112,7 @@ namespace cafeshopCsharp
                     txtTotal.Text = (int.Parse(prices[i]) * nmAmount.Value).ToString();
 
                 };
+
                 if (i == 0) {
                     selectedButton = button;
                     lblPrice.Text = prices[i];
@@ -201,52 +196,10 @@ namespace cafeshopCsharp
             reloadData();
         }
 
-        private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-           
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            listView1.Items.Clear();
-            lblAllprice.Text = "0";
-        }
-
         private void button8_Click(object sender, EventArgs e)
         {
             var search = data.Where<Product>(item => item.PName.ToLower().Contains(txtSearch.Text.ToLower()));
             createCard(search.ToArray());
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var order = new string[] { pid, lblname.Text, lblType.Text, size, price, nmAmount.Value.ToString(), txtTotal.Text };
-            double allprice = 0;
-            bool orderExists = false;
-
-
-            foreach (ListViewItem item in listView1.Items) {
-                if (item.SubItems[0].Text==pid&& item.SubItems[3].Text==size) {
-                    int existingAmount = int.Parse(item.SubItems[5].Text);
-                    int newAmount = existingAmount + int.Parse(nmAmount.Value.ToString());
-                    int newTotal = newAmount * int.Parse(price);
-
-
-                    item.SubItems[5].Text = newAmount.ToString();
-                    item.SubItems[6].Text = newTotal.ToString();
-                    orderExists = true;
-                }
-
-                allprice += double.Parse(item.SubItems[6].Text);
-            }
-            if (!orderExists) {
-
-                var newOrder = new ListViewItem(order);
-                listView1.Items.Add(newOrder);
-                allprice += double.Parse(txtTotal.Text);
-            }
-            lblAllprice.Text = allprice.ToString();
-        }
-      
     }
 }
