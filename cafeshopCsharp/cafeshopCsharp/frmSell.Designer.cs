@@ -325,7 +325,7 @@ namespace cafeshopCsharp
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(489, 111);
+            this.button9.Location = new System.Drawing.Point(575, 111);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 0;
