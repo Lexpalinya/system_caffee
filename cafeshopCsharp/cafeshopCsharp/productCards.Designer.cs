@@ -40,7 +40,7 @@ namespace cafeshopCsharp
             this.pictureBox1.Location = new System.Drawing.Point(6, 6);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(238, 184);
+            this.pictureBox1.Size = new System.Drawing.Size(238, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -49,7 +49,7 @@ namespace cafeshopCsharp
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(24, 208);
+            this.lbName.Location = new System.Drawing.Point(24, 217);
             this.lbName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(63, 27);
@@ -59,7 +59,7 @@ namespace cafeshopCsharp
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(162, 208);
+            this.lbPrice.Location = new System.Drawing.Point(161, 217);
             this.lbPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(63, 27);

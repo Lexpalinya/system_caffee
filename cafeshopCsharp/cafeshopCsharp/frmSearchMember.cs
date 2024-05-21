@@ -10,15 +10,22 @@ namespace cafeshopCsharp
 
         private readonly MemberRepository _memberRepository;
         private connectionDB conn = new connectionDB();
+        private frmSell frmsell;
 
         private Member memberData = new Member();
 
         public frmSearchMember()
         {
             InitializeComponent();
+           
+
+
+        }
+        public frmSearchMember(frmSell frm) {
+            this.frmsell = frm;
+
             _memberRepository = new MemberRepository(conn.getConnection());
-
-
+            InitializeComponent();
         }
 
 
@@ -55,8 +62,9 @@ namespace cafeshopCsharp
 
                int id= _memberRepository.AddMember(memberData);
                 memberData.mbId = id;
-             
-
+               
+                frmsell.member(memberData);
+                this.Close();
                 // send memberData  -----------------------------------------------------
 
             }
@@ -81,9 +89,9 @@ namespace cafeshopCsharp
 
                     // send memberData  -----------------------------------------------------
 
+                    frmsell.member(memberData);
 
-
-
+                    this.Close();
 
 
                 }
@@ -143,6 +151,22 @@ namespace cafeshopCsharp
 
             bool condition = string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtAddress.Text) || string.IsNullOrWhiteSpace(txtPhoneNumber.Text);
             return condition;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                memberData.mbId = 0;
+                memberData.mbPoints = 0;
+
+                frmsell.member(memberData);
+                this.Close();
+
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

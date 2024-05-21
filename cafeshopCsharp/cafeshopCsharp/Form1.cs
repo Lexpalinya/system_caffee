@@ -16,6 +16,7 @@ namespace cafeshopCsharp
     public partial class Form1 : Form
     {
         private readonly SalaryPaymentRepository _salaryPaymentRepository;
+        private readonly AccountRepository _accountRepository;
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace cafeshopCsharp
             {
                 _salaryPaymentRepository.AddSalaryPaymentByEmployee();
             }
+
+            _accountRepository = new AccountRepository(new connectionDB().getConnection());
 
 
 
@@ -45,9 +48,39 @@ namespace cafeshopCsharp
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmHomePage hp = new frmHomePage();
-            hp.Show();
-            this.Hide();
+            try {
+                if (string.IsNullOrWhiteSpace(txtPassword.Text)||string.IsNullOrWhiteSpace(txtUsername.Text)) {
+                    MessageBox.Show("ກະລຸນາປ້ອນຂໍ້ມູນສຳລັບການເຂົ້າສູ່ລະບົບ", "ຄຳແນະນຳ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    return;
+                }
+                    Account account = new Account {
+                        AccUserName = txtUsername.Text,
+                        AccPassword = txtPassword.Text
+                    };
+                var login=_accountRepository.AccountLogin(account);
+                if (login==null) {
+                    MessageBox.Show("ກະລຸນາກວດສອບ ຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານ", "ການເຂົ້າສູ່ລະບົບຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                AccountView accountVie = new AccountView
+                {
+                    AccId = login.AccId,
+                    AccUserName = login.AccUserName,
+                    empLastName = login.empLastName,
+                    empName = login.empName,
+                    AccLevel = login.AccLevel
+                };
+                
+                frmHomePage hp = new frmHomePage(accountVie);
+                hp.Show();
+                this.Hide();
+            }
+            catch (Exception ex) {
+
+                Console.WriteLine(ex.Message);
+            
+            
+            }
         }
     }
 }

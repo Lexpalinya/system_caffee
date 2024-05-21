@@ -81,24 +81,24 @@ namespace cafeshopCsharp
             // 
             // cmbLevel
             // 
-            this.cmbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLevel.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLevel.FormattingEnabled = true;
             this.cmbLevel.Items.AddRange(new object[] {
             "Admin",
             "Seller"});
             this.cmbLevel.Location = new System.Drawing.Point(68, 350);
             this.cmbLevel.Name = "cmbLevel";
-            this.cmbLevel.Size = new System.Drawing.Size(288, 33);
+            this.cmbLevel.Size = new System.Drawing.Size(288, 39);
             this.cmbLevel.TabIndex = 14;
             this.cmbLevel.Text = "---ເລືອກລະດັບ---";
             // 
             // cmbEmp
             // 
-            this.cmbEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmp.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmp.FormattingEnabled = true;
             this.cmbEmp.Location = new System.Drawing.Point(68, 268);
             this.cmbEmp.Name = "cmbEmp";
-            this.cmbEmp.Size = new System.Drawing.Size(288, 33);
+            this.cmbEmp.Size = new System.Drawing.Size(288, 39);
             this.cmbEmp.TabIndex = 13;
             this.cmbEmp.Text = "---ກະລຸນາເລືອກພະນັກງານ---";
             // 
@@ -243,6 +243,8 @@ namespace cafeshopCsharp
             // 
             // reload
             // 
+            this.reload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reload.BackgroundImage")));
+            this.reload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.reload.Location = new System.Drawing.Point(1015, 27);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(41, 36);
@@ -296,7 +298,7 @@ namespace cafeshopCsharp
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
-            // frmSeller
+            // FrmSeller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -308,7 +310,7 @@ namespace cafeshopCsharp
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmSeller";
+            this.Name = "FrmSeller";
             this.Text = "seller";
             this.Load += new System.EventHandler(this.FrmSeller_Load);
             this.panel2.ResumeLayout(false);

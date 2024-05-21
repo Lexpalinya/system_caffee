@@ -16,26 +16,55 @@ namespace cafeshopCsharp
     {
 
         private readonly ProductRepository _productRepository;
-        
+        private readonly BillRepository _billRepository;
+        private readonly BillDetailRepository _billDetailRepository;
+        AccountView accountView;
         string size, pid,price;
-        
+        int mbId=0 , mbpoint = 0;
+
 
 
         List<Product> data;
         public frmSell()
         {
-
-            _productRepository = new ProductRepository(new connectionDB().getConnection());
             InitializeComponent();
-      
 
+
+
+        }
+        public frmSell(AccountView account) {
+            InitializeComponent();
+            _productRepository = new ProductRepository(new connectionDB().getConnection());
+            _billRepository = new BillRepository(new connectionDB().getConnection());
+            _billDetailRepository = new BillDetailRepository(new connectionDB().getConnection());
+            this.accountView = account;
+
+            try {
+                lblusername.Text = "ບັນຊີ:" + account.AccUserName;
+            lblAccNameLastName.Text = " ຜູ້ຂາຍ:" +account.empName+" "+account.empLastName;
+           
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            
+            }
+          
         }
      
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
-
+        public void member(Member mb) {
+            mbId = mb.mbId;
+            mbpoint = mb.mbPoints;
+            btnmember.BackColor = Color.White;
+            if (mbId != 0) { 
+            btnmember.BackColor = Color.DarkGreen;
+            
+            }
+            
+        }
 
         private void reloadData() {
             data = (List<Product>)_productRepository.GetProductByStatus();
@@ -210,6 +239,90 @@ namespace cafeshopCsharp
         {
             listView1.Items.Clear();
             lblAllprice.Text = "0";
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            lblAllprice.Text = "0";
+        }
+
+        private void Addbilldetail(ListView list,int billId) {
+
+            foreach (ListViewItem item in list.Items)
+            {
+                BillDetail billDetail = new BillDetail
+                {
+                    BdblId = billId,
+                    BdPId = int.Parse(item.SubItems[0].Text.ToString()),
+                    BdSize = item.SubItems[3].Text.ToString(),
+                    BdPrice = int.Parse(item.SubItems[4].Text.ToString()),
+                    BdAmount = int.Parse(item.SubItems[5].Text.ToString()),
+                    BdTotal = int.Parse(item.SubItems[6].Text.ToString())
+                };
+
+                _billDetailRepository.AddBillDetail(billDetail);
+            }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (listView1.Items.Count==0) return;
+                Bill addbill = new Bill {
+                    BlAccId = accountView.AccId,
+                    BlDate = DateTime.Now,
+                    BlTotalMoney=double.Parse(lblAllprice.Text)
+                };
+                // add member id in bill
+                int billId;
+                if (mbId != 0)
+                {
+                    // Member -------------------------------
+                    addbill.BlMbId = mbId;
+                   billId=  _billRepository.AddBill(addbill);
+                    
+                }
+                else {
+                    // NoMember -------------------------------
+                   billId=  _billRepository.AddBillNoMember(addbill);
+                }
+
+                // addbilldetail ---------------------------------
+                    Addbilldetail(listView1,billId);
+
+
+
+
+
+                // reset memberid and point 
+                mbId = 0;
+                mbpoint = 0;
+                btnmember.BackColor = Color.White;
+
+                listView1.Items.Clear();
+                lblAllprice.Text = "0";
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            
+            }
+
+
+
+           
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            frmSearchMember frm = new frmSearchMember(this);
+            frm.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)

@@ -33,14 +33,13 @@ namespace cafeshopCsharp.modle
         public void AddBillDetail(BillDetail addBillDetail)
         {
             try {
-                string sql = "INSERT INTO tb_billdetail (bdblId,bdPId,bdSize,bdPrice,bdAmount,bdTotal) VALUES (@bdblId,@bdPId,@bdSize,@bdPrice,@bdAmount,@bdTotal)";
-                int rowAffected = dbConnection.Execute(sql,addBillDetail);
+                string sql = "INSERT INTO tb_billdetail (bdblId,bdPId,bdSize,bdPrice,bdAmount,bdTotal) " +
+                      "VALUES (@BdblId, @BdPId, @BdSize, @BdPrice, @BdAmount, @BdTotal)";
 
-                if (rowAffected == 1)
-                {
-                    MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
-                }
+                // Execute the SQL insert statement
+                int rowsAffected = dbConnection.Execute(sql, addBillDetail);
 
+                
             }
             catch (Exception ex)
             {

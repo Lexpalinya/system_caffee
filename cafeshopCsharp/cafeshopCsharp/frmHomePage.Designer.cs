@@ -32,45 +32,45 @@ namespace cafeshopCsharp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHomePage));
             this.panel10 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pnseller = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnemp = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnmember = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnhistory = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnsellmanage = new System.Windows.Forms.Panel();
+            this.pnsell = new System.Windows.Forms.Panel();
+            this.pnproduct = new System.Windows.Forms.Panel();
             this.pnMain = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnsalarymanagement = new System.Windows.Forms.Label();
+            this.pnpaidrecord = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.dashmain = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.pnreport = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.pnseller.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pnemp.SuspendLayout();
+            this.pnmember.SuspendLayout();
+            this.pnhistory.SuspendLayout();
+            this.pnsellmanage.SuspendLayout();
+            this.pnsell.SuspendLayout();
+            this.pnproduct.SuspendLayout();
             this.pnMain.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnpaidrecord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashmain)).BeginInit();
-            this.panel8.SuspendLayout();
+            this.pnreport.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel10
@@ -97,17 +97,16 @@ namespace cafeshopCsharp
             this.label9.TabIndex = 5;
             this.label9.Text = "Logout";
             // 
-            // panel9
+            // pnseller
             // 
-            this.panel9.BackColor = System.Drawing.Color.Green;
-            this.panel9.Controls.Add(this.label8);
-            this.panel9.ForeColor = System.Drawing.Color.Gold;
-            this.panel9.Location = new System.Drawing.Point(12, 432);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(279, 52);
-            this.panel9.TabIndex = 8;
-            this.panel9.Click += new System.EventHandler(this.panel9_Click);
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel9_Paint);
+            this.pnseller.BackColor = System.Drawing.Color.Green;
+            this.pnseller.Controls.Add(this.label8);
+            this.pnseller.ForeColor = System.Drawing.Color.Gold;
+            this.pnseller.Location = new System.Drawing.Point(12, 432);
+            this.pnseller.Name = "pnseller";
+            this.pnseller.Size = new System.Drawing.Size(279, 52);
+            this.pnseller.TabIndex = 8;
+            this.pnseller.Click += new System.EventHandler(this.panel9_Click);
             // 
             // label8
             // 
@@ -121,7 +120,6 @@ namespace cafeshopCsharp
             this.label8.Size = new System.Drawing.Size(66, 30);
             this.label8.TabIndex = 4;
             this.label8.Text = "ຜູ້ຂາຍ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel11
             // 
@@ -144,16 +142,16 @@ namespace cafeshopCsharp
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // panel6
+            // pnemp
             // 
-            this.panel6.BackColor = System.Drawing.Color.Green;
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.ForeColor = System.Drawing.Color.Gold;
-            this.panel6.Location = new System.Drawing.Point(12, 372);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(279, 52);
-            this.panel6.TabIndex = 7;
-            this.panel6.Click += new System.EventHandler(this.panel6_Click);
+            this.pnemp.BackColor = System.Drawing.Color.Green;
+            this.pnemp.Controls.Add(this.label5);
+            this.pnemp.ForeColor = System.Drawing.Color.Gold;
+            this.pnemp.Location = new System.Drawing.Point(12, 372);
+            this.pnemp.Name = "pnemp";
+            this.pnemp.Size = new System.Drawing.Size(279, 52);
+            this.pnemp.TabIndex = 7;
+            this.pnemp.Click += new System.EventHandler(this.panel6_Click);
             // 
             // label5
             // 
@@ -167,7 +165,7 @@ namespace cafeshopCsharp
             this.label5.Size = new System.Drawing.Size(110, 30);
             this.label5.TabIndex = 5;
             this.label5.Text = "ພະນັກງານ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+           
             // 
             // label1
             // 
@@ -183,16 +181,16 @@ namespace cafeshopCsharp
             this.label1.TabIndex = 2;
             this.label1.Text = "ຂາຍ";
             // 
-            // panel7
+            // pnmember
             // 
-            this.panel7.BackColor = System.Drawing.Color.Green;
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.ForeColor = System.Drawing.Color.Gold;
-            this.panel7.Location = new System.Drawing.Point(12, 312);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(279, 52);
-            this.panel7.TabIndex = 6;
-            this.panel7.Click += new System.EventHandler(this.panel7_Click);
+            this.pnmember.BackColor = System.Drawing.Color.Green;
+            this.pnmember.Controls.Add(this.label6);
+            this.pnmember.ForeColor = System.Drawing.Color.Gold;
+            this.pnmember.Location = new System.Drawing.Point(12, 312);
+            this.pnmember.Name = "pnmember";
+            this.pnmember.Size = new System.Drawing.Size(279, 52);
+            this.pnmember.TabIndex = 6;
+            this.pnmember.Click += new System.EventHandler(this.panel7_Click);
             // 
             // label6
             // 
@@ -206,7 +204,7 @@ namespace cafeshopCsharp
             this.label6.Size = new System.Drawing.Size(94, 30);
             this.label6.TabIndex = 4;
             this.label6.Text = "ສະມາຊິກ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+          
             // 
             // label2
             // 
@@ -231,18 +229,17 @@ namespace cafeshopCsharp
             this.label3.Size = new System.Drawing.Size(134, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "ເພີ່ມລາຍການ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // panel4
+            // pnhistory
             // 
-            this.panel4.BackColor = System.Drawing.Color.Green;
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.ForeColor = System.Drawing.Color.Gold;
-            this.panel4.Location = new System.Drawing.Point(12, 252);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(279, 52);
-            this.panel4.TabIndex = 5;
-            this.panel4.Click += new System.EventHandler(this.panel4_Click);
+            this.pnhistory.BackColor = System.Drawing.Color.Green;
+            this.pnhistory.Controls.Add(this.label4);
+            this.pnhistory.ForeColor = System.Drawing.Color.Gold;
+            this.pnhistory.Location = new System.Drawing.Point(12, 252);
+            this.pnhistory.Name = "pnhistory";
+            this.pnhistory.Size = new System.Drawing.Size(279, 52);
+            this.pnhistory.TabIndex = 5;
+            this.pnhistory.Click += new System.EventHandler(this.panel4_Click);
             // 
             // label4
             // 
@@ -257,55 +254,54 @@ namespace cafeshopCsharp
             this.label4.TabIndex = 5;
             this.label4.Text = "ປະຫວັດການຂາຍ";
             // 
-            // panel3
+            // pnsellmanage
             // 
-            this.panel3.BackColor = System.Drawing.Color.Green;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.ForeColor = System.Drawing.Color.Gold;
-            this.panel3.Location = new System.Drawing.Point(12, 131);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(279, 52);
-            this.panel3.TabIndex = 3;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.pnsellmanage.BackColor = System.Drawing.Color.Green;
+            this.pnsellmanage.Controls.Add(this.label2);
+            this.pnsellmanage.ForeColor = System.Drawing.Color.Gold;
+            this.pnsellmanage.Location = new System.Drawing.Point(12, 131);
+            this.pnsellmanage.Name = "pnsellmanage";
+            this.pnsellmanage.Size = new System.Drawing.Size(279, 52);
+            this.pnsellmanage.TabIndex = 3;
+            this.pnsellmanage.Click += new System.EventHandler(this.panel3_Click);
             // 
-            // panel2
+            // pnsell
             // 
-            this.panel2.BackColor = System.Drawing.Color.Green;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.ForeColor = System.Drawing.Color.Gold;
-            this.panel2.Location = new System.Drawing.Point(12, 71);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 52);
-            this.panel2.TabIndex = 2;
-            this.panel2.Click += new System.EventHandler(this.panel2_Click);
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.pnsell.BackColor = System.Drawing.Color.Green;
+            this.pnsell.Controls.Add(this.label1);
+            this.pnsell.ForeColor = System.Drawing.Color.Gold;
+            this.pnsell.Location = new System.Drawing.Point(12, 71);
+            this.pnsell.Name = "pnsell";
+            this.pnsell.Size = new System.Drawing.Size(279, 52);
+            this.pnsell.TabIndex = 2;
+            this.pnsell.Click += new System.EventHandler(this.panel2_Click);
             // 
-            // panel5
+            // pnproduct
             // 
-            this.panel5.BackColor = System.Drawing.Color.Green;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.ForeColor = System.Drawing.Color.Gold;
-            this.panel5.Location = new System.Drawing.Point(12, 192);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(279, 52);
-            this.panel5.TabIndex = 4;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
+            this.pnproduct.BackColor = System.Drawing.Color.Green;
+            this.pnproduct.Controls.Add(this.label3);
+            this.pnproduct.ForeColor = System.Drawing.Color.Gold;
+            this.pnproduct.Location = new System.Drawing.Point(12, 192);
+            this.pnproduct.Name = "pnproduct";
+            this.pnproduct.Size = new System.Drawing.Size(279, 52);
+            this.pnproduct.TabIndex = 4;
+            this.pnproduct.Click += new System.EventHandler(this.panel5_Click);
             // 
             // pnMain
             // 
             this.pnMain.BackColor = System.Drawing.Color.DarkGreen;
             this.pnMain.Controls.Add(this.panel12);
-            this.pnMain.Controls.Add(this.panel1);
+            this.pnMain.Controls.Add(this.pnpaidrecord);
             this.pnMain.Controls.Add(this.dashmain);
             this.pnMain.Controls.Add(this.panel10);
-            this.pnMain.Controls.Add(this.panel8);
-            this.pnMain.Controls.Add(this.panel9);
-            this.pnMain.Controls.Add(this.panel6);
-            this.pnMain.Controls.Add(this.panel7);
-            this.pnMain.Controls.Add(this.panel4);
-            this.pnMain.Controls.Add(this.panel5);
-            this.pnMain.Controls.Add(this.panel3);
-            this.pnMain.Controls.Add(this.panel2);
+            this.pnMain.Controls.Add(this.pnreport);
+            this.pnMain.Controls.Add(this.pnseller);
+            this.pnMain.Controls.Add(this.pnemp);
+            this.pnMain.Controls.Add(this.pnmember);
+            this.pnMain.Controls.Add(this.pnhistory);
+            this.pnMain.Controls.Add(this.pnproduct);
+            this.pnMain.Controls.Add(this.pnsellmanage);
+            this.pnMain.Controls.Add(this.pnsell);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMain.Location = new System.Drawing.Point(0, 0);
             this.pnMain.Name = "pnMain";
@@ -316,37 +312,39 @@ namespace cafeshopCsharp
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.Green;
-            this.panel12.Controls.Add(this.label11);
+            this.panel12.Controls.Add(this.pnsalarymanagement);
             this.panel12.ForeColor = System.Drawing.Color.Gold;
             this.panel12.Location = new System.Drawing.Point(12, 551);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(279, 52);
             this.panel12.TabIndex = 13;
+            
             // 
-            // label11
+            // pnsalarymanagement
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnsalarymanagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(84, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(136, 30);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "ຈ່າຍເງິນເດືອນ";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.pnsalarymanagement.AutoSize = true;
+            this.pnsalarymanagement.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnsalarymanagement.Location = new System.Drawing.Point(84, 12);
+            this.pnsalarymanagement.Name = "pnsalarymanagement";
+            this.pnsalarymanagement.Size = new System.Drawing.Size(136, 30);
+            this.pnsalarymanagement.TabIndex = 5;
+            this.pnsalarymanagement.Text = "ຈ່າຍເງິນເດືອນ";
+            this.pnsalarymanagement.Click += new System.EventHandler(this.pnsalarymanagement_Click);
             // 
-            // panel1
+            // pnpaidrecord
             // 
-            this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.ForeColor = System.Drawing.Color.Gold;
-            this.panel1.Location = new System.Drawing.Point(12, 492);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 52);
-            this.panel1.TabIndex = 10;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnpaidrecord.BackColor = System.Drawing.Color.Green;
+            this.pnpaidrecord.Controls.Add(this.label10);
+            this.pnpaidrecord.ForeColor = System.Drawing.Color.Gold;
+            this.pnpaidrecord.Location = new System.Drawing.Point(12, 492);
+            this.pnpaidrecord.Name = "pnpaidrecord";
+            this.pnpaidrecord.Size = new System.Drawing.Size(279, 52);
+            this.pnpaidrecord.TabIndex = 10;
+            this.pnpaidrecord.Click += new System.EventHandler(this.pnpaidrecord_Click);
+           
             // 
             // label10
             // 
@@ -360,7 +358,7 @@ namespace cafeshopCsharp
             this.label10.Size = new System.Drawing.Size(152, 30);
             this.label10.TabIndex = 5;
             this.label10.Text = "ບັນທຶກລາຍຈ່າຍ";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+           
             // 
             // dashmain
             // 
@@ -373,16 +371,16 @@ namespace cafeshopCsharp
             this.dashmain.TabStop = false;
             this.dashmain.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // panel8
+            // pnreport
             // 
-            this.panel8.BackColor = System.Drawing.Color.Green;
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.ForeColor = System.Drawing.Color.Gold;
-            this.panel8.Location = new System.Drawing.Point(12, 609);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(279, 52);
-            this.panel8.TabIndex = 9;
-            this.panel8.Click += new System.EventHandler(this.Panel8_Click);
+            this.pnreport.BackColor = System.Drawing.Color.Green;
+            this.pnreport.Controls.Add(this.label7);
+            this.pnreport.ForeColor = System.Drawing.Color.Gold;
+            this.pnreport.Location = new System.Drawing.Point(12, 609);
+            this.pnreport.Name = "pnreport";
+            this.pnreport.Size = new System.Drawing.Size(279, 52);
+            this.pnreport.TabIndex = 9;
+            this.pnreport.Click += new System.EventHandler(this.Panel8_Click);
             // 
             // label7
             // 
@@ -412,30 +410,30 @@ namespace cafeshopCsharp
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.pnseller.ResumeLayout(false);
+            this.pnseller.PerformLayout();
             this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pnemp.ResumeLayout(false);
+            this.pnemp.PerformLayout();
+            this.pnmember.ResumeLayout(false);
+            this.pnmember.PerformLayout();
+            this.pnhistory.ResumeLayout(false);
+            this.pnhistory.PerformLayout();
+            this.pnsellmanage.ResumeLayout(false);
+            this.pnsellmanage.PerformLayout();
+            this.pnsell.ResumeLayout(false);
+            this.pnsell.PerformLayout();
+            this.pnproduct.ResumeLayout(false);
+            this.pnproduct.PerformLayout();
             this.pnMain.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnpaidrecord.ResumeLayout(false);
+            this.pnpaidrecord.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashmain)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            this.pnreport.ResumeLayout(false);
+            this.pnreport.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -443,29 +441,29 @@ namespace cafeshopCsharp
         #endregion
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel pnseller;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnemp;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnmember;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnhistory;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnsellmanage;
+        private System.Windows.Forms.Panel pnsell;
+        private System.Windows.Forms.Panel pnproduct;
         private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox dashmain;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnpaidrecord;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel pnreport;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label pnsalarymanagement;
     }
 }

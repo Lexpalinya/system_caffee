@@ -65,7 +65,7 @@ namespace cafeshopCsharp.modle
             {
 
                 string sql = " SELECT * FROM v_account WHERE accUserName=@Username AND accPassword=@Password";
-                return dbConnection.QueryFirst<AccountView>(sql, new { Username = acc.AccUserName, Password = acc.AccPassword });
+                return dbConnection.QueryFirstOrDefault<AccountView>(sql, new { Username = acc.AccUserName, Password = acc.AccPassword });
 
             }
             catch (Exception ex)

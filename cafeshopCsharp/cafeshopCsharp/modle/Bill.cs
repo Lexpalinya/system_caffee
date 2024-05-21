@@ -30,29 +30,40 @@ namespace cafeshopCsharp.modle
 
 
         // Add Bill- -------------------------------------------------------------------------
-        public void AddBill(Bill appBill) {
+        public int AddBill(Bill addBill) {
             try {
-                string sql = "INSERT INTO tb_bill (blMbId,blAccId,blTotalMoney,blDate) VALUES (@blMbId,@blAccId,@blTotalMoney,@blDate) ";
-                int rowAffected = dbConnection.Execute(sql,appBill);
-                
+                string sql = "INSERT INTO tb_bill (blMbId,blAccId,blTotalMoney,blDate) VALUES (@blMbId,@blAccId,@blTotalMoney,@blDate); "+ "SELECT LAST_INSERT_ID();";
+                int lastInsertedId = dbConnection.QuerySingle<int>(sql, addBill);
 
-            if (rowAffected == 1)
-            {
-                MessageBox.Show("ບັນທຶກສຳເລັດ", "Save", MessageBoxButtons.OK);
-            }
-
+                return lastInsertedId;
         }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
             }
         }
-    
-    
-    
-    
-    
+
+        public int AddBillNoMember(Bill addBill)
+        {
+            try
+            {
+                string sql = "INSERT INTO tb_bill (blAccId,blTotalMoney,blDate) VALUES (@blAccId,@blTotalMoney,@blDate); " + "SELECT LAST_INSERT_ID();"; ;
+                int lastInsertedId = dbConnection.QuerySingle<int>(sql, addBill);
+
+                return lastInsertedId;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+
+
+
+
     }
 
 }

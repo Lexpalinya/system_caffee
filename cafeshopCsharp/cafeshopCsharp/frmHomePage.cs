@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cafeshopCsharp.modle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,30 @@ namespace cafeshopCsharp
 {
     public partial class frmHomePage : Form
     {
-
+        AccountView Accountview;
        
         public frmHomePage()
         {
             InitializeComponent();
-            panel11.Visible = false;
+           
         
           
+        }
+        public frmHomePage(AccountView account) {
+            this.Accountview = account;
+            InitializeComponent();
+            panel11.Visible = false;
+            if (Accountview.AccLevel=="Seller") {
+                pnpaidrecord.Enabled = false;
+                pnproduct.Enabled = false;
+                pnmember.Enabled = false;
+                pnreport.Enabled = false;
+                pnsalarymanagement.Enabled = false;
+                pnseller.Enabled = false;
+                pnemp.Enabled = false;
+
+            }
+
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -55,10 +72,9 @@ namespace cafeshopCsharp
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            frmSell sell = new frmSell();
+            frmSell sell = new frmSell(Accountview);
             setmdi(sell);
-            
-  
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -72,28 +88,9 @@ namespace cafeshopCsharp
             panel10.Location = new Point(12,placelogoutBTY);
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-            frmEmployee selmn = new frmEmployee();
-            setmdi(selmn);
-        }
+      
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-            frmMember member = new frmMember();
-            setmdi(member);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-            frmPaidrecord paidrecord = new frmPaidrecord();
-            setmdi(paidrecord);
-        }
+       
 
         private void panel3_Click(object sender, EventArgs e)
         {
@@ -128,8 +125,9 @@ namespace cafeshopCsharp
 
         private void panel7_Click(object sender, EventArgs e)
         {
-            frmMember selmn = new frmMember();
-            setmdi(selmn);
+           
+            frmMember member = new frmMember();
+            setmdi(member);
         }
 
         private void panel6_Click(object sender, EventArgs e)
@@ -144,30 +142,20 @@ namespace cafeshopCsharp
             setmdi(selmn);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
+      
 
+        private void pnpaidrecord_Click(object sender, EventArgs e)
+        {
+            frmPaidrecord paidrecord = new frmPaidrecord();
+            setmdi(paidrecord);
         }
 
-        private void label11_Click(object sender, EventArgs e)
+       
+
+        private void pnsalarymanagement_Click(object sender, EventArgs e)
         {
             FrmSalaryPayment salaryPayment = new FrmSalaryPayment();
             setmdi(salaryPayment);
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
