@@ -49,6 +49,7 @@ namespace cafeshopCsharp
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.btnmember = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnclearlistview = new System.Windows.Forms.Button();
@@ -317,6 +318,7 @@ namespace cafeshopCsharp
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.btnmember);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label1);
@@ -325,6 +327,16 @@ namespace cafeshopCsharp
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(663, 151);
             this.panel3.TabIndex = 1;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(423, 102);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 35);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "ລົບລາຍການ";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_2);
             // 
             // btnmember
             // 
@@ -475,8 +487,6 @@ namespace cafeshopCsharp
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView1_ItemCheck);
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -667,5 +677,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Button btnmember;
         private System.Windows.Forms.Label lblAccNameLastName;
         private System.Windows.Forms.Label lblusername;
+        private System.Windows.Forms.Button button9;
     }
 }

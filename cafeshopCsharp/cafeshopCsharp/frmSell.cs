@@ -2,158 +2,135 @@
 using cafeshopCsharp.modle;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace cafeshopCsharp
 {
     public partial class frmSell : Form
     {
-
         private readonly ProductRepository _productRepository;
         private readonly BillRepository _billRepository;
         private readonly BillDetailRepository _billDetailRepository;
         AccountView accountView;
-        string size, pid,price;
-        int mbId=0 , mbpoint = 0;
-
-
+        string size, pid, price;
+        int mbId = 0, mbpoint = 0;
 
         List<Product> data;
+
         public frmSell()
         {
             InitializeComponent();
-
-
-
+            // Initialize repositories in constructor
+            var connection = new connectionDB().getConnection();
+            _productRepository = new ProductRepository(connection);
+            _billRepository = new BillRepository(connection);
+            _billDetailRepository = new BillDetailRepository(connection);
         }
-        public frmSell(AccountView account) {
-            InitializeComponent();
-            _productRepository = new ProductRepository(new connectionDB().getConnection());
-            _billRepository = new BillRepository(new connectionDB().getConnection());
-            _billDetailRepository = new BillDetailRepository(new connectionDB().getConnection());
-            this.accountView = account;
 
-            try {
-                lblusername.Text = "ບັນຊີ:" + account.AccUserName;
-            lblAccNameLastName.Text = " ຜູ້ຂາຍ:" +account.empName+" "+account.empLastName;
-           
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            
-            }
-          
-        }
-     
-        private void label7_Click(object sender, EventArgs e)
+        public frmSell(AccountView account) : this() // Call the default constructor
         {
-
+            InitializeAccount(account);
         }
-        public void member(Member mb) {
-            mbId = mb.mbId;
-            mbpoint = mb.mbPoints;
-            btnmember.BackColor = Color.White;
-            if (mbId != 0) { 
-            btnmember.BackColor = Color.DarkGreen;
-            
+
+        private void InitializeAccount(AccountView account)
+        {
+            if (account != null)
+            {
+                accountView = account;
+                lblusername.Text = $"ບັນຊີ: {account.AccUserName}";
+                lblAccNameLastName.Text = $" ຜູ້ຂາຍ: {account.empName} {account.empLastName}";
             }
-            
         }
 
-        private void reloadData() {
+        private void reloadData()
+        {
             data = (List<Product>)_productRepository.GetProductByStatus();
-            createCard(data.ToArray<Product>());
+            createCard(data.ToArray());
         }
 
         private void Sell_Load(object sender, EventArgs e)
         {
-
             reloadData();
-           
         }
-        private void createCard(Product[] product) {
+
+        private void createCard(Product[] products)
+        {
             pnMain.Controls.Clear();
-            int x = 10,y=10;           
+            int x = 10, y = 10;
             int cardSizeX = 280, cardSizeY = 270;
-            foreach (var i in Enumerable.Range(0, product.Length)) {
+
+            foreach (var i in Enumerable.Range(0, products.Length))
+            {
                 int col = i % 4;
                 int rowthis = i / 4;
 
-                ProductCards cards = new ProductCards(product[i],this)
+                ProductCards cards = new ProductCards(products[i], this)
                 {
-                    Location = new Point(x+col*cardSizeX,y+cardSizeY*rowthis)
+                    Location = new Point(x + col * cardSizeX, y + cardSizeY * rowthis)
                 };
-
-
 
                 pnMain.Controls.Add(cards);
             }
+
             pnMain.AutoScroll = true;
             pnMain.VerticalScroll.Enabled = true;
             pnMain.VerticalScroll.Visible = true;
-
         }
 
         public void createPanelSize(Product product)
         {
-            string[] prices = product.PPrice.Split(',').ToArray();
-            string[] sizes = product.PSize.Split(',').ToArray();
+            string[] prices = product.PPrice.Split(',');
+            string[] sizes = product.PSize.Split(',');
             Button selectedButton = null;
 
-
             pnSize.Controls.Clear();
-
             int X = 15, Y = 10;
-            int columnWidth = 100,rowHight=50;
-            foreach (int i in Enumerable.Range(0,sizes.Length)) {
+            int columnWidth = 100, rowHeight = 50;
 
+            foreach (var i in Enumerable.Range(0, sizes.Length))
+            {
                 int col = i % 2;
                 int row = i / 2;
 
-                Button button = new Button {
+                Button button = new Button
+                {
                     Text = sizes[i],
                     TextAlign = ContentAlignment.MiddleCenter,
                     Size = new Size(94, 40),
-                    Font = new Font("Times new roman", 16, FontStyle.Bold),
-                    Location = new Point(X + col * columnWidth, Y + row * rowHight)
-                    ,BackColor=Color.Green,
-                    ForeColor=Color.Gold,
-
+                    Font = new Font("Times New Roman", 16, FontStyle.Bold),
+                    Location = new Point(X + col * columnWidth, Y + row * rowHeight),
+                    BackColor = Color.Green,
+                    ForeColor = Color.Gold,
                 };
-                
+
                 pid = product.PId.ToString();
-                price =prices[i].ToString();
-                
+                price = prices[i].ToString();
+
                 button.Click += (sender, e) =>
                 {
                     size = sizes[i];
-                    foreach (var control in pnSize.Controls) {
-                        if (control is Button btn) {
+                    foreach (var control in pnSize.Controls)
+                    {
+                        if (control is Button btn)
+                        {
                             btn.BackColor = Color.Green;
                             btn.ForeColor = Color.Gold;
                         }
-                    
                     }
                     button.ForeColor = Color.Gold;
                     button.BackColor = Color.Black;
                     lblPrice.Text = prices[i];
-                  
                     txtTotal.Text = (int.Parse(prices[i]) * nmAmount.Value).ToString();
-
                 };
-                if (i == 0) {
+
+                if (i == 0)
+                {
                     selectedButton = button;
                     lblPrice.Text = prices[i];
-
                     txtTotal.Text = (int.Parse(prices[i]) * nmAmount.Value).ToString();
-
-
                 }
 
                 pnSize.Controls.Add(button);
@@ -162,52 +139,41 @@ namespace cafeshopCsharp
             selectedButton?.PerformClick();
         }
 
-
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             frmSearchMember sm = new frmSearchMember();
             sm.Show();
         }
 
-      
-        public void seleteProductSetText(Product product) {
+        public void seleteProductSetText(Product product)
+        {
             try
             {
-
                 lblname.Text = product.PName;
                 lblType.Text = product.PType;
-
-               
-               createPanelSize(product);
-
+                createPanelSize(product);
             }
-            catch (Exception ex) {
-
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
-
-            
-
         }
 
         private void nmAmount_ValueChanged(object sender, EventArgs e)
         {
             int total = (int)(nmAmount.Value * int.Parse(lblPrice.Text));
-            txtTotal.Text = total.ToString() ;
+            txtTotal.Text = total.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            searchByType("Hot");   
+            searchByType("Hot");
         }
 
-        private void searchByType(String findType) {
-
-            var find = data.Where<Product>(item=>item.PType==findType);
-            createCard(find.ToArray<Product>());
+        private void searchByType(string findType)
+        {
+            var find = data.Where(item => item.PType == findType);
+            createCard(find.ToArray());
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -230,93 +196,66 @@ namespace cafeshopCsharp
             reloadData();
         }
 
-        private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-           
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
-            lblAllprice.Text = "0";
+            ResetUI();
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
-            lblAllprice.Text = "0";
+            ResetUI();
         }
 
-        private void Addbilldetail(ListView list,int billId) {
-
+        private void Addbilldetail(ListView list, int billId)
+        {
             foreach (ListViewItem item in list.Items)
             {
                 BillDetail billDetail = new BillDetail
                 {
                     BdblId = billId,
-                    BdPId = int.Parse(item.SubItems[0].Text.ToString()),
-                    BdSize = item.SubItems[3].Text.ToString(),
-                    BdPrice = int.Parse(item.SubItems[4].Text.ToString()),
-                    BdAmount = int.Parse(item.SubItems[5].Text.ToString()),
-                    BdTotal = int.Parse(item.SubItems[6].Text.ToString())
+                    BdPId = int.Parse(item.SubItems[0].Text),
+                    BdSize = item.SubItems[3].Text,
+                    BdPrice = int.Parse(item.SubItems[4].Text),
+                    BdAmount = int.Parse(item.SubItems[5].Text),
+                    BdTotal = int.Parse(item.SubItems[6].Text)
                 };
 
                 _billDetailRepository.AddBillDetail(billDetail);
             }
         }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
             {
+                if (listView1.Items.Count == 0) return;
 
-                if (listView1.Items.Count==0) return;
-                Bill addbill = new Bill {
+                Bill addbill = new Bill
+                {
                     BlAccId = accountView.AccId,
                     BlDate = DateTime.Now,
-                    BlTotalMoney=double.Parse(lblAllprice.Text)
+                    BlTotalMoney = double.Parse(lblAllprice.Text)
                 };
-                // add member id in bill
+
                 int billId;
                 if (mbId != 0)
                 {
-                    // Member -------------------------------
                     addbill.BlMbId = mbId;
-                   billId=  _billRepository.AddBill(addbill);
-                    
+                    billId = _billRepository.AddBill(addbill);
                 }
-                else {
-                    // NoMember -------------------------------
-                   billId=  _billRepository.AddBillNoMember(addbill);
+                else
+                {
+                    billId = _billRepository.AddBillNoMember(addbill);
                 }
 
-                // addbilldetail ---------------------------------
-                    Addbilldetail(listView1,billId);
+                Addbilldetail(listView1, billId);
 
-
-
-
-
-                // reset memberid and point 
-                mbId = 0;
-                mbpoint = 0;
-                btnmember.BackColor = Color.White;
-
-                listView1.Items.Clear();
-                lblAllprice.Text = "0";
+                ResetUI();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
-            
             }
-
-
-
-           
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -327,7 +266,7 @@ namespace cafeshopCsharp
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var search = data.Where<Product>(item => item.PName.ToLower().Contains(txtSearch.Text.ToLower()));
+            var search = data.Where(item => item.PName.ToLower().Contains(txtSearch.Text.ToLower()));
             createCard(search.ToArray());
         }
 
@@ -337,13 +276,13 @@ namespace cafeshopCsharp
             double allprice = 0;
             bool orderExists = false;
 
-
-            foreach (ListViewItem item in listView1.Items) {
-                if (item.SubItems[0].Text==pid&& item.SubItems[3].Text==size) {
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.SubItems[0].Text == pid && item.SubItems[3].Text == size)
+                {
                     int existingAmount = int.Parse(item.SubItems[5].Text);
                     int newAmount = existingAmount + int.Parse(nmAmount.Value.ToString());
                     int newTotal = newAmount * int.Parse(price);
-
 
                     item.SubItems[5].Text = newAmount.ToString();
                     item.SubItems[6].Text = newTotal.ToString();
@@ -352,14 +291,45 @@ namespace cafeshopCsharp
 
                 allprice += double.Parse(item.SubItems[6].Text);
             }
-            if (!orderExists) {
 
+            if (!orderExists)
+            {
                 var newOrder = new ListViewItem(order);
                 listView1.Items.Add(newOrder);
                 allprice += double.Parse(txtTotal.Text);
             }
+
             lblAllprice.Text = allprice.ToString();
         }
-      
+
+        private void button9_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+        private void ResetUI()
+        {
+            listView1.Items.Clear();
+            lblAllprice.Text = "0";
+            mbId = 0;
+            mbpoint = 0;
+            btnmember.BackColor = Color.White;
+        }
+        public void member(Member memberData)
+        {
+            if (memberData != null)
+            {
+                mbId = memberData.mbId;
+                mbpoint = memberData.mbPoints;
+                btnmember.BackColor = Color.Green; // Assuming btnmember is a Button control indicating membership status
+                                                   // You can add other logic to handle member data as needed
+            }
+            else
+            {
+                // Handle the case where memberData is null, if necessary
+            }
+        }
     }
 }

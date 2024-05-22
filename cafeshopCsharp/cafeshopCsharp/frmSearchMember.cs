@@ -7,7 +7,6 @@ namespace cafeshopCsharp
 {
     public partial class frmSearchMember : Form
     {
-
         private readonly MemberRepository _memberRepository;
         private connectionDB conn = new connectionDB();
         private frmSell frmsell;
@@ -17,17 +16,14 @@ namespace cafeshopCsharp
         public frmSearchMember()
         {
             InitializeComponent();
-           
-
-
         }
-        public frmSearchMember(frmSell frm) {
-            this.frmsell = frm;
 
+        public frmSearchMember(frmSell frm)
+        {
+            this.frmsell = frm;
             _memberRepository = new MemberRepository(conn.getConnection());
             InitializeComponent();
         }
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -41,7 +37,6 @@ namespace cafeshopCsharp
                 if (checkText())
                 {
                     MessageBox.Show("ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
@@ -51,63 +46,47 @@ namespace cafeshopCsharp
                     mbPhoneNumber = txtPhoneNumber.Text,
                     mbAddress = txtAddress.Text,
                     mbPoints = 0
-
-
                 };
+
                 if (isExistingMember(txtPhoneNumber.Text))
                 {
                     MessageBox.Show("ເບີນີ້\n" + txtPhoneNumber.Text + "\nໄດ້ສະໝັກແລ້ວ");
                     return;
                 }
 
-               int id= _memberRepository.AddMember(memberData);
+                int id = _memberRepository.AddMember(memberData);
                 memberData.mbId = id;
-               
-                frmsell.member(memberData);
+
+                frmsell.member(memberData); // Ensure this method is now defined in frmSell
                 this.Close();
-                // send memberData  -----------------------------------------------------
-
             }
-            else {
-
+            else
+            {
                 if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
                 {
                     MessageBox.Show("ບໍ່ມີເບີສະມາຊິກ", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
-                    // send memberData  -----------------------------------------------------
-
                     return;
                 }
-              
+
                 memberData = _memberRepository.GetMember(txtPhoneNumber.Text);
                 if (memberData != null)
                 {
                     txtName.Text = memberData?.mbName;
                     txtAddress.Text = memberData?.mbAddress;
 
-
-                    // send memberData  -----------------------------------------------------
-
-                    frmsell.member(memberData);
-
+                    frmsell.member(memberData); // Ensure this method is now defined in frmSell
                     this.Close();
-
-
                 }
-                else {
+                else
+                {
                     MessageBox.Show("ບໍ່ພົບ ເບີສະມາຊິກ : " + txtPhoneNumber.Text);
                     txtPhoneNumber.Focus();
                 }
             }
-             
         }
-
-
 
         private bool isExistingMember(string phoneNumber)
         {
-            
             return _memberRepository.GetMember(phoneNumber) != null;
         }
 
@@ -122,10 +101,9 @@ namespace cafeshopCsharp
                 btn.Text = "ຄົ້ນຫາ";
             }
         }
-        // textboxfocus  ---------------------------------------------------------------------
-        private void textFocus() {
 
-
+        private void textFocus()
+        {
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 txtName.Focus();
@@ -134,21 +112,17 @@ namespace cafeshopCsharp
             else if (string.IsNullOrWhiteSpace(txtAddress.Text))
             {
                 txtAddress.Focus();
-                txtAddress.SelectAll(); 
+                txtAddress.SelectAll();
             }
             else if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
             {
                 txtPhoneNumber.Focus();
                 txtPhoneNumber.SelectAll();
             }
-
-
-
         }
-       
-        //  ckeck textbox for add member  -------------------------------------
-        private bool checkText() {
 
+        private bool checkText()
+        {
             bool condition = string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtAddress.Text) || string.IsNullOrWhiteSpace(txtPhoneNumber.Text);
             return condition;
         }
@@ -160,11 +134,11 @@ namespace cafeshopCsharp
                 memberData.mbId = 0;
                 memberData.mbPoints = 0;
 
-                frmsell.member(memberData);
+                frmsell.member(memberData); // Ensure this method is now defined in frmSell
                 this.Close();
-
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
