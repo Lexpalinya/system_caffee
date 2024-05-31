@@ -145,6 +145,18 @@
     <Compile Include="frmHomePage.Designer.cs">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowDetail.Designer.cs">
+      <DependentUpon>frmShowDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="historyCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="historyCard.Designer.cs">
+      <DependentUpon>historyCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="modle\Account.cs" />
     <Compile Include="modle\Bill.cs" />
     <Compile Include="modle\BillDetail.cs" />
@@ -241,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductAdding.resx">
       <DependentUpon>frmProductAdding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowDetail.resx">
+      <DependentUpon>frmShowDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="historyCard.resx">
+      <DependentUpon>historyCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productCards.resx">
       <DependentUpon>productCards.cs</DependentUpon>

@@ -29,10 +29,21 @@ namespace cafeshopCsharp
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(1560, 26);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 37);
+            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 5, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -46,17 +57,7 @@ namespace cafeshopCsharp
             this.label1.TabIndex = 4;
             this.label1.Text = "ຍອດຂາຍລາຍວັນ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1560, 26);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 35);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 5, 1, 0, 0, 0, 0);
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -64,21 +65,21 @@ namespace cafeshopCsharp
             this.panel1.Location = new System.Drawing.Point(36, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1751, 970);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 1;
             // 
-            // sellHistory
+            // frmSellHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(1789, 1080);
+            this.ClientSize = new System.Drawing.Size(1789, 1061);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.Name = "sellHistory";
+            this.Name = "frmSellHistory";
             this.Text = "sellHistory";
             this.Load += new System.EventHandler(this.sellHistory_Load);
             this.ResumeLayout(false);
@@ -86,8 +87,8 @@ namespace cafeshopCsharp
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
     }
 }

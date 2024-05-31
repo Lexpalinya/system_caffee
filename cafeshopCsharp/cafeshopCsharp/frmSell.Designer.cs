@@ -30,7 +30,6 @@ namespace cafeshopCsharp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSell));
-            this.pnMain = new System.Windows.Forms.Panel();
             this.txtTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,6 +74,7 @@ namespace cafeshopCsharp
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.pnMain = new System.Windows.Forms.Panel();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmAmount)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,15 +83,6 @@ namespace cafeshopCsharp
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnMain
-            // 
-            this.pnMain.BackColor = System.Drawing.Color.DarkGray;
-            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(663, 87);
-            this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1107, 780);
-            this.pnMain.TabIndex = 10;
             // 
             // txtTotal
             // 
@@ -118,7 +109,7 @@ namespace cafeshopCsharp
             this.label6.ForeColor = System.Drawing.Color.Gold;
             this.label6.Location = new System.Drawing.Point(981, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 30);
+            this.label6.Size = new System.Drawing.Size(98, 33);
             this.label6.TabIndex = 5;
             this.label6.Text = "ລາຄາລວມ";
             // 
@@ -132,7 +123,7 @@ namespace cafeshopCsharp
             this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(353, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 30);
+            this.label4.Size = new System.Drawing.Size(137, 33);
             this.label4.TabIndex = 14;
             this.label4.Text = "ລາຄາ/ ຂະໜາດ";
             // 
@@ -147,7 +138,7 @@ namespace cafeshopCsharp
             this.label5.ForeColor = System.Drawing.Color.Gold;
             this.label5.Location = new System.Drawing.Point(109, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 30);
+            this.label5.Size = new System.Drawing.Size(97, 33);
             this.label5.TabIndex = 7;
             this.label5.Text = "ຊື່ລາຍການ";
             // 
@@ -161,7 +152,7 @@ namespace cafeshopCsharp
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(31, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 30);
+            this.label3.Size = new System.Drawing.Size(74, 33);
             this.label3.TabIndex = 14;
             this.label3.Text = "ປະເພດ";
             // 
@@ -214,7 +205,7 @@ namespace cafeshopCsharp
             this.label7.ForeColor = System.Drawing.Color.Gold;
             this.label7.Location = new System.Drawing.Point(618, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 30);
+            this.label7.Size = new System.Drawing.Size(57, 33);
             this.label7.TabIndex = 24;
             this.label7.Text = "ລາຄາ";
             // 
@@ -273,7 +264,7 @@ namespace cafeshopCsharp
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(772, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 30);
+            this.label2.Size = new System.Drawing.Size(75, 33);
             this.label2.TabIndex = 4;
             this.label2.Text = "ຈຳນວນ";
             // 
@@ -297,7 +288,7 @@ namespace cafeshopCsharp
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(22, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 30);
+            this.label1.Size = new System.Drawing.Size(49, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "ຂາຍ";
             // 
@@ -330,9 +321,9 @@ namespace cafeshopCsharp
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(423, 102);
+            this.button9.Location = new System.Drawing.Point(539, 104);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 35);
+            this.button9.Size = new System.Drawing.Size(111, 35);
             this.button9.TabIndex = 14;
             this.button9.Text = "ລົບລາຍການ";
             this.button9.UseVisualStyleBackColor = true;
@@ -343,7 +334,7 @@ namespace cafeshopCsharp
             this.btnmember.BackColor = System.Drawing.Color.White;
             this.btnmember.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnmember.BackgroundImage")));
             this.btnmember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnmember.Location = new System.Drawing.Point(589, 87);
+            this.btnmember.Location = new System.Drawing.Point(582, 17);
             this.btnmember.Name = "btnmember";
             this.btnmember.Size = new System.Drawing.Size(68, 50);
             this.btnmember.TabIndex = 13;
@@ -448,7 +439,7 @@ namespace cafeshopCsharp
             this.label9.ForeColor = System.Drawing.Color.Gold;
             this.label9.Location = new System.Drawing.Point(22, 992);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 30);
+            this.label9.Size = new System.Drawing.Size(114, 33);
             this.label9.TabIndex = 27;
             this.label9.Text = "ລາຄາທັງໝົດ";
             // 
@@ -552,7 +543,7 @@ namespace cafeshopCsharp
             // 
             this.txtSearch.Location = new System.Drawing.Point(648, 25);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(371, 35);
+            this.txtSearch.Size = new System.Drawing.Size(371, 38);
             this.txtSearch.TabIndex = 4;
             // 
             // button6
@@ -599,9 +590,18 @@ namespace cafeshopCsharp
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // pnMain
+            // 
+            this.pnMain.BackColor = System.Drawing.Color.DarkGray;
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Location = new System.Drawing.Point(663, 87);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1107, 780);
+            this.pnMain.TabIndex = 10;
+            // 
             // frmSell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1800, 1061);
@@ -632,8 +632,6 @@ namespace cafeshopCsharp
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.Label txtTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -678,5 +676,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Label lblAccNameLastName;
         private System.Windows.Forms.Label lblusername;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel pnMain;
     }
 }

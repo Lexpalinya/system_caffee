@@ -30,7 +30,6 @@ namespace cafeshopCsharp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSellManage));
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -38,18 +37,10 @@ namespace cafeshopCsharp
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.LightYellow;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1604, 966);
-            this.mainPanel.TabIndex = 0;
             // 
             // comboBox1
             // 
@@ -62,7 +53,7 @@ namespace cafeshopCsharp
             "Other"});
             this.comboBox1.Location = new System.Drawing.Point(948, 14);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 38);
+            this.comboBox1.Size = new System.Drawing.Size(201, 41);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -86,7 +77,7 @@ namespace cafeshopCsharp
             this.checkBox1.ForeColor = System.Drawing.Color.Gold;
             this.checkBox1.Location = new System.Drawing.Point(1209, 17);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(197, 34);
+            this.checkBox1.Size = new System.Drawing.Size(177, 37);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "ລາຍການທີ່ສະແດງ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -132,9 +123,18 @@ namespace cafeshopCsharp
             this.panel3.Size = new System.Drawing.Size(1604, 966);
             this.panel3.TabIndex = 6;
             // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.LightYellow;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1604, 966);
+            this.mainPanel.TabIndex = 1;
+            // 
             // frmSellManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1669, 1061);
@@ -155,8 +155,6 @@ namespace cafeshopCsharp
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -164,5 +162,6 @@ namespace cafeshopCsharp
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

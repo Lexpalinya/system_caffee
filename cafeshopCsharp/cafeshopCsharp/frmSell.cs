@@ -16,7 +16,7 @@ namespace cafeshopCsharp
         private readonly BillDetailRepository _billDetailRepository;
         AccountView accountView;
         string size, pid, price;
-        int mbId = 0, mbpoint = 0;
+        int mbId = 0, mbpoint = 0,amount=0;
 
         List<Product> data;
 
@@ -108,6 +108,11 @@ namespace cafeshopCsharp
 
                 pid = product.PId.ToString();
                 price = prices[i].ToString();
+                amount = product.PAmount;
+
+
+
+
 
                 button.Click += (sender, e) =>
                 {
@@ -235,6 +240,7 @@ namespace cafeshopCsharp
                     BlAccId = accountView.AccId,
                     BlDate = DateTime.Now,
                     BlTotalMoney = double.Parse(lblAllprice.Text)
+                   ,BlPoint=(int) int.Parse(lblAllprice.Text)/1000
                 };
 
                 int billId;
@@ -251,6 +257,7 @@ namespace cafeshopCsharp
                 Addbilldetail(listView1, billId);
 
                 ResetUI();
+                MessageBox.Show("ຂາຍສຳເລັດແລ້ວ");
             }
             catch (Exception ex)
             {
@@ -272,6 +279,10 @@ namespace cafeshopCsharp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (amount < nmAmount.Value) {
+                MessageBox.Show("ຈຳນວນບໍ່ພໍ"); 
+                return;
+            }
             var order = new string[] { pid, lblname.Text, lblType.Text, size, price, nmAmount.Value.ToString(), txtTotal.Text };
             double allprice = 0;
             bool orderExists = false;
@@ -301,10 +312,12 @@ namespace cafeshopCsharp
 
             lblAllprice.Text = allprice.ToString();
         }
+        
+        
 
         private void button9_Click_2(object sender, EventArgs e)
         {
-            
+                listView1.Items.Remove(listView1.SelectedItems[0]);
         }
 
 

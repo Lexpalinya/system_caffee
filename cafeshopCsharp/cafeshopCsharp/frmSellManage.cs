@@ -57,6 +57,7 @@ namespace cafeshopCsharp
             mainPanel.AutoScroll = true;
             mainPanel.VerticalScroll.Enabled=true;
             mainPanel.VerticalScroll.Visible = true;
+            
 
         }
 
