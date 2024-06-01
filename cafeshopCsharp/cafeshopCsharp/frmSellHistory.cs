@@ -17,12 +17,15 @@ namespace cafeshopCsharp
     public partial class frmSellHistory : Form
     {
     private readonly BillRepository _billrepo;
-    List<Bill> data;
+    List<Billpreview> data;
         public frmSellHistory()
         {
             _billrepo = new BillRepository(new connectionDB().getConnection());
             InitializeComponent();
-            data = (List<Bill>)_billrepo.getallbill();
+            data = (List<Billpreview>)_billrepo.GetAllBill();
+            
+            
+
         }
 
         private void sellHistory_Load(object sender, EventArgs e)
@@ -30,25 +33,22 @@ namespace cafeshopCsharp
             createGrid(data.ToArray());
         }
 
-        private void createGrid(Bill[] data)
+        private void createGrid(Billpreview[] datas)
         {
 
             panel1.Controls.Clear();
-            int y = 1000;
-            int x = 130;
+            int x = 10, y = 10;
+            int cardSizeX = 1, cardSizeY = 200;
 
-            if (data == null) return;
-            foreach (var i in Enumerable.Range(0, data.Length))
-
+            //  if (data == null) return;
+            foreach (var i in Enumerable.Range(0, datas.Length))
             {
-
-
-                historyCard card = new historyCard();
+                historyCard card = new historyCard(datas[i], this)
                 {
-                    Location = new Point(x, (i + 1) * (y + 10) - y + 10);
+                    Location = new Point(x + cardSizeX, y + (cardSizeY * i))
                 };
                 panel1.Controls.Add(card);
-
+         
             }
             panel1.AutoScroll = true;
             panel1.VerticalScroll.Enabled = true;

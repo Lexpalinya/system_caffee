@@ -86,5 +86,59 @@ namespace cafeshopCsharp
             
             }
         }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    if (string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtUsername.Text))
+                    {
+                        MessageBox.Show("ກະລຸນາປ້ອນຂໍ້ມູນສຳລັບການເຂົ້າສູ່ລະບົບ", "ຄຳແນະນຳ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    Account account = new Account
+                    {
+                        AccUserName = txtUsername.Text,
+                        AccPassword = txtPassword.Text
+                    };
+                    var login = _accountRepository.AccountLogin(account);
+                    if (login == null)
+                    {
+                        MessageBox.Show("ກະລຸນາກວດສອບ ຊື່ຜູ້ໃຊ້ ແລະ ລະຫັດຜ່ານ", "ການເຂົ້າສູ່ລະບົບຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    AccountView accountVie = new AccountView
+                    {
+                        AccId = login.AccId,
+                        AccUserName = login.AccUserName,
+                        empLastName = login.empLastName,
+                        empName = login.empName,
+                        AccLevel = login.AccLevel
+                    };
+
+                    frmHomePage hp = new frmHomePage(accountVie
+                        );
+                    hp.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+
+
+                }
+            }
+        }
     }
 }

@@ -105,6 +105,7 @@ namespace cafeshopCsharp
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(490, 32);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label3
             // 
@@ -127,6 +128,7 @@ namespace cafeshopCsharp
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(490, 32);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // label2
             // 

@@ -18,6 +18,16 @@ namespace cafeshopCsharp.modle
         public int BdAmount { get; set; }
         public int BdTotal { get; set; }
     }
+    public class showbilldetail
+    {
+        public string name { get; set; }
+        public string type { get; set; }
+        public string size{ get; set; }
+        public int price { get; set; }
+        public int amount { get; set; }
+        public int total{ get; set; }
+
+    }
 
     public class BillDetailRepository {
         private readonly IDbConnection dbConnection;
@@ -25,6 +35,21 @@ namespace cafeshopCsharp.modle
         public BillDetailRepository(IDbConnection connection ) {
 
             dbConnection = connection ?? throw new ArgumentException(nameof(connection));
+        }
+        //get bill detail from id
+        public IEnumerable<showbilldetail> getbillbyid(BillDetail addid)
+        {
+            try
+            {
+                return dbConnection.Query<showbilldetail>(@"select pd.pName as name,pd.pType as type,bdt.bdSize as size,bdt.bdPrice as price,bdt.bdAmount as amount,bdt.bdTotal as total from tb_billdetail as bdt 
+join tb_products as pd on bdt.bdPId = pd.pId WHERE bdt.bdblId =@bdblid",addid);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return Enumerable.Empty<showbilldetail>();
+            }
         }
 
 

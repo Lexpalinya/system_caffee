@@ -31,7 +31,6 @@ namespace cafeshopCsharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowDetail));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,7 +54,6 @@ namespace cafeshopCsharp
             this.listView1.AllowColumnReorder = true;
             this.listView1.AutoArrange = false;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -64,17 +62,13 @@ namespace cafeshopCsharp
             this.columnHeader7});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(4, 268);
+            this.listView1.Location = new System.Drawing.Point(12, 261);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(655, 569);
+            this.listView1.Size = new System.Drawing.Size(647, 569);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ລະຫັດ";
             // 
             // columnHeader2
             // 
@@ -119,6 +113,7 @@ namespace cafeshopCsharp
             this.button2.TabIndex = 25;
             this.button2.Text = " X";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -187,7 +182,7 @@ namespace cafeshopCsharp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(606, 849);
+            this.label7.Location = new System.Drawing.Point(500, 833);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 29);
             this.label7.TabIndex = 32;
@@ -214,6 +209,7 @@ namespace cafeshopCsharp
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "frmShowDetail";
             this.Text = "frmShowDetail";
+            this.Load += new System.EventHandler(this.frmShowDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,7 +219,6 @@ namespace cafeshopCsharp
         #endregion
 
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;

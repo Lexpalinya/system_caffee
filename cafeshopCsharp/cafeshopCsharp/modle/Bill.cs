@@ -19,6 +19,16 @@ namespace cafeshopCsharp.modle
     public int BlPoint { get; set; }
   }
 
+    public class Billpreview
+    {
+        public int Id { get; set; }
+        public DateTime Date { get; set; }
+        public int Point { get; set; }
+        public string Accname { get; set; }
+        public string Cusname { get; set; }
+    }
+
+
 
     public class BillRepository {
         private readonly IDbConnection dbConnection;
@@ -26,17 +36,17 @@ namespace cafeshopCsharp.modle
             dbConnection = connection ?? throw new ArgumentException(nameof(connection));
         
         }
-        public IEnumerable<Bill> getallbill()
+        public IEnumerable<Billpreview> GetAllBill()
         {
             try
             {
-                return dbConnection.Query<Bill>("SELECT blId, blDate, blPoint, ac.accUserName, mb.mbName FROM `tb_bill` AS b INNER JOIN tb_member as mb ON b.blMbId = mb.mbId INNER JOIN tb_account as ac ON b.blAccId = ac.accId");
+                return dbConnection.Query<Billpreview>("SELECT blId as Id, blDate as Date, blPoint as Point, ac.accUserName as Accname, mb.mbName as cusname FROM `tb_bill` AS b left JOIN tb_member as mb ON b.blMbId = mb.mbId INNER JOIN tb_account as ac ON b.blAccId = ac.accId");
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return Enumerable.Empty<Bill>();
+                return Enumerable.Empty<Billpreview>();
             }
         }
 
