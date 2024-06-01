@@ -13,7 +13,7 @@ namespace cafeshopCsharp
 {
     public partial class frmHomePage : Form
     {
-        AccountView Accountview;
+        readonly AccountView Accountview;
        
         public frmHomePage()
         {
@@ -119,7 +119,7 @@ namespace cafeshopCsharp
 
         private void panel4_Click(object sender, EventArgs e)
         {
-            frmSellHistory selmn = new frmSellHistory();
+            frmSellHistory selmn = new frmSellHistory(Accountview.AccLevel,Accountview.AccId);
             setmdi(selmn);
         }
 

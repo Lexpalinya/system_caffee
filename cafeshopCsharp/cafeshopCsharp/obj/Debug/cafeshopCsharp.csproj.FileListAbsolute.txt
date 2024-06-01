@@ -215,3 +215,5 @@ E:\gitHub\projectc#Lastest\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug
 E:\gitHub\projectc#Lastest\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.pdb
 E:\gitHub\projectc#Lastest\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmShowDetail.resources
 E:\gitHub\projectc#Lastest\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.historyCard.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.frmShowDetail.resources
+D:\GitHub\Csharpcafeshop\system_caffee\cafeshopCsharp\cafeshopCsharp\obj\Debug\cafeshopCsharp.historyCard.resources

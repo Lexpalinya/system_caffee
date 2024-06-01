@@ -104,7 +104,7 @@ namespace cafeshopCsharp
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Gold;
             this.Name = "historyCard";
-            this.Size = new System.Drawing.Size(184, 158);
+            this.Size = new System.Drawing.Size(200, 160);
             this.Load += new System.EventHandler(this.historyCard_Load);
             this.Click += new System.EventHandler(this.historyCard_Click);
             this.ResumeLayout(false);

@@ -41,9 +41,10 @@ namespace cafeshopCsharp
             this.dateTimePicker1.Location = new System.Drawing.Point(1560, 26);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 37);
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 35);
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.Value = new System.DateTime(2024, 5, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
@@ -69,7 +70,7 @@ namespace cafeshopCsharp
             // 
             // frmSellHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1789, 1061);

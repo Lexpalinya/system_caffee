@@ -50,23 +50,75 @@ namespace cafeshopCsharp.modle
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0m; // Return 0 if an error occurs
+                return 0; // Return 0 if an error occurs
             }
         }
         //
-        public IEnumerable<Billpreview> GetAllBill()
+        //public IEnumerable<Billpreview> GetAllBill(string role, int accId)
+        //{
+        //    try
+        //    {
+            
+        //        string sql = "SELECT " +
+        //            "b.blId AS Id, b.blDate AS Date, b.blPoint AS Point, ac.accUserName AS Accname, mb.mbName AS cusname " +
+        //            "FROM tb_bill AS b " +
+        //            "LEFT JOIN tb_member AS mb ON b.blMbId = mb.mbId " +
+        //            "INNER JOIN tb_account AS ac ON b.blAccId = ac.accId ";
+
+        //        if (role == "Admin")
+        //        {
+        //            sql += "ORDER BY b.blDate DESC";
+        //            return dbConnection.Query<Billpreview>(sql);
+        //        }
+        //        else
+        //        {
+        //            sql += "WHERE b.blAccId = @accId ORDER BY b.blDate DESC";
+        //            return dbConnection.Query<Billpreview>(sql, new { accId = accId });
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        return Enumerable.Empty<Billpreview>();
+        //    }
+        //}
+
+        public IEnumerable<Billpreview> GetBillsByDate(string role, int accId, DateTime date)
         {
             try
             {
-                return dbConnection.Query<Billpreview>("SELECT blId as Id, blDate as Date, blPoint as Point, ac.accUserName as Accname, mb.mbName as cusname FROM `tb_bill` AS b left JOIN tb_member as mb ON b.blMbId = mb.mbId INNER JOIN tb_account as ac ON b.blAccId = ac.accId");
+                // Log the date for debugging purposes
+                Console.WriteLine($"Date: {date.ToShortDateString()}");
+
+                // Base SQL query
+                string sql = "SELECT " +
+                             "b.blId AS Id, b.blDate AS Date, b.blPoint AS Point, ac.accUserName AS Accname, mb.mbName AS cusname " +
+                             "FROM tb_bill AS b " +
+                             "LEFT JOIN tb_member AS mb ON b.blMbId = mb.mbId " +
+                             "INNER JOIN tb_account AS ac ON b.blAccId = ac.accId ";
+
+                // Append the appropriate WHERE clause and ORDER BY clause
+                string dateCondition = "DATE(b.blDate) = @date";
+
+                if (role == "Admin")
+                {
+                    sql += $"WHERE {dateCondition} ORDER BY b.blDate DESC LIMIT 200";
+                    return dbConnection.Query<Billpreview>(sql, new { date = date.Date });
+                }
+                else
+                {
+                    sql += $"WHERE b.blAccId = @accId AND {dateCondition} ORDER BY b.blDate DESC LIMIT 200";
+                    return dbConnection.Query<Billpreview>(sql, new { accId, date = date.Date });
+                }
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Log the exception message
+                Console.WriteLine(ex.Message);
                 return Enumerable.Empty<Billpreview>();
             }
         }
+
 
 
         // Add Bill- -------------------------------------------------------------------------
