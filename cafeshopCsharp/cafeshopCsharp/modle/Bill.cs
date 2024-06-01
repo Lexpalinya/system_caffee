@@ -26,6 +26,7 @@ namespace cafeshopCsharp.modle
         public int Point { get; set; }
         public string Accname { get; set; }
         public string Cusname { get; set; }
+        public int price { get; set; }
     }
 
 
@@ -36,6 +37,23 @@ namespace cafeshopCsharp.modle
             dbConnection = connection ?? throw new ArgumentException(nameof(connection));
         
         }
+        //get total price
+        public decimal GetTotalPriceByBillId(int billId)
+        {
+            try
+            {
+                return dbConnection.ExecuteScalar<decimal>(@"
+            SELECT SUM(bdPrice) 
+            FROM tb_billdetail 
+            WHERE bdblId = @id", new { id = billId });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0m; // Return 0 if an error occurs
+            }
+        }
+        //
         public IEnumerable<Billpreview> GetAllBill()
         {
             try

@@ -118,7 +118,7 @@ namespace cafeshopCsharp
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(212, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(222, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +128,8 @@ namespace cafeshopCsharp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 140);
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(12, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 29);
             this.label1.TabIndex = 26;
@@ -137,7 +138,8 @@ namespace cafeshopCsharp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 215);
+            this.label2.ForeColor = System.Drawing.Color.Gold;
+            this.label2.Location = new System.Drawing.Point(7, 849);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 29);
             this.label2.TabIndex = 27;
@@ -146,7 +148,8 @@ namespace cafeshopCsharp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(576, 140);
+            this.label3.ForeColor = System.Drawing.Color.Gold;
+            this.label3.Location = new System.Drawing.Point(352, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 29);
             this.label3.TabIndex = 28;
@@ -155,7 +158,8 @@ namespace cafeshopCsharp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(606, 204);
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(352, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 29);
             this.label4.TabIndex = 29;
@@ -164,7 +168,8 @@ namespace cafeshopCsharp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 65);
+            this.label5.ForeColor = System.Drawing.Color.Gold;
+            this.label5.Location = new System.Drawing.Point(352, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 29);
             this.label5.TabIndex = 30;
@@ -173,7 +178,8 @@ namespace cafeshopCsharp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 19);
+            this.label6.ForeColor = System.Drawing.Color.Gold;
+            this.label6.Location = new System.Drawing.Point(12, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 29);
             this.label6.TabIndex = 31;
@@ -182,7 +188,8 @@ namespace cafeshopCsharp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(500, 833);
+            this.label7.ForeColor = System.Drawing.Color.Gold;
+            this.label7.Location = new System.Drawing.Point(471, 833);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 29);
             this.label7.TabIndex = 32;

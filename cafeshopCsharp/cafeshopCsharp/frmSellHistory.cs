@@ -18,13 +18,13 @@ namespace cafeshopCsharp
     {
     private readonly BillRepository _billrepo;
     List<Billpreview> data;
+        
         public frmSellHistory()
         {
             _billrepo = new BillRepository(new connectionDB().getConnection());
             InitializeComponent();
             data = (List<Billpreview>)_billrepo.GetAllBill();
-            
-            
+
 
         }
 
