@@ -178,7 +178,7 @@ namespace cafeshopCsharp.modle
         {
             try
             {
-                string sql = "INSERT INTO tb_bill (blAccId,blTotalMoney,blDate) VALUES (@blAccId,@blTotalMoney,@blDate); " + "SELECT LAST_INSERT_ID();"; ;
+                string sql = "INSERT INTO tb_bill (blAccId,blTotalMoney,blDate,blPoint) VALUES (@blAccId,@blTotalMoney,@blDate,0); " + "SELECT LAST_INSERT_ID();"; ;
                 int lastInsertedId = dbConnection.QuerySingle<int>(sql, addBill);
 
                 return lastInsertedId;
