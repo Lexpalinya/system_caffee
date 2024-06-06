@@ -32,6 +32,9 @@ namespace cafeshopCsharp
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -41,7 +44,7 @@ namespace cafeshopCsharp
             this.dateTimePicker1.Location = new System.Drawing.Point(1560, 26);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 35);
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 37);
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.Value = new System.DateTime(2024, 5, 1, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
@@ -65,15 +68,47 @@ namespace cafeshopCsharp
             this.panel1.BackColor = System.Drawing.Color.LightYellow;
             this.panel1.Location = new System.Drawing.Point(36, 85);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1751, 970);
+            this.panel1.Size = new System.Drawing.Size(1751, 906);
             this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(867, 1013);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 29);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(902, 1013);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 29);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "-->";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(804, 1013);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 29);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "<--";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // frmSellHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1789, 1061);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
@@ -84,6 +119,7 @@ namespace cafeshopCsharp
             this.Text = "sellHistory";
             this.Load += new System.EventHandler(this.sellHistory_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +127,8 @@ namespace cafeshopCsharp
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

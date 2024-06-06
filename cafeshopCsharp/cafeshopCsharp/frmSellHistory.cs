@@ -27,7 +27,7 @@ namespace cafeshopCsharp
             _billrepo = new BillRepository(new connectionDB().getConnection());
             InitializeComponent();
            
-            data = (List<Billpreview>)_billrepo.GetBillsByDate(role,accId,DateTime.Today);
+            data = (List<Billpreview>)_billrepo.GetBillsByDate(role,accId,DateTime.Today, int.Parse(label2.Text)).ToList();
 
 
         }
@@ -78,7 +78,31 @@ namespace cafeshopCsharp
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId,dateTimePicker1.Value.Date);
+            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId,dateTimePicker1.Value.Date,int.Parse(label2.Text)).ToList();
+            createGrid(search.ToArray<Billpreview>());
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            int value = int.Parse(label2.Text)+1;
+            label2.Text = value.ToString();
+            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId, dateTimePicker1.Value.Date, int.Parse(label2.Text)).ToList();
+
+            createGrid(search.ToArray<Billpreview>());
+
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(label2.Text)<= 1)
+            {
+                return;
+            }
+            int value = int.Parse(label2.Text) - 1;
+            label2.Text = value.ToString();
+            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId, dateTimePicker1.Value.Date, int.Parse(label2.Text)).ToList();
+
             createGrid(search.ToArray<Billpreview>());
         }
     }
