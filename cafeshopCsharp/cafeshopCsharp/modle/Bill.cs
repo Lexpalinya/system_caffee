@@ -10,14 +10,15 @@ using Dapper;
 
 namespace cafeshopCsharp.modle
 {
-  public class Bill{
-    public int BlId { get; set; }
-    public int  BlMbId{ get; set; }
-    public int BlAccId { get; set; }
-    public double BlTotalMoney { get; set; }
-    public DateTime BlDate { get; set; }
-    public int BlPoint { get; set; }
-  }
+    public class Bill
+    {
+        public int BlId { get; set; }
+        public int BlMbId { get; set; }
+        public int BlAccId { get; set; }
+        public double BlTotalMoney { get; set; }
+        public DateTime BlDate { get; set; }
+        public int BlPoint { get; set; }
+    }
 
     public class Billpreview
     {
@@ -31,11 +32,13 @@ namespace cafeshopCsharp.modle
 
 
 
-    public class BillRepository {
+    public class BillRepository
+    {
         private readonly IDbConnection dbConnection;
-        public BillRepository(IDbConnection connection){
+        public BillRepository(IDbConnection connection)
+        {
             dbConnection = connection ?? throw new ArgumentException(nameof(connection));
-        
+
         }
         //get total price
         public decimal GetTotalPriceByBillId(int billId)
@@ -58,7 +61,7 @@ namespace cafeshopCsharp.modle
         //{
         //    try
         //    {
-            
+
         //        string sql = "SELECT " +
         //            "b.blId AS Id, b.blDate AS Date, b.blPoint AS Point, ac.accUserName AS Accname, mb.mbName AS cusname " +
         //            "FROM tb_bill AS b " +
@@ -82,27 +85,36 @@ namespace cafeshopCsharp.modle
         //        return Enumerable.Empty<Billpreview>();
         //    }
         //}
-        public int getcounpage(string role, int accId, DateTime date)
+        public int GetCountPage(string role, int accId, DateTime date)
         {
-            string sqlcountall;
-            if (role == "Admin")
+            try
             {
-                 sqlcountall = @"SELECT COUNT(*) FROM tb_bill AS b WHERE DATE(b.blDate) = @date";
-                return dbConnection.QuerySingle<int>(sqlcountall, new { date = date});
+                string sqlcountall;
+                if (role == "Admin")
+                {
+                    sqlcountall = @"SELECT COUNT(*) FROM tb_bill AS b WHERE DATE(b.blDate) = @date";
+                    return dbConnection.QuerySingle<int>(sqlcountall, new { date });
 
 
+                }
+                else
+                {
+                    sqlcountall = @"SELECT COUNT(*) FROM tb_bill AS b WHERE DATE(b.blDate) = @date and b.blAccId = @accId";
+                    return dbConnection.QuerySingle<int>(sqlcountall, new { date,  accId });
+                }
             }
-            else
+            catch (Exception ex)
             {
-                sqlcountall = @"SELECT COUNT(*) FROM tb_bill AS b WHERE DATE(b.blDate) = @date and b.blAccId = @accId";
-                return dbConnection.QuerySingle<int>(sqlcountall, new { date = date,accId=accId });
-
-
+                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
+                return 0;
             }
 
 
         }
-        public IEnumerable<Billpreview> GetBillsByDate(string role, int accId, DateTime date,int page)
+
+
+        public IEnumerable<Billpreview> GetBillsByDate(string role, int accId, DateTime date, int page)
         {
 
             try
@@ -110,37 +122,29 @@ namespace cafeshopCsharp.modle
                 // Log the date for debugging purposes
                 Console.WriteLine($"Date: {date.ToShortDateString()}");
                 // Base SQL query
-             
+
                 string sql = @"SELECT 
-    b.blId AS Id, 
-    b.blDate AS Date, 
-    b.blPoint AS Point, 
-    ac.accUserName AS Accname, 
-    mb.mbName AS cusname 
-FROM 
-    tb_bill AS b 
-LEFT JOIN 
-    tb_member AS mb 
-ON 
-    b.blMbId = mb.mbId 
-INNER JOIN 
-    tb_account AS ac 
-ON 
-    b.blAccId = ac.accId 
-";
+                            b.blId AS Id, 
+                            b.blDate AS Date, 
+                            b.blPoint AS Point, 
+                            ac.accUserName AS Accname, 
+                            mb.mbName AS cusname 
+                            FROM tb_bill AS b 
+                            LEFT JOIN tb_member AS mb ON b.blMbId = mb.mbId 
+                            INNER JOIN tb_account AS ac ON b.blAccId = ac.accId ";
 
                 // Append the appropriate WHERE clause and ORDER BY clause
                 string dateCondition = "DATE(b.blDate) = @date";
-
+                int limit = 50;
                 if (role == "Admin")
                 {
-                    sql += $"WHERE {dateCondition} ORDER BY b.blDate DESC LIMIT 50  offset @page";
-                    return dbConnection.Query<Billpreview>(sql, new { date = date.Date, page=(page-1)*50});
+                    sql += $"WHERE {dateCondition} ORDER BY b.blDate DESC LIMIT @limit  offset @page";
+                    return dbConnection.Query<Billpreview>(sql, new { date,limit, page = (page - 1) * limit });
                 }
                 else
                 {
-                    sql += $"WHERE b.blAccId = @accId AND {dateCondition} ORDER BY b.blDate DESC LIMIT 50 offset @page";
-                    return dbConnection.Query<Billpreview>(sql, new { accId, date = date.Date, page = (page - 1 )*50});
+                    sql += $"WHERE b.blAccId = @accId AND {dateCondition} ORDER BY b.blDate DESC LIMIT @limit offset @page";
+                    return dbConnection.Query<Billpreview>(sql, new { accId, date, limit,page = (page - 1) * limit });
                 }
             }
             catch (Exception ex)
@@ -154,13 +158,15 @@ ON
 
 
         // Add Bill- -------------------------------------------------------------------------
-        public int AddBill(Bill addBill) {
-            try {
-                string sql = "INSERT INTO tb_bill (blMbId,blAccId,blTotalMoney,blDate,blPoint) VALUES (@blMbId,@blAccId,@blTotalMoney,@blDate,@blPoint); "+ "SELECT LAST_INSERT_ID();";
+        public int AddBill(Bill addBill)
+        {
+            try
+            {
+                string sql = "INSERT INTO tb_bill (blMbId,blAccId,blTotalMoney,blDate,blPoint) VALUES (@blMbId,@blAccId,@blTotalMoney,@blDate,@blPoint); " + "SELECT LAST_INSERT_ID();";
                 int lastInsertedId = dbConnection.QuerySingle<int>(sql, addBill);
 
                 return lastInsertedId;
-        }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Errror", MessageBoxButtons.OK, MessageBoxIcon.Error);

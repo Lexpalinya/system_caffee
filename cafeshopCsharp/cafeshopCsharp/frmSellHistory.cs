@@ -20,20 +20,26 @@ namespace cafeshopCsharp
     List<Billpreview> data;
         string role;
         int accId;
+        int count;
+        int limit = 50;
         public frmSellHistory(string role,int accId)
         {
             this.role = role;
             this.accId = accId;
             _billrepo = new BillRepository(new connectionDB().getConnection());
             InitializeComponent();
-           
-            data = (List<Billpreview>)_billrepo.GetBillsByDate(role,accId,DateTime.Today, int.Parse(label2.Text)).ToList();
-
+            dateTimePicker1.Value = DateTime.Today;
+            data = (List<Billpreview>)_billrepo.GetBillsByDate(role,accId,DateTime.Today, int.Parse(lblpage.Text.Split('/')[0])).ToList();
+            count =_billrepo.GetCountPage(role, accId,DateTime.Today);
 
         }
 
         private void sellHistory_Load(object sender, EventArgs e)
         {
+           
+            lblcount.Text = "ຂາຍໄດ້ : " + count.ToString()+ " ລາຍການ ໃນວັນທີ່";
+            count = (int)count /limit + 1;
+            lblpage.Text = "1/" +count.ToString();
             createGrid(data.ToArray());
         }
 
@@ -68,25 +74,30 @@ namespace cafeshopCsharp
             panel1.AutoScroll = true;
             panel1.VerticalScroll.Enabled = true;
             panel1.VerticalScroll.Visible = true;
-            label1.Text = panel1.Controls.Count.ToString();
+          
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            label1.Text = panel1.Controls.Count.ToString();
         }
-
+        
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId,dateTimePicker1.Value.Date,int.Parse(label2.Text)).ToList();
+            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId,dateTimePicker1.Value,1).ToList();
             createGrid(search.ToArray<Billpreview>());
+            count =_billrepo.GetCountPage(role, accId, dateTimePicker1.Value);
+            lblcount.Text = "ຂາຍໄດ້ : " + count.ToString() + " ລາຍການ ໃນວັນທີ່";
+            count =(int) count / limit + 1;
+
+            lblpage.Text = "1/" + count.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            int value = int.Parse(label2.Text)+1;
-            label2.Text = value.ToString();
-            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId, dateTimePicker1.Value.Date, int.Parse(label2.Text)).ToList();
+            int value = int.Parse(lblpage.Text.Split('/')[0])+1;
+            if (value > count) return;
+            lblpage.Text = value.ToString() + "/" + count;
+            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId, dateTimePicker1.Value.Date,value).ToList();
 
             createGrid(search.ToArray<Billpreview>());
 
@@ -95,13 +106,13 @@ namespace cafeshopCsharp
 
         private void label4_Click(object sender, EventArgs e)
         {
-            if (int.Parse(label2.Text)<= 1)
+            int value = int.Parse(lblpage.Text.Split('/')[0]) - 1;
+            if (value< 1)
             {
                 return;
             }
-            int value = int.Parse(label2.Text) - 1;
-            label2.Text = value.ToString();
-            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId, dateTimePicker1.Value.Date, int.Parse(label2.Text)).ToList();
+            lblpage.Text = value.ToString()+"/"+count;
+            var search = (List<Billpreview>)_billrepo.GetBillsByDate(role, accId, dateTimePicker1.Value.Date, value).ToList();
 
             createGrid(search.ToArray<Billpreview>());
         }
