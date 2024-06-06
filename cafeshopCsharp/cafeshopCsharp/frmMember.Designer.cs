@@ -105,6 +105,7 @@ namespace cafeshopCsharp
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Gold;
             this.button3.Location = new System.Drawing.Point(62, 932);
@@ -118,6 +119,7 @@ namespace cafeshopCsharp
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Gold;
             this.button2.Location = new System.Drawing.Point(62, 850);
@@ -131,6 +133,7 @@ namespace cafeshopCsharp
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Gold;
             this.button1.Location = new System.Drawing.Point(62, 788);
@@ -262,6 +265,7 @@ namespace cafeshopCsharp
             // 
             this.reload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reload.BackgroundImage")));
             this.reload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reload.Location = new System.Drawing.Point(1065, 20);
             this.reload.Name = "reload";
             this.reload.Size = new System.Drawing.Size(50, 45);
@@ -280,6 +284,7 @@ namespace cafeshopCsharp
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(897, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(53, 45);
@@ -305,6 +310,7 @@ namespace cafeshopCsharp
             this.ClientSize = new System.Drawing.Size(1847, 1061);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);

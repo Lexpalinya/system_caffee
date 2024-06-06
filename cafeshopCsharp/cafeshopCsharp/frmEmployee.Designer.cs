@@ -96,6 +96,7 @@ namespace cafeshopCsharp
             // pbImage
             // 
             this.pbImage.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.pbImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbImage.Location = new System.Drawing.Point(408, 152);
             this.pbImage.Margin = new System.Windows.Forms.Padding(2);
             this.pbImage.Name = "pbImage";
@@ -163,6 +164,7 @@ namespace cafeshopCsharp
             // btndelete
             // 
             this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btndelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btndelete.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.Gold;
             this.btndelete.Location = new System.Drawing.Point(183, 910);
@@ -176,6 +178,7 @@ namespace cafeshopCsharp
             // btnedit
             // 
             this.btnedit.BackColor = System.Drawing.Color.Green;
+            this.btnedit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnedit.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.ForeColor = System.Drawing.Color.Gold;
             this.btnedit.Location = new System.Drawing.Point(183, 848);
@@ -189,6 +192,7 @@ namespace cafeshopCsharp
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Gold;
             this.btnAdd.Location = new System.Drawing.Point(183, 786);
@@ -340,6 +344,7 @@ namespace cafeshopCsharp
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(898, 27);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 41);

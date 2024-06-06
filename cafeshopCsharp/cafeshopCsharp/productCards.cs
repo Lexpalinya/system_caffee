@@ -14,7 +14,7 @@ namespace cafeshopCsharp
     public partial class ProductCards : UserControl
     {
         // Define event for entire product card click
-        public event EventHandler ProductCardClicked;
+      //  public event EventHandler ProductCardClicked;
         public frmSell _frmSell;
         public Product product1;
 
@@ -26,6 +26,7 @@ namespace cafeshopCsharp
             pictureBox1.Image = new ConvertByteToImage().ByteToImage(product.PImage);
             lbName.Text = product.PName;
             lbPrice.Text = product.PType;
+            lblamount.Text = product.PAmount.ToString();
 
             if (product.PType == "Hot")
             {
@@ -65,6 +66,11 @@ namespace cafeshopCsharp
         {
            
             _frmSell.seleteProductSetText(product1);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

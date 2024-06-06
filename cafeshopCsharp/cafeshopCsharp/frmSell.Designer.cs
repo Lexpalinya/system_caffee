@@ -109,7 +109,7 @@ namespace cafeshopCsharp
             this.label6.ForeColor = System.Drawing.Color.Gold;
             this.label6.Location = new System.Drawing.Point(981, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 33);
+            this.label6.Size = new System.Drawing.Size(105, 30);
             this.label6.TabIndex = 5;
             this.label6.Text = "ລາຄາລວມ";
             // 
@@ -123,7 +123,7 @@ namespace cafeshopCsharp
             this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(353, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 33);
+            this.label4.Size = new System.Drawing.Size(154, 30);
             this.label4.TabIndex = 14;
             this.label4.Text = "ລາຄາ/ ຂະໜາດ";
             // 
@@ -138,7 +138,7 @@ namespace cafeshopCsharp
             this.label5.ForeColor = System.Drawing.Color.Gold;
             this.label5.Location = new System.Drawing.Point(109, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 33);
+            this.label5.Size = new System.Drawing.Size(106, 30);
             this.label5.TabIndex = 7;
             this.label5.Text = "ຊື່ລາຍການ";
             // 
@@ -152,7 +152,7 @@ namespace cafeshopCsharp
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(31, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 33);
+            this.label3.Size = new System.Drawing.Size(79, 30);
             this.label3.TabIndex = 14;
             this.label3.Text = "ປະເພດ";
             // 
@@ -205,7 +205,7 @@ namespace cafeshopCsharp
             this.label7.ForeColor = System.Drawing.Color.Gold;
             this.label7.Location = new System.Drawing.Point(618, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 33);
+            this.label7.Size = new System.Drawing.Size(62, 30);
             this.label7.TabIndex = 24;
             this.label7.Text = "ລາຄາ";
             // 
@@ -246,6 +246,7 @@ namespace cafeshopCsharp
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(898, 125);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(188, 62);
@@ -264,7 +265,7 @@ namespace cafeshopCsharp
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(772, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 33);
+            this.label2.Size = new System.Drawing.Size(82, 30);
             this.label2.TabIndex = 4;
             this.label2.Text = "ຈຳນວນ";
             // 
@@ -288,13 +289,14 @@ namespace cafeshopCsharp
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(22, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 33);
+            this.label1.Size = new System.Drawing.Size(51, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "ຂາຍ";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Goldenrod;
@@ -321,6 +323,7 @@ namespace cafeshopCsharp
             // 
             // button9
             // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Location = new System.Drawing.Point(539, 104);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(111, 35);
@@ -334,6 +337,7 @@ namespace cafeshopCsharp
             this.btnmember.BackColor = System.Drawing.Color.White;
             this.btnmember.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnmember.BackgroundImage")));
             this.btnmember.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnmember.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmember.Location = new System.Drawing.Point(582, 17);
             this.btnmember.Name = "btnmember";
             this.btnmember.Size = new System.Drawing.Size(68, 50);
@@ -357,6 +361,7 @@ namespace cafeshopCsharp
             this.btnclearlistview.BackColor = System.Drawing.Color.White;
             this.btnclearlistview.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnclearlistview.BackgroundImage")));
             this.btnclearlistview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnclearlistview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnclearlistview.FlatAppearance.BorderSize = 0;
             this.btnclearlistview.Location = new System.Drawing.Point(9, 159);
             this.btnclearlistview.Margin = new System.Windows.Forms.Padding(0);
@@ -371,6 +376,7 @@ namespace cafeshopCsharp
             this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button7.Location = new System.Drawing.Point(6, 12);
             this.button7.Name = "button7";
@@ -439,7 +445,7 @@ namespace cafeshopCsharp
             this.label9.ForeColor = System.Drawing.Color.Gold;
             this.label9.Location = new System.Drawing.Point(22, 992);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 33);
+            this.label9.Size = new System.Drawing.Size(130, 30);
             this.label9.TabIndex = 27;
             this.label9.Text = "ລາຄາທັງໝົດ";
             // 
@@ -532,6 +538,7 @@ namespace cafeshopCsharp
             // 
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Location = new System.Drawing.Point(1037, 12);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(64, 59);
@@ -543,11 +550,12 @@ namespace cafeshopCsharp
             // 
             this.txtSearch.Location = new System.Drawing.Point(648, 25);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(371, 38);
+            this.txtSearch.Size = new System.Drawing.Size(371, 35);
             this.txtSearch.TabIndex = 4;
             // 
             // button6
             // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(528, 12);
             this.button6.Name = "button6";
@@ -559,6 +567,7 @@ namespace cafeshopCsharp
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(421, 12);
             this.button5.Name = "button5";
@@ -570,6 +579,7 @@ namespace cafeshopCsharp
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(314, 12);
             this.button4.Name = "button4";
@@ -581,6 +591,7 @@ namespace cafeshopCsharp
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(218, 12);
             this.button3.Name = "button3";
@@ -601,7 +612,7 @@ namespace cafeshopCsharp
             // 
             // frmSell
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(1800, 1061);

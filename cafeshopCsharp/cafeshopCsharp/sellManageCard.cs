@@ -16,9 +16,12 @@ namespace cafeshopCsharp
 
     {
         private readonly ProductRepository _productRepository;
+        private readonly PaidRecordRepository _paidRecordRepository;
         private frmSellManage _frmSellManage;
 
         int PId = 0;
+        int PAmount;
+        int price;
         public sellManageCard()
         {
             InitializeComponent();
@@ -29,13 +32,18 @@ namespace cafeshopCsharp
         public sellManageCard(Product product,frmSellManage frmSellManage) {
             _frmSellManage = frmSellManage;
             _productRepository = new ProductRepository(new connectionDB().getConnection());
+            _paidRecordRepository = new PaidRecordRepository(new connectionDB().getConnection());
             InitializeComponent();
             string[] sizes =product.PSize.Split(',');
             createPanelSize(sizes);
             lblName.Text = product.PName;
+            if (product.PType == "Other") { 
+            price =int.Parse(product.PPrice.Split(',')[0]);
+            }
             pictureBox1.Image =new ConvertByteToImage().ByteToImage(product.PImage);
             lblType.Text = product.PType;
-            txtAmount.Text = product.PAmount.ToString();
+            PAmount = product.PAmount;
+            txtAmount.Text =PAmount.ToString();
             PId = product.PId;
 
             if (product.PStatus == 1)
@@ -136,6 +144,23 @@ namespace cafeshopCsharp
             _productRepository.UpdateStatusAndAmount(update);
             List<Product> updateData= (List<Product>)_productRepository.GetAllProducts();
             _frmSellManage.reLoadData(updateData);
+            if (lblType.Text == "Other" && update.PAmount > PAmount) { 
+            
+            int amount = update.PAmount - PAmount;
+            PaidRecord paidRecord = new PaidRecord
+            {
+                PrText = lblName.Text,
+                PrAmount = amount,
+                PrPrice = price,
+                PrTotal = amount * price,
+                PrDate=DateTime.Now
+            };
+            _paidRecordRepository.AddPaidRecord(paidRecord);
+            
+            
+            }
+
+            
         
         }
 
@@ -151,6 +176,21 @@ namespace cafeshopCsharp
             _productRepository.UpdateStatusAndAmount(update);
             List<Product> updateData = (List<Product>)_productRepository.GetAllProducts();
             _frmSellManage.reLoadData(updateData);
+            if (lblType.Text == "Other" && update.PAmount > PAmount) { 
+            
+            int amount = update.PAmount - PAmount;
+            PaidRecord paidRecord = new PaidRecord
+            {
+                PrText = lblName.Text,
+                PrAmount = amount,
+                PrPrice = price,
+                PrTotal = amount * price,
+                PrDate = DateTime.Now
+            };
+            _paidRecordRepository.AddPaidRecord(paidRecord);
+            
+            };
+
         }
 
         private void txtAmount_TextChanged(object sender, EventArgs e)

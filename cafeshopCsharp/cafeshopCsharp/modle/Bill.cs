@@ -82,7 +82,7 @@ namespace cafeshopCsharp.modle
         //        return Enumerable.Empty<Billpreview>();
         //    }
         //}
-        public int getcounpage(string role, int accId, DateTime date,)
+        public int getcounpage(string role, int accId, DateTime date)
         {
             string sqlcountall;
             if (role == "Admin")

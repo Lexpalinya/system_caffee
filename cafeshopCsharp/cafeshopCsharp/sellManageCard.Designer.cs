@@ -48,6 +48,7 @@ namespace cafeshopCsharp
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 144);
@@ -126,6 +127,7 @@ namespace cafeshopCsharp
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.ForeColor = System.Drawing.Color.Gold;
             this.button3.Location = new System.Drawing.Point(1007, 77);
             this.button3.Name = "button3";
@@ -139,6 +141,7 @@ namespace cafeshopCsharp
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DarkGreen;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ForeColor = System.Drawing.Color.Gold;
             this.button4.Location = new System.Drawing.Point(1170, 77);
             this.button4.Name = "button4";
@@ -206,6 +209,7 @@ namespace cafeshopCsharp
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "sellManageCard";

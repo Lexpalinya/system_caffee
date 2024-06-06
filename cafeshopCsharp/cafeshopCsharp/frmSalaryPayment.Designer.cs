@@ -106,11 +106,11 @@ namespace cafeshopCsharp
             this.cmbsearch.Size = new System.Drawing.Size(314, 35);
             this.cmbsearch.TabIndex = 26;
             this.cmbsearch.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
-       
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox2.Font = new System.Drawing.Font("Phetsarath OT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.ForeColor = System.Drawing.Color.Gold;
             this.checkBox2.Location = new System.Drawing.Point(1494, 19);
@@ -120,7 +120,6 @@ namespace cafeshopCsharp
             this.checkBox2.Text = "ຈ່າຍແລ້ວ";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
-         
             // 
             // dateTimePicker2
             // 
@@ -133,6 +132,7 @@ namespace cafeshopCsharp
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(1667, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 45);
@@ -216,6 +216,7 @@ namespace cafeshopCsharp
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Gold;
             this.button3.Location = new System.Drawing.Point(62, 985);
@@ -229,6 +230,7 @@ namespace cafeshopCsharp
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Gold;
             this.button2.Location = new System.Drawing.Point(62, 903);
@@ -242,6 +244,7 @@ namespace cafeshopCsharp
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Gold;
             this.button1.Location = new System.Drawing.Point(62, 841);
@@ -271,6 +274,7 @@ namespace cafeshopCsharp
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.label3);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

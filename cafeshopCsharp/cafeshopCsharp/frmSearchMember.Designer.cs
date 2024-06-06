@@ -61,7 +61,7 @@ namespace cafeshopCsharp
             this.label4.Location = new System.Drawing.Point(80, 335);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 29);
+            this.label4.Size = new System.Drawing.Size(41, 26);
             this.label4.TabIndex = 17;
             this.label4.Text = "ທີ່ຢູ່";
             // 
@@ -70,7 +70,7 @@ namespace cafeshopCsharp
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Location = new System.Drawing.Point(77, 373);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(288, 38);
+            this.txtAddress.Size = new System.Drawing.Size(288, 35);
             this.txtAddress.TabIndex = 16;
             // 
             // label3
@@ -81,7 +81,7 @@ namespace cafeshopCsharp
             this.label3.Location = new System.Drawing.Point(80, 253);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 29);
+            this.label3.Size = new System.Drawing.Size(55, 26);
             this.label3.TabIndex = 15;
             this.label3.Text = "ເບີໂທ";
             // 
@@ -90,7 +90,7 @@ namespace cafeshopCsharp
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNumber.Location = new System.Drawing.Point(77, 291);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(288, 38);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(288, 35);
             this.txtPhoneNumber.TabIndex = 14;
             // 
             // label2
@@ -101,7 +101,7 @@ namespace cafeshopCsharp
             this.label2.Location = new System.Drawing.Point(80, 171);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 29);
+            this.label2.Size = new System.Drawing.Size(96, 26);
             this.label2.TabIndex = 13;
             this.label2.Text = "ຊື່ສະມາຊິກ";
             // 
@@ -110,12 +110,13 @@ namespace cafeshopCsharp
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(77, 209);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(288, 38);
+            this.txtName.Size = new System.Drawing.Size(288, 35);
             this.txtName.TabIndex = 12;
             // 
             // btn
             // 
             this.btn.BackColor = System.Drawing.Color.DarkGreen;
+            this.btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn.Location = new System.Drawing.Point(85, 558);
             this.btn.Name = "btn";
@@ -129,9 +130,10 @@ namespace cafeshopCsharp
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Location = new System.Drawing.Point(240, 433);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 33);
+            this.checkBox1.Size = new System.Drawing.Size(125, 31);
             this.checkBox1.TabIndex = 22;
             this.checkBox1.Text = "ເພື່ມສະມາຊິກ";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -154,7 +156,7 @@ namespace cafeshopCsharp
             // 
             // frmSearchMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(447, 657);

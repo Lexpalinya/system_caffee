@@ -77,6 +77,7 @@ namespace cafeshopCsharp
             // 
             this.panel10.BackColor = System.Drawing.Color.Red;
             this.panel10.Controls.Add(this.label9);
+            this.panel10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel10.ForeColor = System.Drawing.Color.Gold;
             this.panel10.Location = new System.Drawing.Point(12, 879);
             this.panel10.Name = "panel10";
@@ -101,6 +102,7 @@ namespace cafeshopCsharp
             // 
             this.pnseller.BackColor = System.Drawing.Color.Green;
             this.pnseller.Controls.Add(this.label8);
+            this.pnseller.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnseller.ForeColor = System.Drawing.Color.Gold;
             this.pnseller.Location = new System.Drawing.Point(12, 432);
             this.pnseller.Name = "pnseller";
@@ -133,6 +135,7 @@ namespace cafeshopCsharp
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
@@ -146,6 +149,7 @@ namespace cafeshopCsharp
             // 
             this.pnemp.BackColor = System.Drawing.Color.Green;
             this.pnemp.Controls.Add(this.label5);
+            this.pnemp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnemp.ForeColor = System.Drawing.Color.Gold;
             this.pnemp.Location = new System.Drawing.Point(12, 372);
             this.pnemp.Name = "pnemp";
@@ -165,7 +169,6 @@ namespace cafeshopCsharp
             this.label5.Size = new System.Drawing.Size(110, 30);
             this.label5.TabIndex = 5;
             this.label5.Text = "ພະນັກງານ";
-           
             // 
             // label1
             // 
@@ -185,6 +188,7 @@ namespace cafeshopCsharp
             // 
             this.pnmember.BackColor = System.Drawing.Color.Green;
             this.pnmember.Controls.Add(this.label6);
+            this.pnmember.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnmember.ForeColor = System.Drawing.Color.Gold;
             this.pnmember.Location = new System.Drawing.Point(12, 312);
             this.pnmember.Name = "pnmember";
@@ -204,7 +208,6 @@ namespace cafeshopCsharp
             this.label6.Size = new System.Drawing.Size(94, 30);
             this.label6.TabIndex = 4;
             this.label6.Text = "ສະມາຊິກ";
-          
             // 
             // label2
             // 
@@ -234,6 +237,7 @@ namespace cafeshopCsharp
             // 
             this.pnhistory.BackColor = System.Drawing.Color.Green;
             this.pnhistory.Controls.Add(this.label4);
+            this.pnhistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnhistory.ForeColor = System.Drawing.Color.Gold;
             this.pnhistory.Location = new System.Drawing.Point(12, 252);
             this.pnhistory.Name = "pnhistory";
@@ -258,6 +262,7 @@ namespace cafeshopCsharp
             // 
             this.pnsellmanage.BackColor = System.Drawing.Color.Green;
             this.pnsellmanage.Controls.Add(this.label2);
+            this.pnsellmanage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnsellmanage.ForeColor = System.Drawing.Color.Gold;
             this.pnsellmanage.Location = new System.Drawing.Point(12, 131);
             this.pnsellmanage.Name = "pnsellmanage";
@@ -269,6 +274,7 @@ namespace cafeshopCsharp
             // 
             this.pnsell.BackColor = System.Drawing.Color.Green;
             this.pnsell.Controls.Add(this.label1);
+            this.pnsell.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnsell.ForeColor = System.Drawing.Color.Gold;
             this.pnsell.Location = new System.Drawing.Point(12, 71);
             this.pnsell.Name = "pnsell";
@@ -280,6 +286,7 @@ namespace cafeshopCsharp
             // 
             this.pnproduct.BackColor = System.Drawing.Color.Green;
             this.pnproduct.Controls.Add(this.label3);
+            this.pnproduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnproduct.ForeColor = System.Drawing.Color.Gold;
             this.pnproduct.Location = new System.Drawing.Point(12, 192);
             this.pnproduct.Name = "pnproduct";
@@ -313,12 +320,12 @@ namespace cafeshopCsharp
             // 
             this.panel12.BackColor = System.Drawing.Color.Green;
             this.panel12.Controls.Add(this.pnsalarymanagement);
+            this.panel12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel12.ForeColor = System.Drawing.Color.Gold;
             this.panel12.Location = new System.Drawing.Point(12, 551);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(279, 52);
             this.panel12.TabIndex = 13;
-            
             // 
             // pnsalarymanagement
             // 
@@ -338,13 +345,13 @@ namespace cafeshopCsharp
             // 
             this.pnpaidrecord.BackColor = System.Drawing.Color.Green;
             this.pnpaidrecord.Controls.Add(this.label10);
+            this.pnpaidrecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnpaidrecord.ForeColor = System.Drawing.Color.Gold;
             this.pnpaidrecord.Location = new System.Drawing.Point(12, 492);
             this.pnpaidrecord.Name = "pnpaidrecord";
             this.pnpaidrecord.Size = new System.Drawing.Size(279, 52);
             this.pnpaidrecord.TabIndex = 10;
             this.pnpaidrecord.Click += new System.EventHandler(this.pnpaidrecord_Click);
-           
             // 
             // label10
             // 
@@ -358,10 +365,10 @@ namespace cafeshopCsharp
             this.label10.Size = new System.Drawing.Size(152, 30);
             this.label10.TabIndex = 5;
             this.label10.Text = "ບັນທຶກລາຍຈ່າຍ";
-           
             // 
             // dashmain
             // 
+            this.dashmain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dashmain.Image = ((System.Drawing.Image)(resources.GetObject("dashmain.Image")));
             this.dashmain.Location = new System.Drawing.Point(12, 12);
             this.dashmain.Name = "dashmain";
@@ -375,6 +382,7 @@ namespace cafeshopCsharp
             // 
             this.pnreport.BackColor = System.Drawing.Color.Green;
             this.pnreport.Controls.Add(this.label7);
+            this.pnreport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnreport.ForeColor = System.Drawing.Color.Gold;
             this.pnreport.Location = new System.Drawing.Point(12, 609);
             this.pnreport.Name = "pnreport";

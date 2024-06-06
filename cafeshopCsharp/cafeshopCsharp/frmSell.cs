@@ -15,8 +15,8 @@ namespace cafeshopCsharp
         private readonly BillRepository _billRepository;
         private readonly BillDetailRepository _billDetailRepository;
         AccountView accountView;
-        string size, pid, price;
-        int mbId = 0, mbpoint = 0,amount=0;
+        string size, pid="0", price;
+        int mbId = 0, mbpoint = 0, amount = 0;
 
         List<Product> data;
 
@@ -47,6 +47,15 @@ namespace cafeshopCsharp
 
         private void reloadData()
         {
+            data = (List<Product>)_productRepository.GetProductByStatusAmount();
+            foreach (var item in data)
+            {
+                if (item.PAmount <= 0)
+                {
+                
+                    _productRepository.UpdateStatus();
+                }
+            }
             data = (List<Product>)_productRepository.GetProductByStatus();
             createCard(data.ToArray());
         }
@@ -166,8 +175,10 @@ namespace cafeshopCsharp
 
         private void nmAmount_ValueChanged(object sender, EventArgs e)
         {
+            if (lblPrice.Text == "") return;
             int total = (int)(nmAmount.Value * int.Parse(lblPrice.Text));
             txtTotal.Text = total.ToString();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -225,6 +236,13 @@ namespace cafeshopCsharp
                     BdTotal = int.Parse(item.SubItems[6].Text)
                 };
 
+
+                Product product = new Product
+                {
+                    PId = int.Parse(item.SubItems[0].Text),
+                    PAmount = int.Parse(item.SubItems[5].Text)
+                };
+                _productRepository.UpdateAmount(product);
                 _billDetailRepository.AddBillDetail(billDetail);
             }
         }
@@ -239,8 +257,8 @@ namespace cafeshopCsharp
                 {
                     BlAccId = accountView.AccId,
                     BlDate = DateTime.Now,
-                    BlTotalMoney = double.Parse(lblAllprice.Text)
-                   ,BlPoint=(int) int.Parse(lblAllprice.Text)/1000
+                    BlTotalMoney = double.Parse(lblAllprice.Text),
+                    BlPoint = (int)int.Parse(lblAllprice.Text) / 1000
                 };
 
                 int billId;
@@ -258,6 +276,7 @@ namespace cafeshopCsharp
 
                 ResetUI();
                 MessageBox.Show("ຂາຍສຳເລັດແລ້ວ");
+                reloadData();
             }
             catch (Exception ex)
             {
@@ -279,10 +298,28 @@ namespace cafeshopCsharp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (amount < nmAmount.Value) {
-                MessageBox.Show("ຈຳນວນບໍ່ພໍ"); 
+            if (pid == "0") {
+                MessageBox.Show("ກະລຸນາເລືອກສີນຄ້າ");   
+            return;
+            }
+
+            int checkAmount = 0;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.SubItems[0].Text == pid)
+                {
+                    checkAmount += int.Parse(item.SubItems[5].Text);
+                }
+            }
+
+            int currentStockAmount = amount;
+            int requestedAmount = (int)nmAmount.Value;
+            if (currentStockAmount < requestedAmount + checkAmount)
+            {
+                MessageBox.Show("ຈຳນວນບໍ່ພໍ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             var order = new string[] { pid, lblname.Text, lblType.Text, size, price, nmAmount.Value.ToString(), txtTotal.Text };
             double allprice = 0;
             bool orderExists = false;
@@ -292,7 +329,7 @@ namespace cafeshopCsharp
                 if (item.SubItems[0].Text == pid && item.SubItems[3].Text == size)
                 {
                     int existingAmount = int.Parse(item.SubItems[5].Text);
-                    int newAmount = existingAmount + int.Parse(nmAmount.Value.ToString());
+                    int newAmount = existingAmount + requestedAmount;
                     int newTotal = newAmount * int.Parse(price);
 
                     item.SubItems[5].Text = newAmount.ToString();
@@ -311,13 +348,17 @@ namespace cafeshopCsharp
             }
 
             lblAllprice.Text = allprice.ToString();
+           
+
+            
         }
-        
-        
+
+
+
 
         private void button9_Click_2(object sender, EventArgs e)
         {
-                listView1.Items.Remove(listView1.SelectedItems[0]);
+            listView1.Items.Remove(listView1.SelectedItems[0]);
         }
 
 
@@ -329,6 +370,13 @@ namespace cafeshopCsharp
             mbId = 0;
             mbpoint = 0;
             btnmember.BackColor = Color.White;
+            pid = "0";
+            lblPrice.Text = "";
+            lblname.Text = "";
+            lblType.Text = "";
+            nmAmount.Value = 1;
+            txtTotal.Text = "0.0";
+            pnSize.Controls.Clear();
         }
         public void member(Member memberData)
         {
