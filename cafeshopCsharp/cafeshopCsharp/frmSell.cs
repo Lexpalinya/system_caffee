@@ -14,6 +14,7 @@ namespace cafeshopCsharp
         private readonly ProductRepository _productRepository;
         private readonly BillRepository _billRepository;
         private readonly BillDetailRepository _billDetailRepository;
+        private readonly MemberRepository _memberRepository;
         AccountView accountView;
         string size, pid="0", price;
         int mbId = 0, mbpoint = 0, amount = 0;
@@ -28,6 +29,7 @@ namespace cafeshopCsharp
             _productRepository = new ProductRepository(connection);
             _billRepository = new BillRepository(connection);
             _billDetailRepository = new BillDetailRepository(connection);
+            _memberRepository = new MemberRepository(connection);
         }
 
         public frmSell(AccountView account) : this() // Call the default constructor
@@ -233,7 +235,7 @@ namespace cafeshopCsharp
                     BdSize = item.SubItems[3].Text,
                     BdPrice = int.Parse(item.SubItems[4].Text),
                     BdAmount = int.Parse(item.SubItems[5].Text),
-                    BdTotal = int.Parse(item.SubItems[6].Text)
+                    BdTotal = int.Parse(item.SubItems[6].Text) 
                 };
 
 
@@ -266,6 +268,7 @@ namespace cafeshopCsharp
                 {
                     addbill.BlMbId = mbId;
                     billId = _billRepository.AddBill(addbill);
+                    _memberRepository.UpdatePoints(mbId, addbill.BlPoint);
                 }
                 else
                 {
