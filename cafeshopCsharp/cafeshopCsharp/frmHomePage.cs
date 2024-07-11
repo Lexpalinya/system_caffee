@@ -1,4 +1,5 @@
-﻿using cafeshopCsharp.modle;
+﻿using cafeshopCsharp.connection_DB;
+using cafeshopCsharp.modle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,8 @@ namespace cafeshopCsharp
     public partial class frmHomePage : Form
     {
         readonly AccountView Accountview;
-       
+        private readonly AccountRepository _accountRepository;
+        private List<AccountView> data;
         public frmHomePage()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace cafeshopCsharp
           
         }
         public frmHomePage(AccountView account) {
+            _accountRepository = new AccountRepository(new connectionDB().getConnection());
             this.Accountview = account;
             InitializeComponent();
             panel11.Visible = false;
@@ -53,8 +56,14 @@ namespace cafeshopCsharp
 
         private void Panel8_Click(object sender, EventArgs e)
         {
+            data = (List<AccountView>)_accountRepository.GetAllAccount();
+            CrystalReport1 cr1 = new CrystalReport1();
+            cr1.SetDataSource(data);
             frmReport selmn = new frmReport();
             setmdi(selmn);
+            selmn.crystalReportViewer1.ReportSource = cr1;
+            selmn.crystalReportViewer1.Refresh();
+
         }
 
         private void panel10_Click(object sender, EventArgs e)

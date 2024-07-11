@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.Data.SqlClient; // Changed from MySql.Data.MySqlClient
+using MySql.Data.MySqlClient;
 
 namespace cafeshopCsharp.connection_DB
 {
     public class connectionDB
     {
-        private readonly SqlConnection connect = new SqlConnection("Server=.;Database=cafe;Integrated Security=True;");
+        private readonly MySqlConnection connect = new MySqlConnection("Server=localhost;Database=cafe_shop_db;Uid=root;");
 
         public IDbConnection getConnection()
         {
-            try 
+            try
             {
-                if (connect.State != ConnectionState.Open)
+                if (connect.State != System.Data.ConnectionState.Open)
                 {
                     connect.Open();
-                    // MessageBox.Show("Connection successful");
+                   // MessageBox.Show("Connection successful");
                 }
+              
             }
             catch (Exception ex)
             {
@@ -26,5 +27,7 @@ namespace cafeshopCsharp.connection_DB
 
             return connect;
         }
+        
+        
     }
 }
