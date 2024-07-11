@@ -111,13 +111,13 @@ namespace cafeshopCsharp.modle
         }
 
         // Update Point Member -----------------------------------------------------------------------------
-        public void UpdatePoints(int id, int mbPoints) {
+        public void UpdatePoints(Member updatePoints) {
 
            
             try
             {
-                string sql = "UPDATE tb_member SET mbPoints=mbPoints+@mbPoints WHERE mbId=@id";
-                int rowAffected = dbConnection.Execute(sql,new { id,mbPoints});
+                string sql = "UPDATE tb_member SET mbPoints=@mbPoints WHERE mbPhoneNumber=@mbPhoneNumber";
+                int rowAffected = dbConnection.Execute(sql, updatePoints);
 
                 if (rowAffected == 0)
                 {

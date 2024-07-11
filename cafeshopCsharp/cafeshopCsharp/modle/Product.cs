@@ -143,7 +143,7 @@ namespace cafeshopCsharp.modle
                 }
                 else
                 {
-                   // MessageBox.Show("ແກ້ໄຂສຳເລັດ", "Edit", MessageBoxButtons.OK);
+                    MessageBox.Show("ແກ້ໄຂສຳເລັດ", "Edit", MessageBoxButtons.OK);
                 }
 
             }
