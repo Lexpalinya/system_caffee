@@ -61,7 +61,7 @@ namespace cafeshopCsharp
             catch (Exception ex)
             {
                 // Handle image conversion error
-             MessageBox.Show("Error converting image to byte array: " + ex.Message);
+                //MessageBox.Show("Error converting image to byte array: " + ex.Message);
                 return null;
             }
         }

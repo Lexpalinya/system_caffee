@@ -114,7 +114,19 @@ namespace cafeshopCsharp.modle
         {
             try
             {
-                string sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pAmount=@PAmount,pImage=@pImage,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp,pPrice=@pPrice WHERE pId=@pID";
+                string sql = "";
+                if (product.PImage != null)
+                {
+                    sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pAmount=@PAmount,pImage=@pImage,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp,pPrice=@pPrice WHERE pId=@pID";
+
+                }
+                else { 
+                    sql = "UPDATE tb_products SET pName=@pName,pType=@pType,pSize=@pSize,pAmount=@PAmount,pStatus=@pStatus,pPriceOriginal=@pPriceOriginal,pExp=@pExp,pPrice=@pPrice WHERE pId=@pID";
+
+                }
+
+
+
                 int rowAffected = dbConnection.Execute(sql, product);
                 if (rowAffected == 0)
                 {

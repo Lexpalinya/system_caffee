@@ -110,10 +110,22 @@
   <ItemGroup>
     <Compile Include="connection DB\connectionDB.cs" />
     <Compile Include="ConvertByteToImage.cs" />
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="reportSalarys.cs">
+      <DependentUpon>reportSalarys.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportTotalsales.cs">
+      <DependentUpon>reportTotalsales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportAccount.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>reportAccount.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="frmEmployee.cs">
@@ -240,9 +252,17 @@
     <Compile Include="sellManageCard.Designer.cs">
       <DependentUpon>sellManageCard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="reportSalarys.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>reportSalarys.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportTotalsales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportTotalsales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportAccount.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportAccount.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>

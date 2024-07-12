@@ -104,6 +104,7 @@ namespace cafeshopCsharp
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(206, 35);
             this.txtprice.TabIndex = 27;
+            this.txtprice.TextChanged += new System.EventHandler(this.txtprice_TextChanged);
             // 
             // label6
             // 

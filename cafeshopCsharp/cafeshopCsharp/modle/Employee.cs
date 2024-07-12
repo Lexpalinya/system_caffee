@@ -68,7 +68,14 @@ namespace cafeshopCsharp.modle
         // Update Employee ----------------------------------------------------------------
         public void UpdateEmployee(Employee emp) {
             try {
-                string sql = "UPDATE tb_employee SET empName=@empName,empLastName=@empLastName,empAddress=@empAddress,empPhoneNumber=@empPhoneNumber,empPosition=@empPosition,empSalary=@empSalary,empImage=@empImage WHERE empId=@empId ";
+                string sql = "";
+                if (emp.EmpImage != null)
+                {
+                    sql = "UPDATE tb_employee SET empName=@empName,empLastName=@empLastName,empAddress=@empAddress,empPhoneNumber=@empPhoneNumber,empPosition=@empPosition,empSalary=@empSalary,empImage=@empImage WHERE empId=@empId ";
+                }
+                else { 
+                    sql = "UPDATE tb_employee SET empName=@empName,empLastName=@empLastName,empAddress=@empAddress,empPhoneNumber=@empPhoneNumber,empPosition=@empPosition,empSalary=@empSalary WHERE empId=@empId ";
+                }
                 int rowAffected = dbConnection.Execute(sql,emp);
 
             if (rowAffected == 0)

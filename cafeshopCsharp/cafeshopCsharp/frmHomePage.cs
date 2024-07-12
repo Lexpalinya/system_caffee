@@ -56,13 +56,13 @@ namespace cafeshopCsharp
 
         private void Panel8_Click(object sender, EventArgs e)
         {
-            data = (List<AccountView>)_accountRepository.GetAllAccount();
-            CrystalReport1 cr1 = new CrystalReport1();
-            cr1.SetDataSource(data);
-            frmReport selmn = new frmReport();
+          //  data = (List<AccountView>)_accountRepository.GetAllAccount();
+         //   CrystalReport1 cr1 = new CrystalReport1();
+         //   cr1.SetDataSource(data);
+            frmReport selmn = new frmReport(Accountview);
             setmdi(selmn);
-            selmn.crystalReportViewer1.ReportSource = cr1;
-            selmn.crystalReportViewer1.Refresh();
+          //  selmn.crystalReportViewer1.ReportSource = cr1;
+           // selmn.crystalReportViewer1.Refresh();
 
         }
 

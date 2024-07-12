@@ -16,14 +16,14 @@ namespace cafeshopCsharp {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class reportAccount : ReportClass {
         
-        public CrystalReport1() {
+        public reportAccount() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "reportAccount.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace cafeshopCsharp {
         
         public override string FullResourceName {
             get {
-                return "cafeshopCsharp.CrystalReport1.rpt";
+                return "cafeshopCsharp.reportAccount.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace cafeshopCsharp {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedreportAccount : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedreportAccount() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace cafeshopCsharp {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            reportAccount rpt = new reportAccount();
             rpt.Site = this.Site;
             return rpt;
         }

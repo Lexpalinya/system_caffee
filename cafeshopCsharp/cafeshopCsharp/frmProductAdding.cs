@@ -192,8 +192,11 @@ namespace cafeshopCsharp
                 PSize = cmbSize.Text,
                 PType = cmbType.Text,
                 PStatus = checkBox1.Checked ? 1 : 0,
-                PImage = img
+              
             };
+            if (img != null) {
+                updateProduct.PImage = img;
+            }
             _productRepository.UpdateProduct(updateProduct);
             reload();
         }

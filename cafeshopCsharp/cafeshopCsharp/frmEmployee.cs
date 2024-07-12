@@ -136,8 +136,11 @@ namespace cafeshopCsharp
                 EmpPhoneNumber = txtPhoneNumber.Text,
                 EmpPosition = txtPosition.Text,
                 EmpSalary = int.Parse(txtSalary.Text),
-                EmpImage = img
+            
             };
+            if (img != null) { 
+            updateEmployee.EmpImage = img;
+            }
             _employeeRepository.UpdateEmployee(updateEmployee);
             reloadData();
         }

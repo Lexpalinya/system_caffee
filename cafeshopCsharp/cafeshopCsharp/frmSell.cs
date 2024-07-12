@@ -276,10 +276,16 @@ namespace cafeshopCsharp
                 }
 
                 Addbilldetail(listView1, billId);
+                PrintDialog printDialog = new PrintDialog();
+                printDialog.Document = printDocument1;
+              
 
                 ResetUI();
                 MessageBox.Show("ຂາຍສຳເລັດແລ້ວ");
+                printDocument1.Print();
                 reloadData();
+
+              
             }
             catch (Exception ex)
             {
@@ -287,6 +293,7 @@ namespace cafeshopCsharp
             }
         }
 
+       
         private void button10_Click(object sender, EventArgs e)
         {
             frmSearchMember frm = new frmSearchMember(this);
@@ -297,6 +304,63 @@ namespace cafeshopCsharp
         {
             var search = data.Where(item => item.PName.ToLower().Contains(txtSearch.Text.ToLower()));
             createCard(search.ToArray());
+        }
+
+        ///--------------------------------------------------------------------
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // Define the content to print
+            string title = "Bill Report\n\n";
+            string content = "";
+
+            // Set font and brush for drawing text
+            Font titleFont = new Font("Arial", 14, FontStyle.Bold);
+            Font contentFont = new Font("Arial", 12);
+            SolidBrush brush = new SolidBrush(Color.Black);
+
+            // Calculate bounds for the text based on margins
+            float margin = 50;
+            float yPos = margin;
+            float xPos = e.MarginBounds.Left;
+            float titleHeight = titleFont.GetHeight();
+            float contentHeight = contentFont.GetHeight();
+
+            // Draw title
+            e.Graphics.DrawString(title, titleFont, brush, xPos, yPos);
+            yPos += titleHeight + 10; // Adjust spacing after title
+
+            // Example: Fetch data from ListView (assuming listView1)
+            foreach (ListViewItem item in listView1.Items)
+            {
+                // Adjust xPos and yPos as needed for positioning within the printable area
+                e.Graphics.DrawString(item.SubItems[0].Text, contentFont, brush, xPos, yPos); // Column 1
+                e.Graphics.DrawString(item.SubItems[1].Text, contentFont, brush, xPos + 100, yPos); // Column 2
+                e.Graphics.DrawString(item.SubItems[2].Text, contentFont, brush, xPos + 250, yPos); // Column 3
+                e.Graphics.DrawString(item.SubItems[3].Text, contentFont, brush, xPos + 400, yPos); // Column 4
+                e.Graphics.DrawString(item.SubItems[4].Text, contentFont, brush, xPos + 550, yPos); // Column 5
+                e.Graphics.DrawString(item.SubItems[5].Text, contentFont, brush, xPos + 650, yPos); // Column 6
+                e.Graphics.DrawString(item.SubItems[6].Text, contentFont, brush, xPos + 750, yPos); // Column 7
+
+                yPos += contentHeight + 5; // Adjust spacing between lines
+
+                // Check if yPos exceeds the page bounds
+                //if (yPos + contentHeight > e.MarginBounds.Bottom)
+                //{
+                //    e.HasMorePages = true; // Set to true if there are more pages to print
+                //    return; // Exit the method to print the next page
+                //}
+            }
+
+            // If no more items and no more pages to print
+            //e.HasMorePages = false;
+        }
+
+
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -361,7 +425,14 @@ namespace cafeshopCsharp
 
         private void button9_Click_2(object sender, EventArgs e)
         {
-            listView1.Items.Remove(listView1.SelectedItems[0]);
+            try
+            {
+
+                listView1.Items.Remove(listView1.SelectedItems[0]);
+            }
+            catch (Exception ex) {
+                MessageBox.Show("ກະລຸນາເລືອກລາຍການທີ່ຕ້ອງການລົບ","ເຕືອນ");
+            }
         }
 
 
@@ -383,7 +454,7 @@ namespace cafeshopCsharp
         }
         public void member(Member memberData)
         {
-            if (memberData != null)
+            if (memberData.mbId!=0)
             {
                 mbId = memberData.mbId;
                 mbpoint = memberData.mbPoints;

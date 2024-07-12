@@ -66,8 +66,8 @@ namespace cafeshopCsharp.modle
         {
             try
             {
-                string sql = "INSERT INTO tb_member (mbName, mbPhoneNumber, mbAddress, mbPoints) VALUES (@mbName, @mbPhoneNumber, @mbAddress, @mbPoints);" +
-                    "SELECT LAST_INSERT_ID();";
+                string sql = "INSERT INTO tb_member (mbName, mbPhoneNumber, mbAddress, mbPoints) OUTPUT INSERTED.mbId VALUES (@mbName, @mbPhoneNumber, @mbAddress, @mbPoints);";
+
                 int lastInsertedId = dbConnection.QuerySingle<int>(sql, addMember);
 
 

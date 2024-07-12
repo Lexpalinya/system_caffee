@@ -156,5 +156,23 @@ namespace cafeshopCsharp
             var searchMonth = _paidrecordRepository.GetPaidRecordBYMoth(paid);
             dataGridView1.DataSource = searchMonth;
         }
+
+        private void txtprice_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtprice.Text) || string.IsNullOrWhiteSpace(txtamount.Text)) return;
+
+            try
+            {
+                int amount = int.Parse(txtamount.Text);
+                int price = int.Parse(txtprice.Text);
+                string total = (amount * price).ToString();
+                txtTotal.Text = total;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter valid numbers for amount and price.");
+            }
+
+        }
     }
 }

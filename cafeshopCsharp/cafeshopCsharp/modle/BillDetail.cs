@@ -73,7 +73,8 @@ join tb_products as pd on bdt.bdPId = pd.pId WHERE bdt.bdblId =@bdblid",addid);
             }
         }
     
-    
+        
+        
     
     
     
